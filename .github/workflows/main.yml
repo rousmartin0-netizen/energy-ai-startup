@@ -2,15 +2,21 @@ name: Energy-Bot-Auto
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Spustí se každých 5 minut (nebo jak dovolí GitHub)
-  workflow_dispatch:      # <--- TENTO ŘÁDEK TI VRÁTÍ TO TLAČÍTKO
+    - cron: '*/5 * * * *'  # Běží automaticky každých 5 minut
+  workflow_dispatch:      # Umožňuje ti tlačítko "Run workflow"
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
+    # Povolení pro zápis do repozitáře (důležité pro ukládání CSV)
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Stáhne celou historii, aby rebase fungoval správně
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -25,10 +31,16 @@ jobs:
       - name: Fetch Data
         run: python engine.py
 
-      - name: Commit data
+      - name: Commit and Push data
         run: |
           git config --global user.name 'EnergyBot'
           git config --global user.email 'bot@energy.ai'
+          
+          # Klíčová oprava: nejdřív stáhne tvoje ruční změny kódu, pak přidá data
+          git pull --rebase origin main
+          
           git add market_history.csv
-          git commit -m "Update market data" || exit 0
-          git push
+          # Pokud se nic nezměnilo, commit neudělá chybu
+          git commit -m "Update market data [skip ci]" || exit 0
+          
+          git push origin main
