@@ -2,8 +2,9 @@ name: Energy-Bot-Auto
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Pokus o spuštění každých 5 minut
-workflow_dispatch
+    - cron: '*/5 * * * *'  # Spustí se každých 5 minut (nebo jak dovolí GitHub)
+  workflow_dispatch:      # <--- TENTO ŘÁDEK TI VRÁTÍ TO TLAČÍTKO
+
 jobs:
   run-bot:
     runs-on: ubuntu-latest
