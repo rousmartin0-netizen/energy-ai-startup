@@ -2,8 +2,7 @@ name: Energy-Bot-Auto
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Spustí se každou hodinu
-  workflow_dispatch:      # Umožňuje ruční spuštění
+    - cron: '*/5 * * * *'  # Pokus o spuštění každých 5 minut
 
 jobs:
   run-bot:
