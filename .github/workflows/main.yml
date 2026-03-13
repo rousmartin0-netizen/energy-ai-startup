@@ -2,13 +2,12 @@ name: Energy-Bot-Auto
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Běží automaticky každých 5 minut
-  workflow_dispatch:      # Umožňuje ti tlačítko "Run workflow"
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-    # Povolení pro zápis do repozitáře (důležité pro ukládání CSV)
     permissions:
       contents: write
 
@@ -16,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Stáhne celou historii, aby rebase fungoval správně
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v4
@@ -36,11 +35,16 @@ jobs:
           git config --global user.name 'EnergyBot'
           git config --global user.email 'bot@energy.ai'
           
-          # Klíčová oprava: nejdřív stáhne tvoje ruční změny kódu, pak přidá data
+          # Schováme nová data do "kapsy"
+          git add market_history.csv
+          git stash
+          
+          # Stáhneme tvoje změny (Telegram token atd.)
           git pull --rebase origin main
           
-          git add market_history.csv
-          # Pokud se nic nezměnilo, commit neudělá chybu
-          git commit -m "Update market data [skip ci]" || exit 0
+          # Vyndáme data z kapsy zpět
+          git stash pop || echo "No changes to pop"
           
+          git add market_history.csv
+          git commit -m "Update market data [skip ci]" || exit 0
           git push origin main
