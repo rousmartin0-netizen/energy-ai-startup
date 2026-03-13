@@ -2,9 +2,8 @@ import streamlit as st
 import pandas as pd
 import os
 
-st.set_page_config(page_title="Second Foundation Alpha", layout="wide", page_icon="⚡")
+st.set_page_config(page_title="Český Energetický Bot", layout="wide", page_icon="🇨🇿")
 
-# OPRAVENÉ CSS
 st.markdown("""
     <style>
     .main { background-color: #0e1117; }
@@ -12,57 +11,47 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("🛡️ Second Foundation Alpha")
+st.title("🇨🇿 Second Foundation: Český energetický trh")
 
-file_path = "market_history.csv"
-
-if os.path.exists(file_path):
-    df = pd.read_csv(file_path)
+if os.path.exists("market_history.csv"):
+    df = pd.read_csv("market_history.csv")
     latest = df.iloc[-1]
     
-    # Ošetření nových sloupců (solar a news_score)
-    solar_val = latest['solar'] if 'solar' in latest else 0
-    news_val = latest['news_score'] if 'news_score' in latest else 0
+    # Načtení dat
+    cena = latest['price']
+    vitr = latest['wind']
+    slunce = latest['solar'] if 'solar' in latest else 0
+    sentiment = latest['news_score'] if 'news_score' in latest else 0
+    titulek = latest['headline'] if 'headline' in latest else "Aktualizuji zprávy..."
     
     col1, col2, col3, col4 = st.columns(4)
-    col1.metric("Market Price", f"{latest['price']} EUR")
-    col2.metric("Wind Speed", f"{latest['wind']} km/h")
-    col3.metric("Solar Index", f"{solar_val} W/m²")
-    
-    # Barva pro news score (červená pokud je vysoké riziko)
-    news_color = "normal" if news_val <= 2 else "inverse"
-    col4.metric("News Risk Score", news_val, delta_color=news_color)
+    col1.metric("Cena v ČR", f"{cena} EUR")
+    col2.metric("Rychlost větru", f"{vitr} km/h")
+    col3.metric("Solární index", f"{slunce} W/m²")
+    col4.metric("Zpravodajské riziko", sentiment)
 
     st.markdown("---")
 
-    # LOGIKA ROZHODOVÁNÍ (Teď i se zprávami!)
-    st.subheader("🤖 AI Analysis Logic")
+    st.subheader("🤖 AI Analýza a Doporučení")
     
-    # Výpočet sentimentu (přidali jsme vliv zpráv)
-    if (latest['price'] > 120 and latest['wind'] < 10) or news_val > 3:
-        sentiment = "VERY BULLISH"
-        advice = "🚀 STRONG BUY"
-    elif latest['wind'] > 35 or solar_val > 400 or news_val < -2:
-        sentiment = "VERY BEARISH"
-        advice = "🚨 STRONG SELL"
-    else:
-        sentiment = "NEUTRAL"
-        advice = "⚖️ HOLD"
-
     c1, c2 = st.columns(2)
     with c1:
-        st.info(f"**Market Sentiment:** {sentiment}")
-        st.write(f"### Recommendation: {advice}")
-        if news_val > 2:
-            st.warning(f"⚠️ POZOR: Zprávy naznačují vysokou volatilitu (Risk: {news_val})")
-    
-    with c2:
-        # Odhad pohybu ceny pro příští hodinu (zprávy zvyšují cenu)
-        change = (latest['wind'] * -0.4) + (solar_val * -0.05) + (news_val * 2)
-        st.write(f"### Expected Price Shift: {round(change, 2)} EUR")
+        if sentiment > 1 or (cena > 150 and vitr < 5):
+            st.error("🚀 DOPORUČENÍ: NAKOUPIT (BUY)")
+            st.write("Důvod: Nízká výroba a negativní zprávy tlačí cenu nahoru.")
+        elif vitr > 25 or slunce > 500:
+            st.success("🚨 DOPORUČENÍ: PRODAT (SELL)")
+            st.write("Důvod: Vysoká výroba z OZE srazí cenu dolů.")
+        else:
+            st.info("⚖️ DOPORUČENÍ: DRŽET (HOLD)")
+            st.write("Důvod: Trh je v rovnováze.")
 
-    st.subheader("📊 Price History")
+    with c2:
+        st.write("### Poslední zpráva z monitoringu:")
+        st.info(f"📰 {titulek}")
+
+    st.subheader("📈 Historie ceny v ČR")
     st.line_chart(df.set_index('time')['price'])
 
 else:
-    st.warning("Čekám na synchronizaci datového tunelu... Zkuste obnovit stránku za minutu.")
+    st.warning("Čekám na první česká data...")
