@@ -1,9 +1,14 @@
 import streamlit as st
 import pandas as pd
 import os
+from streamlit_autorefresh import st_autorefresh
 
-# Základní nastavení stránky
-st.set_page_config(page_title="Český Energetický Bot", layout="wide", page_icon="🇨🇿")
+# 1. KONFIGURACE STRÁNKY
+st.set_page_config(page_title="CZ Second Foundation Live", layout="wide", page_icon="🇨🇿")
+
+# 2. AUTO-REFRESH (Stránka se sama obnoví každých 30 sekund)
+# To zajistí, že uvidíš nová data hned, jak je robot zapíše
+st_autorefresh(interval=30000, key="datarefresh")
 
 # Profesionální tmavý vzhled
 st.markdown("""
@@ -13,80 +18,67 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-st.title("🇨🇿 Second Foundation: Český energetický trh")
+st.title("🇨🇿 CZ Second Foundation: LIVE TERMINAL")
 
 file_path = "market_history.csv"
 
 if os.path.exists(file_path):
     df = pd.read_csv(file_path)
     
-    # Kontrola, zda máme aspoň nějaká data
     if not df.empty:
         latest = df.iloc[-1]
         
-        # Načtení hodnot s ošetřením chybějících sloupců
+        # Načtení dat
         cena = latest['price']
         vitr = latest['wind']
         slunce = latest.get('solar', 0)
         sentiment = latest.get('news_score', 0)
-        titulek = latest.get('headline', "Hledám nové zprávy...")
+        titulek = latest.get('headline', "Skenuji český trh...")
 
-        # 1. Horní řada metrik
+        # METRIKY
         col1, col2, col3, col4 = st.columns(4)
-        
-        # Pokud je cena 0, zobrazíme varování
-        if cena <= 0:
-            col1.metric("Cena v ČR", "Čekám...", delta="Offline")
-        else:
-            col1.metric("Cena v ČR", f"{cena} EUR/MWh")
-            
-        col2.metric("Rychlost větru", f"{vitr} km/h")
-        col3.metric("Solární index", f"{slunce} W/m²")
+        col1.metric("Cena v ČR", f"{cena} EUR/MWh")
+        col2.metric("Vítr (Praha)", f"{vitr} km/h")
+        col3.metric("Slunce", f"{slunce} W/m²")
         col4.metric("AI Sentiment", sentiment)
 
         st.markdown("---")
 
-        # 2. Analýza a Doporučení
+        # ANALÝZA
         st.subheader("🤖 AI Analýza a Doporučení")
-        
         c1, c2 = st.columns([1, 1])
         with c1:
-            # Logika doporučení
             if sentiment > 1 or (cena > 150 and vitr < 10):
                 st.error("🚀 DOPORUČENÍ: NAKOUPIT (BUY)")
-                st.write("**Důvod:** Negativní zprávy nebo nízká výroba tlačí ceny nahoru.")
             elif vitr > 25 or slunce > 500 or sentiment < -1:
                 st.success("🚨 DOPORUČENÍ: PRODAT (SELL)")
-                st.write("**Důvod:** Vysoká produkce z obnovitelných zdrojů srazí cenu dolů.")
             else:
                 st.info("⚖️ DOPORUČENÍ: DRŽET (HOLD)")
-                st.write("**Důvod:** Trh je momentálně stabilní a v rovnováze.")
+            
+            st.caption(f"Poslední aktualizace terminálu: {latest['time']}")
 
         with c2:
-            st.write("### Poslední zpráva z monitoringu:")
-            st.info(f"📰 {titulek}")
+            st.write("### 📰 Monitoring médií:")
+            st.info(f"{titulek}")
 
-        # 3. Graf historie
+        # LIVE GRAF
         st.markdown("---")
-        st.subheader("📈 Vývoj ceny na vnitrodenním trhu")
+        st.subheader("📈 Real-time cenová křivka")
         
         if len(df) > 1:
-            # Vykreslíme oblastní graf pro lepší vizuální efekt
-            chart_data = df.set_index('time')['price']
-            st.area_chart(chart_data, color="#00ff00")
+            # Vykreslení grafu
+            st.area_chart(df.set_index('time')['price'], color="#00ff00")
         else:
-            st.info("Sběr dat zahájen. Graf se vykreslí po druhém měření (každou hodinu).")
-            # Ukážeme aspoň tabulku, pokud není graf
-            st.write(df)
+            st.info("Sběr dat zahájen. Čekám na další body pro vykreslení křivky...")
 
     else:
-        st.warning("Soubor s daty je prázdný. Spusťte bota v GitHub Actions.")
+        st.warning("Databáze je prázdná. Spusťte bota v GitHub Actions.")
 else:
-    st.error("❌ Datový tunel nenalezen. Musíte nejdříve spustit 'Run workflow' v záložce Actions na GitHubu.")
+    st.error("❌ Soubor s daty nebyl nalezen.")
 
-# Sidebar s informacemi
-st.sidebar.title("Nastavení bota")
-st.sidebar.write("Region: **Česká republika**")
-st.sidebar.write("Model: **Alpha-v2-Czech**")
+# SIDEBAR
+st.sidebar.title("Terminál v2.0")
+st.sidebar.write("Stav: **ONLINE - LIVE**")
+st.sidebar.write("Obnovování: **30s**")
 st.sidebar.markdown("---")
-st.sidebar.caption("Bot automaticky skenuje burzu PXE, Open-Meteo a české zpravodajské servery.")
+st.sidebar.caption("Tento dashboard se automaticky aktualizuje. Nechte ho otevřený pro sledování trhu.")
