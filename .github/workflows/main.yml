@@ -35,15 +35,11 @@ jobs:
           git config --global user.name 'EnergyBot'
           git config --global user.email 'bot@energy.ai'
           
-          # Schováme nová data do "kapsy"
+          # Vyčištění případných konfliktů
           git add market_history.csv
           git stash
-          
-          # Stáhneme tvoje změny (Telegram token atd.)
           git pull --rebase origin main
-          
-          # Vyndáme data z kapsy zpět
-          git stash pop || echo "No changes to pop"
+          git stash pop || echo "No changes"
           
           git add market_history.csv
           git commit -m "Update market data [skip ci]" || exit 0
