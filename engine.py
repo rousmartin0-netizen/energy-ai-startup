@@ -2,10 +2,10 @@ import requests
 import pandas as pd
 from datetime import datetime
 import os
-from pygooglenews import GoogleNews
+from gnews import GNews
 
 def get_market_data():
-    print("Zahajuji sběr dat a analýzu zpráv...")
+    print("Zahajuji hloubkovou analýzu trhu a zpráv...")
     
     # 1. Cena a Počasí (Zůstává stejné)
     try:
@@ -18,21 +18,24 @@ def get_market_data():
     except:
         price, wind, solar = 0, 0, 0
 
-    # 2. ANALÝZA ZPRÁV (Sentiment Analysis)
-    gn = GoogleNews(lang='en', country='US')
-    search = gn.search('European energy market prices', when='24h')
-    
-    # Jednoduchý slovník pro AI sentiment
-    bad_words = ['crisis', 'shortage', 'spike', 'increase', 'danger', 'stop', 'war']
-    good_words = ['surplus', 'drop', 'lower', 'cheap', 'renewable', 'stable']
-    
-    sentiment_score = 0
-    for entry in search['entries'][:10]: # Projdeme posledních 10 titulků
-        title = entry.title.lower()
-        for word in bad_words:
-            if word in title: sentiment_score += 1
-        for word in good_words:
-            if word in title: sentiment_score -= 1
+    # 2. ANALÝZA ZPRÁV přes GNews
+    try:
+        google_news = GNews(language='en', country='US', period='24h', max_results=10)
+        news = google_news.get_news('European energy market prices')
+        
+        bad_words = ['crisis', 'shortage', 'spike', 'increase', 'danger', 'stop', 'war']
+        good_words = ['surplus', 'drop', 'lower', 'cheap', 'renewable', 'stable']
+        
+        sentiment_score = 0
+        for item in news:
+            title = item['title'].lower()
+            for word in bad_words:
+                if word in title: sentiment_score += 1
+            for word in good_words:
+                if word in title: sentiment_score -= 1
+    except Exception as e:
+        print(f"Chyba u zpráv: {e}")
+        sentiment_score = 0
     
     print(f"News Sentiment Score: {sentiment_score}")
 
@@ -44,7 +47,6 @@ def get_market_data():
     file_path = "market_history.csv"
     if os.path.exists(file_path):
         df = pd.read_csv(file_path)
-        # Ošetření chybějících sloupců v historii
         for col in ["solar", "news_score"]:
             if col not in df.columns: df[col] = 0
         df = pd.concat([df, new_data], ignore_index=True)
