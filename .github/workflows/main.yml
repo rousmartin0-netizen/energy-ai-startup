@@ -3,7 +3,7 @@ name: Energy-Bot-Auto
 on:
   schedule:
     - cron: '*/5 * * * *'  # Pokus o spuštění každých 5 minut
-
+workflow_dispatch
 jobs:
   run-bot:
     runs-on: ubuntu-latest
