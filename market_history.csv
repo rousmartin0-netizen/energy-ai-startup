@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-14:39,122.24,7.1,0,0,Španělsko před rokem zažilo dramatický blackout. Teď ho zelené zdroje chrání před šokem z růstu cen plynu - E15.cz
 17:45,122.24,2.5,0,0,"Dodavatelé plynu zatím zdražovat neplánují, mají zásoby zajištěné dopředu - oEnergetice.cz"
 19:54,122.24,6.4,0,0,"Dodavatelé plynu zatím zdražovat neplánují, mají zásoby zajištěné dopředu - oEnergetice.cz"
 21:49,122.24,2.6,0,0,"Dodavatelé plynu zatím zdražovat neplánují, mají zásoby zajištěné dopředu - oEnergetice.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 15:52,131.78,9.7,0,0,"Kubu zasáhl další výpadek elektřiny, bez energie je deset milionů lidí - Prahanadlani.cz"
 16:59,131.78,7.6,0,0,"Kubu zasáhl další výpadek elektřiny, bez energie je deset milionů lidí - Prahanadlani.cz"
 17:54,131.78,7.7,0,0,"Kubu zasáhl další výpadek elektřiny, bez energie je deset milionů lidí - Prahanadlani.cz"
+19:06,131.78,4.7,0,0,"Kubu zasáhl další výpadek elektřiny, bez energie je deset milionů lidí - Prahanadlani.cz"
