@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-23:57,106.17,3.1,0,0,"Energetický audit podle Electree nestačí. Většina firem netuší, kde jim unikají peníze - Zprávy Kurzy.cz"
 05:17,122.24,1.8,0,0,Španělsko před rokem zažilo dramatický blackout. Teď ho zelené zdroje chrání před šokem z růstu cen plynu - E15.cz
 07:54,122.24,1.8,0,0,Španělsko před rokem zažilo dramatický blackout. Teď ho zelené zdroje chrání před šokem z růstu cen plynu - E15.cz
 10:07,122.24,4.8,0,0,Španělsko před rokem zažilo dramatický blackout. Teď ho zelené zdroje chrání před šokem z růstu cen plynu - E15.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 10:57,131.78,9.7,0,0,Klid na trhu
 11:48,131.78,10.4,0,0,Klid na trhu
 12:00,131.78,10.7,0,0,Klid na trhu
+13:57,131.78,10.9,0,0,"Kubu zasáhl další výpadek elektřiny, bez energie je deset milionů lidí - Prahanadlani.cz"
