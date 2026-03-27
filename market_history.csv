@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-15:52,131.78,9.7,0,0,"Kubu zasáhl další výpadek elektřiny, bez energie je deset milionů lidí - Prahanadlani.cz"
 16:59,131.78,7.6,0,0,"Kubu zasáhl další výpadek elektřiny, bez energie je deset milionů lidí - Prahanadlani.cz"
 17:54,131.78,7.7,0,0,"Kubu zasáhl další výpadek elektřiny, bez energie je deset milionů lidí - Prahanadlani.cz"
 19:06,131.78,4.7,0,0,"Kubu zasáhl další výpadek elektřiny, bez energie je deset milionů lidí - Prahanadlani.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 08:09,98.26,11.1,0,0,"Už to vypuklo! Největší dodavatel plynu zvýšil cenu, další budou následovat - Ekonomický deník"
 10:34,98.26,13.9,0,0,"Ráno záporné ceny, večer přes 300 eur. Trh s elektřinou ukazuje rostoucí význam flexibility - Zprávy Kurzy.cz"
 12:08,100.0,15.3,0,0,"Ráno záporné ceny, večer přes 300 eur. Trh s elektřinou ukazuje rostoucí význam flexibility - Zprávy Kurzy.cz"
+15:12,100.0,14.3,0,0,"Ráno záporné ceny, večer přes 300 eur. Trh s elektřinou ukazuje rostoucí význam flexibility - Zprávy Kurzy.cz"
