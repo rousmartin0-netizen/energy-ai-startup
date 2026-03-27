@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-11:48,131.78,10.4,0,0,Klid na trhu
 12:00,131.78,10.7,0,0,Klid na trhu
 13:57,131.78,10.9,0,0,"Kubu zasáhl další výpadek elektřiny, bez energie je deset milionů lidí - Prahanadlani.cz"
 14:58,131.78,12.6,0,0,"Kubu zasáhl další výpadek elektřiny, bez energie je deset milionů lidí - Prahanadlani.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 21:57,106.33,11.0,0,0,"Paliva zdražují, Babiš vyzval hlavní distributory ke snížení cen - ČT24"
 23:00,106.33,10.7,0,0,"Paliva zdražují, Babiš vyzval hlavní distributory ke snížení cen - ČT24"
 00:02,100.0,12.2,0,0,"Paliva zdražují, Babiš vyzval hlavní distributory ke snížení cen - ČT24"
+05:53,98.26,10.1,0,0,"Paliva zdražují, Babiš vyzval hlavní distributory ke snížení cen - ČT24"
