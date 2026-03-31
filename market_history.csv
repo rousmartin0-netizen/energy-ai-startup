@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-00:02,100.0,12.2,0,0,"Paliva zdražují, Babiš vyzval hlavní distributory ke snížení cen - ČT24"
 05:53,98.26,10.1,0,0,"Paliva zdražují, Babiš vyzval hlavní distributory ke snížení cen - ČT24"
 08:09,98.26,11.1,0,0,"Už to vypuklo! Největší dodavatel plynu zvýšil cenu, další budou následovat - Ekonomický deník"
 10:34,98.26,13.9,0,0,"Ráno záporné ceny, večer přes 300 eur. Trh s elektřinou ukazuje rostoucí význam flexibility - Zprávy Kurzy.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 05:56,141.4,8.6,0,0,E.ON už zdražuje. Ode dneška zvyšuje o desítky až stovky korun fixované ceníky plynu i elektřiny - Echo24
 09:46,141.4,13.8,0,0,E.ON zdražuje. Fixované ceníky plynu i elektřiny vzrostly o desítky až stovky korun - E15.cz
 12:05,100.0,15.0,0,0,E.ON zdražuje. Fixované ceníky plynu i elektřiny vzrostly o desítky až stovky korun - e15.cz
+15:55,141.4,10.1,0,0,E.ON zdražuje. Fixované ceníky plynu i elektřiny vzrostly o desítky až stovky korun - E15.cz
