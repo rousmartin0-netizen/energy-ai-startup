@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-15:12,100.0,14.3,0,0,"Ráno záporné ceny, večer přes 300 eur. Trh s elektřinou ukazuje rostoucí význam flexibility - Zprávy Kurzy.cz"
 18:06,98.26,10.7,0,0,"Ráno záporné ceny, večer přes 300 eur. Trh s elektřinou ukazuje rostoucí význam flexibility - Zprávy Kurzy.cz"
 19:54,98.26,5.7,0,0,"Ráno záporné ceny, večer přes 300 eur. Trh s elektřinou ukazuje rostoucí význam flexibility - Zprávy Kurzy.cz"
 21:52,98.26,4.3,0,0,"Ráno záporné ceny, večer přes 300 eur. Trh s elektřinou ukazuje rostoucí význam flexibility - Zprávy Kurzy.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 21:25,141.4,3.6,0,0,"Víc větrníků zlevní elektřinu, tvrdí příznivci. Naopak, zdraží ji, volají odpůrci - Ekonomický deník"
 23:02,141.4,3.9,0,0,Expert hnutí DUHA: Odpůrci větrné energie nejsou žádní ruští agenti. Vliv na zdraví dánské orgány neprokázaly - iROZHLAS
 00:05,119.18,3.3,0,0,Expert hnutí DUHA: Odpůrci větrné energie nejsou žádní ruští agenti. Vliv na zdraví dánské orgány neprokázaly - iROZHLAS
+06:15,119.18,4.1,0,0,Expert hnutí DUHA: Odpůrci větrné energie nejsou žádní ruští agenti. Vliv na zdraví dánské orgány neprokázaly - iROZHLAS
