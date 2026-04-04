@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-17:50,4.96,9.2,0,0,Top 10 událostí z energetiky za poslední týden - oEnergetice.cz
 19:47,4.96,6.0,0,0,"Hrozí Evropě nedostatek energie? Pokud se válka v Íránu protáhne do léta, budeme mít problém - Hrot24.cz"
 21:02,4.96,5.1,0,0,"Hrozí Evropě nedostatek energie? Pokud se válka v Íránu protáhne do léta, budeme mít problém - Hrot24.cz"
 22:03,4.96,6.6,0,0,"Hrozí Evropě nedostatek energie? Pokud se válka v Íránu protáhne do léta, budeme mít problém - hrot24.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 05:16,22.05,11.0,0,0,Babiš požaduje zastropování cen. Lidem chce znatelně snížit cenu za energie - EnergoZrouti.cz
 07:55,22.05,16.0,0,0,Babiš požaduje zastropování cen. Lidem chce znatelně snížit cenu za energie - EnergoZrouti.cz
 09:57,22.05,19.0,0,0,Konkurenceschopnost Evropy bude zelená bez ohledu na postoj české vlády - Hospodářské noviny
+11:04,22.05,19.7,0,0,Konkurenceschopnost Evropy bude zelená bez ohledu na postoj české vlády - archiv.hn.cz
