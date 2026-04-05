@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-20:06,102.54,10.5,0,0,České domácnosti stále tápou. Tohle by měl vědět každý odběratel energií - Bydlení.cz
 22:04,102.54,7.1,0,0,E.ON už zdražuje. Ode dneška zvyšuje o desítky až stovky korun fixované ceníky plynu i elektřiny - Echo24
 23:54,102.54,10.0,0,0,E.ON už zdražuje. Ode dneška zvyšuje o desítky až stovky korun fixované ceníky plynu i elektřiny - Echo24
 05:56,141.4,8.6,0,0,E.ON už zdražuje. Ode dneška zvyšuje o desítky až stovky korun fixované ceníky plynu i elektřiny - Echo24
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 21:01,22.05,7.1,0,0,"Energetický úřad vyzývá domácnosti, aby nečekaly a ověřily si ceny energií. Snížení ceny nezabere víc jak 5 minut - EnergoZrouti.cz"
 21:58,22.05,7.7,0,0,"Energetický úřad vyzývá domácnosti, aby nečekaly a ověřily si ceny energií. Snížení ceny nezabere víc jak 5 minut - EnergoZrouti.cz"
 23:03,22.05,7.2,0,0,"Energetický úřad vyzývá domácnosti, aby nečekaly a ověřily si ceny energií. Snížení ceny nezabere víc jak 5 minut - EnergoZrouti.cz"
+00:00,6.7,7.2,0,0,"Energetický úřad vyzývá domácnosti, aby nečekaly a ověřily si ceny energií. Snížení ceny nezabere víc jak 5 minut - EnergoZrouti.cz"
