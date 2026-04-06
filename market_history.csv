@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-22:03,119.18,3.8,0,0,energetika - nákupy a ceny energií - smocr.cz
 23:52,119.18,2.6,0,0,energetika - nákupy a ceny energií - smocr.cz
 05:50,114.24,2.3,0,0,"Evropu dusí drahé energie, ale jádro ji nespasí. Nové reaktory nesníží ceny elektřiny - Hrot24.cz"
 09:39,114.24,5.5,0,0,"Evropu dusí drahé energie, ale jádro ji nespasí. Nové reaktory nesníží ceny elektřiny - Hrot24.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 00:03,101.19,11.2,0,0,"Energetická bezpečnost nevzniká jen z toho, že si zajistíme dodávku komodity, upozorňuje šéf společnosti Electree. - iDNES.cz"
 06:20,101.19,15.5,0,0,"Energetická bezpečnost nevzniká jen z toho, že si zajistíme dodávku komodity, upozorňuje šéf společnosti Electree. - iDNES.cz"
 10:36,101.19,16.2,0,0,"Nové vrty v Severním moři nemusí vyřešit ceny ani bezpečnost, upozorňují analytici - oEnergetice.cz"
+14:15,101.19,17.4,0,0,Růst cen plynu znovu otevírá debatu o tempu odklonu Německa od uhlí - oEnergetice.cz
