@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-17:50,22.05,6.0,0,0,"Pět zemí EU požaduje zavedení mimořádné daně pro energetické firmy, píše Reuters - ČT24"
 19:45,22.05,8.0,0,0,"Pět zemí EU požaduje zavedení mimořádné daně pro energetické firmy, píše Reuters - ČT24"
 21:01,22.05,7.1,0,0,"Energetický úřad vyzývá domácnosti, aby nečekaly a ověřily si ceny energií. Snížení ceny nezabere víc jak 5 minut - EnergoZrouti.cz"
 21:58,22.05,7.7,0,0,"Energetický úřad vyzývá domácnosti, aby nečekaly a ověřily si ceny energií. Snížení ceny nezabere víc jak 5 minut - EnergoZrouti.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 10:16,125.37,6.6,0,0,Týden v OZE: Ceny elektřiny padají do záporných čísel a jádro je opět ve hře - Obnovitelně
 14:21,125.37,6.5,0,0,Týden v OZE: Ceny elektřiny padají do záporných čísel a jádro je opět ve hře - Obnovitelně
 17:10,125.37,5.5,0,0,Týden v OZE: Ceny elektřiny padají do záporných čísel a jádro je opět ve hře - Obnovitelně
+19:34,125.37,4.3,0,0,Týden v OZE: Ceny elektřiny padají do záporných čísel a jádro je opět ve hře - Obnovitelně
