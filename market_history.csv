@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-10:39,68.7,9.5,0,0,Ceny elektřiny: bez rozvoje větrné energetiky a akumulace bude Česko ztrácet - Hybrid.cz
 16:06,68.7,11.5,0,0,Ceny elektřiny: bez rozvoje větrné energetiky a akumulace bude Česko ztrácet - Hybrid.cz
 19:54,68.7,12.3,0,0,Ceny elektřiny: bez rozvoje větrné energetiky a akumulace bude Česko ztrácet - Hybrid.cz
 22:02,68.7,7.2,0,0,Ceny elektřiny: bez rozvoje větrné energetiky a akumulace bude Česko ztrácet - Hybrid.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 15:54,113.23,16.6,0,0,"Havlíček: Nesázejme na dovoz levné elektřiny ze Švédska či Francie. Co je doma, to se počítá - Ekonomický deník"
 17:01,113.23,13.4,0,0,"Nesázejme na dovoz levné elektřiny ze Švédska či Francie, varuje Havlíček - Česká justice"
 18:13,113.23,10.4,0,0,"Nesázejme na dovoz levné elektřiny ze Švédska či Francie, varuje Havlíček - Česká justice"
+19:40,113.23,7.2,0,0,"Nesázejme na dovoz levné elektřiny ze Švédska či Francie, varuje Havlíček - Česká justice"
