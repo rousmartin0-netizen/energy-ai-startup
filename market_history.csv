@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-23:56,101.83,1.5,0,0,Podle EGU nehrozí Evropě nedostatek plynu. Návrat k cenám z února 2026 je však v nedohlednu - TZB-info
 06:07,68.7,2.4,0,0,"Ceny elektřiny během Velikonoc klesly hluboko do záporu, pod nulou se ale drží i nyní - oEnergetice.cz"
 10:39,68.7,9.5,0,0,Ceny elektřiny: bez rozvoje větrné energetiky a akumulace bude Česko ztrácet - Hybrid.cz
 16:06,68.7,11.5,0,0,Ceny elektřiny: bez rozvoje větrné energetiky a akumulace bude Česko ztrácet - Hybrid.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 12:49,113.23,18.0,0,0,"Havlíček: Nesázejme na dovoz levné elektřiny ze Švédska či Francie. Co je doma, to se počítá - Ekonomický deník"
 14:23,113.23,17.8,0,0,"Havlíček: Nesázejme na dovoz levné elektřiny ze Švédska či Francie. Co je doma, to se počítá - Ekonomický deník"
 15:54,113.23,16.6,0,0,"Havlíček: Nesázejme na dovoz levné elektřiny ze Švédska či Francie. Co je doma, to se počítá - Ekonomický deník"
+17:01,113.23,13.4,0,0,"Nesázejme na dovoz levné elektřiny ze Švédska či Francie, varuje Havlíček - Česká justice"
