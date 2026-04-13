@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-06:19,125.37,2.6,0,0,Týden v OZE: Ceny elektřiny padají do záporných čísel a jádro je opět ve hře - Obnovitelně
 10:16,125.37,6.6,0,0,Týden v OZE: Ceny elektřiny padají do záporných čísel a jádro je opět ve hře - Obnovitelně
 14:21,125.37,6.5,0,0,Týden v OZE: Ceny elektřiny padají do záporných čísel a jádro je opět ve hře - Obnovitelně
 17:10,125.37,5.5,0,0,Týden v OZE: Ceny elektřiny padají do záporných čísel a jádro je opět ve hře - Obnovitelně
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 21:29,113.23,6.2,0,0,"Nesázejme na dovoz levné elektřiny ze Švédska či Francie, varuje Havlíček - Česká justice"
 22:11,113.23,6.9,0,0,"Nesázejme na dovoz levné elektřiny ze Švédska či Francie, varuje Havlíček - Česká justice"
 23:03,113.23,5.4,0,0,"Nesázejme na dovoz levné elektřiny ze Švédska či Francie, varuje Havlíček - Česká justice"
+23:55,113.23,4.6,0,0,"Nesázejme na dovoz levné elektřiny ze Švédska či Francie, varuje Havlíček - Česká justice"
