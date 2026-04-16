@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-15:54,113.23,16.6,0,0,"Havlíček: Nesázejme na dovoz levné elektřiny ze Švédska či Francie. Co je doma, to se počítá - Ekonomický deník"
 17:01,113.23,13.4,0,0,"Nesázejme na dovoz levné elektřiny ze Švédska či Francie, varuje Havlíček - Česká justice"
 18:13,113.23,10.4,0,0,"Nesázejme na dovoz levné elektřiny ze Švédska či Francie, varuje Havlíček - Česká justice"
 19:40,113.23,7.2,0,0,"Nesázejme na dovoz levné elektřiny ze Švédska či Francie, varuje Havlíček - Česká justice"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 08:08,119.92,7.4,0,0,"Chladný leden snížil ochotu šetřit plynem a elektřinou, ekonomika naznačuje mírné zpomalování - TZB-info"
 09:46,119.92,9.4,0,0,"Solární nadvýroba v Belgii vyhnala záporné ceny k rekordu, za odběr elektřiny vyplatili 15 tisíc eur - E15.cz"
 10:50,119.92,9.4,0,0,"Solární nadvýroba v Belgii vyhnala záporné ceny k rekordu, za odběr elektřiny vyplatili 15 tisíc eur - E15.cz"
+11:46,119.92,9.8,0,0,"Solární nadvýroba v Belgii vyhnala záporné ceny k rekordu, za odběr elektřiny vyplatili 15 tisíc eur - E15.cz"
