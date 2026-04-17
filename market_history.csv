@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-12:09,120.01,5.3,0,0,Babiš: První kroky k zestátnění ČEZ padnou už v červnu - oEnergetice.cz
 14:11,120.01,9.8,0,0,Babiš: První kroky k zestátnění ČEZ padnou už v červnu - oEnergetice.cz
 15:39,120.01,13.9,0,0,Babiš: První kroky k zestátnění ČEZ padnou už v červnu - oEnergetice.cz
 16:45,120.01,14.9,0,0,Babiš: První kroky k zestátnění ČEZ padnou už v červnu - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 01:47,109.71,4.6,0,0,"Solární nadvýroba v Belgii vyhnala záporné ceny k rekordu, za odběr elektřiny vyplatili 15 tisíc eur - E15.cz"
 04:37,109.71,3.5,0,0,"Solární nadvýroba v Belgii vyhnala záporné ceny k rekordu, za odběr elektřiny vyplatili 15 tisíc eur - E15.cz"
 06:23,109.71,3.3,0,0,"Solární nadvýroba v Belgii vyhnala záporné ceny k rekordu, za odběr elektřiny vyplatili 15 tisíc eur - E15.cz"
+08:10,109.71,2.6,0,0,"Ráno záporné ceny, večer přes 300 eur. Trh s elektřinou a význam flexibility - Metro.cz"
