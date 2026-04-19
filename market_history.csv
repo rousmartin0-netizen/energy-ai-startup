@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-08:10,109.71,2.6,0,0,"Ráno záporné ceny, večer přes 300 eur. Trh s elektřinou a význam flexibility - Metro.cz"
 09:47,109.71,7.0,0,0,"Ráno záporné ceny, večer přes 300 eur. Trh s elektřinou a význam flexibility - Metro.cz"
 10:44,109.71,9.2,0,0,"Ráno záporné ceny, večer přes 300 eur. Trh s elektřinou a význam flexibility - Metro.cz"
 11:38,109.71,9.8,0,0,"Ráno záporné ceny, večer přes 300 eur. Trh s elektřinou a význam flexibility - Metro.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 08:37,106.76,7.1,0,0,IRENA: Obnovitelné zdroje jsou klíčem k energetické bezpečnosti v nejistých časech - oEnergetice.cz
 09:29,106.76,11.6,0,0,IRENA: Obnovitelné zdroje jsou klíčem k energetické bezpečnosti v nejistých časech - oEnergetice.cz
 10:09,106.76,9.8,0,0,IRENA: Obnovitelné zdroje jsou klíčem k energetické bezpečnosti v nejistých časech - oEnergetice.cz
+10:59,106.76,11.8,0,0,IRENA: Obnovitelné zdroje jsou klíčem k energetické bezpečnosti v nejistých časech - oEnergetice.cz
