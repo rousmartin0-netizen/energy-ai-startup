@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-17:48,118.26,5.4,0,0,IRENA: Obnovitelné zdroje jsou klíčem k energetické bezpečnosti v nejistých časech - oEnergetice.cz
 18:27,118.26,4.8,0,0,IRENA: Obnovitelné zdroje jsou klíčem k energetické bezpečnosti v nejistých časech - oEnergetice.cz
 19:24,118.26,5.2,0,0,IRENA: Obnovitelné zdroje jsou klíčem k energetické bezpečnosti v nejistých časech - oEnergetice.cz
 19:57,118.26,4.7,0,0,IRENA: Obnovitelné zdroje jsou klíčem k energetické bezpečnosti v nejistých časech - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 19:33,99.17,6.7,0,0,Top 10 událostí z energetiky za poslední týden - oEnergetice.cz
 20:23,99.17,6.6,0,0,Slibovali nám levné energie. Místo toho cena vzrostla o 12 % za jediný měsíc - Dřevostavitel
 21:06,99.17,6.4,0,0,Slibovali nám levné energie. Místo toho cena vzrostla o 12 % za jediný měsíc - Dřevostavitel
+22:00,99.17,0.0,0,0,Slibovali nám levné energie. Místo toho cena vzrostla o 12 % za jediný měsíc - Dřevostavitel
