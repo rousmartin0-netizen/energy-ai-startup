@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-20:23,99.17,6.6,0,0,Slibovali nám levné energie. Místo toho cena vzrostla o 12 % za jediný měsíc - Dřevostavitel
 21:06,99.17,6.4,0,0,Slibovali nám levné energie. Místo toho cena vzrostla o 12 % za jediný měsíc - Dřevostavitel
 22:00,99.17,0.0,0,0,Slibovali nám levné energie. Místo toho cena vzrostla o 12 % za jediný měsíc - Dřevostavitel
 22:56,99.17,5.9,0,0,Slibovali nám levné energie. Místo toho cena vzrostla o 12 % za jediný měsíc - Dřevostavitel
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 12:51,100.0,18.6,0,0,Španělům rok po blackoutu hrozí světový rekord v záporných cenách elektřiny - Médium.cz
 15:04,100.0,17.8,0,0,Španělům rok po blackoutu hrozí světový rekord v záporných cenách elektřiny - Médium.cz
 16:51,94.54,17.1,0,0,Španělům rok po blackoutu hrozí světový rekord v záporných cenách elektřiny - Médium.cz
+18:01,100.0,12.4,0,0,Španělům rok po blackoutu hrozí světový rekord v záporných cenách elektřiny - Médium.cz
