@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-12:04,100.0,13.9,0,0,"Češi se kvůli válce v Íránu bojí zdražování. Šetří na potravinách, fixaci cen energií zmiňuje málo z nich - iROZHLAS"
 14:05,103.49,10.9,0,0,Vítr jako hlavní zdroj. Madridská konference rýsuje budoucnost obnovitelných zdrojů - iDNES.cz
 15:40,103.49,11.7,0,0,"Stát má kritický scénář zastropování cen elektřiny a plynu, řekl Havlíček na fóru - Prahanadlani.cz"
 16:39,103.49,9.0,0,0,"Stát má kritický scénář zastropování cen elektřiny a plynu, řekl Havlíček na fóru - Prahanadlani.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 05:56,109.09,6.9,0,0,Volatilita cen energií mění rozhodování o vytápění v bytových domech - TZB-info
 08:02,109.09,10.2,0,0,Volatilita cen energií mění rozhodování o vytápění v bytových domech - TZB-info
 09:52,109.09,9.9,0,0,Volatilita cen energií mění rozhodování o vytápění v bytových domech - TZB-info
+10:58,109.09,10.7,0,0,Volatilita cen energií mění rozhodování o vytápění v bytových domech - TZB-info
