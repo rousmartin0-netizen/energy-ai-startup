@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-17:15,100.0,9.9,0,0,Volatilita cen energií mění rozhodování o vytápění v bytových domech - TZB-info
 18:02,100.0,9.4,0,0,Volatilita cen energií mění rozhodování o vytápění v bytových domech - TZB-info
 19:08,100.0,8.4,0,0,Volatilita cen energií mění rozhodování o vytápění v bytových domech - TZB-info
 19:59,109.09,6.6,0,0,Volatilita cen energií mění rozhodování o vytápění v bytových domech - TZB-info
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 17:49,118.0,8.4,0,0,"Fotovoltaika je nutností, ale často nestačí. Firmy musejí investovat i do jiných opatření - iDNES.cz"
 18:31,118.0,6.9,0,0,"Fotovoltaika je nutností, ale často nestačí. Firmy musejí investovat i do jiných opatření - iDNES.cz"
 19:31,100.0,5.4,0,0,"Fotovoltaika je nutností, ale často nestačí. Firmy musejí investovat i do jiných opatření - iDNES.cz"
+20:05,118.0,5.7,0,0,"Fotovoltaika je nutností, ale často nestačí. Firmy musejí investovat i do jiných opatření - iDNES.cz"
