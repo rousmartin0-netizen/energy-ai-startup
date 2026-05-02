@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-11:13,98.9,9.5,0,0,Který dodavatel energií byl za poslední rok nejvyhledávanější? - TZB-info
 12:55,98.9,13.6,0,0,MND uvádí do provozu aktuálně největší bateriové úložiště v Česku. Pomůže stabilizovat síť a posílí energetickou bezpečnost. | ČeskéNoviny.cz - České noviny
 15:09,98.9,18.4,0,0,MND uvádí do provozu aktuálně největší bateriové úložiště v Česku. Pomůže stabilizovat síť a posílí energetickou bezpečnost. | ČeskéNoviny.cz - České noviny
 16:52,98.9,17.1,0,0,Využití záporných cen elektřiny jako nové příležitosti v energetice aneb z anomálie standardem - Solární Novinky
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 11:08,113.45,3.2,0,0,Domácnosti při energetické krizi fixují energie a pokračují v úsporách - TZB-info
 11:56,113.45,4.7,0,0,Domácnosti při energetické krizi fixují energie a pokračují v úsporách - TZB-info
 13:14,113.45,6.9,0,0,Domácnosti při energetické krizi fixují energie a pokračují v úsporách - TZB-info
+14:15,113.45,6.7,0,0,Domácnosti při energetické krizi fixují energie a pokračují v úsporách - TZB-info
