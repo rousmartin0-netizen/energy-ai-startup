@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-12:55,98.9,13.6,0,0,MND uvádí do provozu aktuálně největší bateriové úložiště v Česku. Pomůže stabilizovat síť a posílí energetickou bezpečnost. | ČeskéNoviny.cz - České noviny
 15:09,98.9,18.4,0,0,MND uvádí do provozu aktuálně největší bateriové úložiště v Česku. Pomůže stabilizovat síť a posílí energetickou bezpečnost. | ČeskéNoviny.cz - České noviny
 16:52,98.9,17.1,0,0,Využití záporných cen elektřiny jako nové příležitosti v energetice aneb z anomálie standardem - Solární Novinky
 18:07,98.9,17.3,0,0,Využití záporných cen elektřiny jako nové příležitosti v energetice aneb z anomálie standardem - Solární Novinky
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 11:56,113.45,4.7,0,0,Domácnosti při energetické krizi fixují energie a pokračují v úsporách - TZB-info
 13:14,113.45,6.9,0,0,Domácnosti při energetické krizi fixují energie a pokračují v úsporách - TZB-info
 14:15,113.45,6.7,0,0,Domácnosti při energetické krizi fixují energie a pokračují v úsporách - TZB-info
+15:07,113.45,7.1,0,0,Domácnosti při energetické krizi fixují energie a pokračují v úsporách - TZB-info
