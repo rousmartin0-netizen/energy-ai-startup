@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-15:59,113.45,7.7,0,0,Domácnosti při energetické krizi fixují energie a pokračují v úsporách - TZB-info
 16:59,113.45,7.9,0,0,Domácnosti při energetické krizi fixují energie a pokračují v úsporách - TZB-info
 17:52,113.45,6.9,0,0,Domácnosti při energetické krizi fixují energie a pokračují v úsporách - TZB-info
 18:40,113.45,5.9,0,0,Domácnosti při energetické krizi fixují energie a pokračují v úsporách - TZB-info
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 10:17,104.81,6.9,0,0,PRE od května zvyšuje fixované ceny - Novinky
 11:42,104.81,4.5,0,0,Další dodavatel zvyšuje ceny energií. Od května zdražuje fixované ceníky - E15.cz
 12:56,104.81,6.0,0,0,Další dodavatel zvyšuje ceny energií. Od května zdražuje fixované ceníky - E15.cz
+15:08,104.81,6.4,0,0,"Energetický úřad hlásí zlevnění, velcí dodavatelé ale kvůli krizi v Perském zálivu zdražují - E15.cz"
