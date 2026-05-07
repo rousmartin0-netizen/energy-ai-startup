@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-22:24,113.31,5.9,0,0,"Ceny energií letos vzrostou o čtvrtinu. Hrozí další šok, varuje Světová banka - E15.cz"
 23:09,113.31,3.8,0,0,"Ceny energií letos vzrostou o čtvrtinu. Hrozí další šok, varuje Světová banka - E15.cz"
 00:02,125.46,3.1,0,0,"Ceny energií letos vzrostou o čtvrtinu. Hrozí další šok, varuje Světová banka - E15.cz"
 04:02,125.46,2.7,0,0,"Ceny energií letos vzrostou o čtvrtinu. Hrozí další šok, varuje Světová banka - E15.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 12:00,100.0,15.5,0,0,I přes meziroční pokles mají Češi šestou nejdražší elektřinu v EU - Hrot24.cz
 14:40,130.78,16.8,0,0,Ceny energií kolísají. Co dnes rozhoduje o vytápění bytových domů? - Echo24
 16:26,130.78,14.2,0,0,Ceny energií kolísají. Co dnes rozhoduje o vytápění bytových domů? - Echo24
+18:06,130.78,11.6,0,0,Ceny energií kolísají. Co dnes rozhoduje o vytápění bytových domů? - Echo24
