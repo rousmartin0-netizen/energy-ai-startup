@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-22:16,125.46,3.8,0,0,PRE od května zvyšuje fixované ceny - Novinky
 23:12,125.46,6.0,0,0,PRE od května zvyšuje fixované ceny - Novinky
 00:09,104.81,12.8,0,0,PRE od května zvyšuje fixované ceny - Novinky
 03:48,104.81,2.6,0,0,PRE od května zvyšuje fixované ceny - Novinky
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 09:58,109.06,6.6,0,0,Záporné ceny opět zaúřadovaly. Elektřina stála téměř –500 eur za MWh - Obnovitelně
 11:21,109.06,6.9,0,0,Záporné ceny opět zaúřadovaly. Elektřina stála téměř –500 eur za MWh - Obnovitelně
 12:51,109.06,6.8,0,0,Záporné ceny opět zaúřadovaly. Elektřina stála téměř –500 eur za MWh - Obnovitelně
+14:28,109.06,3.6,0,0,Záporné ceny opět zaúřadovaly. Elektřina stála téměř –500 eur za MWh - Obnovitelně
