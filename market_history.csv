@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-22:40,104.81,10.7,0,0,"Ceny energií rostou, trh zůstává nervózní. Fixace cen ochrání zákazníky, říká Jiří Matoušek - TZB-info"
 23:32,104.81,4.0,0,0,"Ceny energií rostou, trh zůstává nervózní. Fixace cen ochrání zákazníky, říká Jiří Matoušek - TZB-info"
 01:14,120.43,11.3,0,0,"Ceny energií rostou, trh zůstává nervózní. Fixace cen ochrání zákazníky, říká Jiří Matoušek - TZB-info"
 04:45,120.43,11.7,0,0,"Ceny energií rostou, trh zůstává nervózní. Fixace cen ochrání zákazníky, říká Jiří Matoušek - TZB-info"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 09:44,122.58,4.9,0,0,Renesance jaderné energetiky v České republice už probíhá - oEnergetice.cz
 10:38,122.58,3.6,0,0,Renesance jaderné energetiky v České republice už probíhá - oEnergetice.cz
 11:31,122.58,7.0,0,0,Renesance jaderné energetiky v České republice už probíhá - oEnergetice.cz
+12:35,122.58,3.4,0,0,"Solární elektrárny v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
