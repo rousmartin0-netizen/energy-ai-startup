@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-20:40,120.43,4.0,0,0,"Ceny energií rostou, trh zůstává nervózní. Fixace cen ochrání zákazníky, říká Jiří Matoušek - TZB-info"
 21:44,120.43,8.2,0,0,"Ceny energií rostou, trh zůstává nervózní. Fixace cen ochrání zákazníky, říká Jiří Matoušek - TZB-info"
 22:34,120.43,5.7,0,0,Za elektřinu Češi platili šesté nejvyšší ceny v Evropě. Plyn byl naopak levnější než průměr - Newstream
 23:31,120.43,8.4,0,0,"Drahá nafta. Inflace v dubnu vyskočila na 2,5 procenta, zdražily energie i pohonné hmoty - Newstream"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 20:59,122.58,4.7,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
 21:53,122.58,3.4,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
 22:35,122.58,2.1,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
+23:28,122.58,1.6,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
