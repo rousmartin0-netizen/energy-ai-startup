@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-22:34,120.43,5.7,0,0,Za elektřinu Češi platili šesté nejvyšší ceny v Evropě. Plyn byl naopak levnější než průměr - Newstream
 23:31,120.43,8.4,0,0,"Drahá nafta. Inflace v dubnu vyskočila na 2,5 procenta, zdražily energie i pohonné hmoty - Newstream"
 01:18,130.78,9.9,0,0,Za elektřinu Češi platili šesté nejvyšší ceny v Evropě. Plyn byl naopak levnější než průměr - Newstream
 04:46,130.78,10.2,0,0,Za elektřinu Češi platili šesté nejvyšší ceny v Evropě. Plyn byl naopak levnější než průměr - Newstream
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 22:35,122.58,2.1,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
 23:28,122.58,1.6,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
 01:21,113.14,1.8,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
+04:55,113.14,2.6,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
