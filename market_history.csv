@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-14:40,130.78,16.8,0,0,Ceny energií kolísají. Co dnes rozhoduje o vytápění bytových domů? - Echo24
 16:26,130.78,14.2,0,0,Ceny energií kolísají. Co dnes rozhoduje o vytápění bytových domů? - Echo24
 18:06,130.78,11.6,0,0,Ceny energií kolísají. Co dnes rozhoduje o vytápění bytových domů? - Echo24
 19:51,130.78,9.8,0,0,Ceny energií kolísají. Co dnes rozhoduje o vytápění bytových domů? - Echo24
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 11:30,113.14,5.6,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
 12:10,113.14,6.3,0,0,Evropská větrná energetika naráží na nedostatek turbín - Hrot24.cz
 13:55,113.14,9.7,0,0,Evropská větrná energetika naráží na nedostatek turbín - Hrot24.cz
+14:51,113.14,8.3,0,0,Evropská větrná energetika naráží na nedostatek turbín - Hrot24.cz
