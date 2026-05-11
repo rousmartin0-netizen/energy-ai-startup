@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-09:58,109.06,6.6,0,0,Záporné ceny opět zaúřadovaly. Elektřina stála téměř –500 eur za MWh - Obnovitelně
 11:21,109.06,6.9,0,0,Záporné ceny opět zaúřadovaly. Elektřina stála téměř –500 eur za MWh - Obnovitelně
 12:51,109.06,6.8,0,0,Záporné ceny opět zaúřadovaly. Elektřina stála téměř –500 eur za MWh - Obnovitelně
 14:28,109.06,3.6,0,0,Záporné ceny opět zaúřadovaly. Elektřina stála téměř –500 eur za MWh - Obnovitelně
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 23:09,113.14,1.1,0,0,Sázka na slunce může zachránit klimatické cíle Evropy a šetří peníze za ropu - Ekonomický deník
 00:07,101.06,1.4,0,0,Sázka na slunce může zachránit klimatické cíle Evropy a šetří peníze za ropu - Ekonomický deník
 04:22,101.06,4.7,0,0,Sázka na slunce může zachránit klimatické cíle Evropy a šetří peníze za ropu - Ekonomický deník
+07:59,101.06,12.9,0,0,"Češi se bojí zdražování energií. Polovina přitom netuší, kolik spotřebuje - Týden.cz"
