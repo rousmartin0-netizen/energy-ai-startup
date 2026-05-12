@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-12:35,122.58,3.4,0,0,"Solární elektrárny v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
 14:02,122.58,7.1,0,0,"Solární elektrárny v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
 15:04,122.58,7.2,0,0,"Solární elektrárny v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
 16:04,122.58,9.4,0,0,"Solární elektrárny v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 17:25,110.74,17.7,0,0,Elektrifikace jako páka pro zlepšení ekonomiky provozu - Peníze.cz
 19:16,110.74,10.9,0,0,Elektrifikace jako páka pro zlepšení ekonomiky provozu - Peníze.cz
 20:52,110.74,10.5,0,0,Elektrifikace jako páka pro zlepšení ekonomiky provozu - Peníze.cz
+22:02,110.74,12.3,0,0,Elektrifikace jako páka pro zlepšení ekonomiky provozu - Peníze.cz
