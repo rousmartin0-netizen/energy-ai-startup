@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-18:03,122.58,10.8,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
 19:18,122.58,9.0,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
 20:04,122.58,7.0,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
 20:59,122.58,4.7,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 00:13,115.93,10.4,0,0,"Pražská plynárenská snižuje cenu plynu u tříleté fixace, navíc nabídka platí i pro stálé zákazníky - TZB-info"
 04:14,115.93,10.3,0,0,"Pražská plynárenská snižuje cenu plynu u tříleté fixace, navíc nabídka platí i pro stálé zákazníky - TZB-info"
 07:28,115.93,15.3,0,0,Češi očekávají zdražení energií. Vlastní reálnou spotřebu ale často neznají - Obnovitelně
+10:05,115.93,17.0,0,0,Češi očekávají zdražení energií. Vlastní reálnou spotřebu ale často neznají - Obnovitelně
