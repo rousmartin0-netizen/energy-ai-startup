@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-10:38,113.14,6.3,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
 11:30,113.14,5.6,0,0,"Soláry v květnu zatím prodělávají. Denní trh ukazuje průměrnou realizační cenu -8,5 EUR/MWh - oEnergetice.cz"
 12:10,113.14,6.3,0,0,Evropská větrná energetika naráží na nedostatek turbín - Hrot24.cz
 13:55,113.14,9.7,0,0,Evropská větrná energetika naráží na nedostatek turbín - Hrot24.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 01:29,129.75,12.3,0,0,Češi očekávají zdražení energií. Vlastní reálnou spotřebu ale často neznají - Obnovitelně
 05:27,129.75,12.2,0,0,Češi očekávají zdražení energií. Vlastní reálnou spotřebu ale často neznají - Obnovitelně
 08:09,129.75,17.7,0,0,"Kdybychom přešli na elektromobily, kolik aut by dokázalo jezdit díky dukovanským blokům? - Obnovitelně"
+10:31,129.75,15.5,0,0,"Kdybychom přešli na elektromobily, kolik aut by dokázalo jezdit díky dukovanským blokům? - Obnovitelně"
