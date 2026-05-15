@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-22:11,113.14,1.8,0,0,Sázka na slunce může zachránit klimatické cíle Evropy a šetří peníze za ropu - Ekonomický deník
 23:09,113.14,1.1,0,0,Sázka na slunce může zachránit klimatické cíle Evropy a šetří peníze za ropu - Ekonomický deník
 00:07,101.06,1.4,0,0,Sázka na slunce může zachránit klimatické cíle Evropy a šetří peníze za ropu - Ekonomický deník
 04:22,101.06,4.7,0,0,Sázka na slunce může zachránit klimatické cíle Evropy a šetří peníze za ropu - Ekonomický deník
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 01:27,129.16,4.7,0,0,Plyn v nabídkách zdražil z 1000 na 1800 Kč. Máte ještě šanci na levnou fixaci? - INFO.CZ
 05:31,129.16,4.0,0,0,Chladnější duben zvedl spotřebu elektřiny v ČR. Soláry teprve potřetí v historii vyrobily více než 600 GWh - oEnergetice.cz
 08:22,129.16,2.9,0,0,Chladnější duben zvedl spotřebu elektřiny v ČR. Soláry teprve potřetí v historii vyrobily více než 600 GWh - oEnergetice.cz
+10:42,129.16,1.5,0,0,Chladný duben zvedl spotřebu elektřiny v ČR. Soláry potřetí v historii vyrobily přes 600 GWh - oEnergetice.cz
