@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-01:29,129.75,12.3,0,0,Češi očekávají zdražení energií. Vlastní reálnou spotřebu ale často neznají - Obnovitelně
 05:27,129.75,12.2,0,0,Češi očekávají zdražení energií. Vlastní reálnou spotřebu ale často neznají - Obnovitelně
 08:09,129.75,17.7,0,0,"Kdybychom přešli na elektromobily, kolik aut by dokázalo jezdit díky dukovanským blokům? - Obnovitelně"
 10:31,129.75,15.5,0,0,"Kdybychom přešli na elektromobily, kolik aut by dokázalo jezdit díky dukovanským blokům? - Obnovitelně"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 11:44,134.22,6.1,0,0,"Větrná energie na moři. Zelený nesmysl, nebo strategický krok pro Evropu? - E15.cz"
 12:41,134.22,1.5,0,0,"Větrná energie na moři. Zelený nesmysl, nebo strategický krok pro Evropu? - E15.cz"
 14:11,134.22,10.9,0,0,"Větrná energie na moři. Zelený nesmysl, nebo strategický krok pro Evropu? - E15.cz"
+15:17,134.22,6.5,0,0,"Větrná energie na moři. Zelený nesmysl, nebo strategický krok pro Evropu? - E15.cz"
