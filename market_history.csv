@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-10:42,129.16,1.5,0,0,Chladný duben zvedl spotřebu elektřiny v ČR. Soláry potřetí v historii vyrobily přes 600 GWh - oEnergetice.cz
 12:25,129.16,9.2,0,0,Chladný duben zvedl spotřebu elektřiny v ČR. Soláry potřetí v historii vyrobily přes 600 GWh - oEnergetice.cz
 14:59,129.16,5.8,0,0,Chladný duben zvedl spotřebu elektřiny v ČR. Soláry potřetí v historii vyrobily přes 600 GWh - oEnergetice.cz
 16:55,129.16,6.2,0,0,Chladný duben zvedl spotřebu elektřiny v ČR. Soláry potřetí v historii vyrobily přes 600 GWh - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 12:43,140.36,3.9,0,0,"25 tisíc firem se musí během půlroku připravit na největší změnu v účtování elektřiny. Jinak hrozí, že budou platit zbytečně moc - Hospodářské noviny"
 16:13,140.36,5.8,0,0,"25 tisíc firem se musí během půlroku připravit na největší změnu v účtování elektřiny. Jinak hrozí, že budou platit zbytečně moc - Hospodářské noviny"
 18:12,140.36,5.1,0,0,Plyn a elektřina pro domácnosti podraží: Ptejte se energetické expertky - TN.cz
+20:02,140.36,3.9,0,0,"25 tisíc firem se musí během půlroku připravit na největší změnu v účtování elektřiny. Jinak hrozí, že budou platit zbytečně moc - Hospodářské noviny"
