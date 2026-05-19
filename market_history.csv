@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-06:25,119.38,8.6,0,0,"Pražská energetika navýšila zisk na 3,2 miliardy korun. Roste na trhu s elektřinou i plynem - Ekonomický deník"
 08:22,119.38,9.1,0,0,"Pražská energetika navýšila zisk na 3,2 miliardy korun. Roste na trhu s elektřinou i plynem - Ekonomický deník"
 09:54,119.38,9.5,0,0,"Pražská energetika navýšila zisk na 3,2 miliardy korun. Roste na trhu s elektřinou i plynem - energy-hub.cz"
 10:57,119.38,10.2,0,0,Pražská energetika si udržela silnou pozici na trhu. Zisk překročil tři miliardy - Hrot24.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 14:21,123.62,9.8,0,0,Energetika potřebuje víc než nové zdroje. Boduje chytrá optimalizace - Hospodářské noviny
 17:22,123.62,10.0,0,0,"Tříletá fixace, levnější první rok. E.ON láká na nový tarif plynu, má ale podmínku - Peníze.cz"
 19:23,123.62,4.9,0,0,"Tříletá fixace, levnější první rok. E.ON láká na nový tarif plynu, má ale podmínku - Peníze.cz"
+20:58,123.62,4.9,0,0,"Tříletá fixace, levnější první rok. E.ON láká na nový tarif plynu, má ale podmínku - Peníze.cz"
