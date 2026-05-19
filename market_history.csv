@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-23:10,129.16,6.6,0,0,Chladný duben zvedl spotřebu elektřiny v ČR. Soláry potřetí v historii vyrobily přes 600 GWh - oEnergetice.cz
 00:06,119.38,5.8,0,0,Chladný duben zvedl spotřebu elektřiny v ČR. Soláry potřetí v historii vyrobily přes 600 GWh - oEnergetice.cz
 03:57,119.38,6.6,0,0,Chladný duben zvedl spotřebu elektřiny v ČR. Soláry potřetí v historii vyrobily přes 600 GWh - oEnergetice.cz
 06:25,119.38,8.6,0,0,"Pražská energetika navýšila zisk na 3,2 miliardy korun. Roste na trhu s elektřinou i plynem - Ekonomický deník"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 05:47,123.62,1.6,0,0,Dobře nastavený energetický management může ušetřit až desítky procent nákladů - Hospodářské noviny
 08:50,123.62,0.8,0,0,Energetika potřebuje víc než nové zdroje. Boduje chytrá optimalizace - Hospodářské noviny
 11:50,123.62,10.1,0,0,Energetika potřebuje víc než nové zdroje. Boduje chytrá optimalizace - Hospodářské noviny
+14:21,123.62,9.8,0,0,Energetika potřebuje víc než nové zdroje. Boduje chytrá optimalizace - Hospodářské noviny
