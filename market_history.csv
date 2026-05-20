@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-10:57,119.38,10.2,0,0,Pražská energetika si udržela silnou pozici na trhu. Zisk překročil tři miliardy - Hrot24.cz
 11:54,119.38,7.2,0,0,Pražská energetika si udržela silnou pozici na trhu. Zisk překročil tři miliardy - Hrot24.cz
 13:07,119.38,8.0,0,0,Pražská energetika si udržela silnou pozici na trhu. Zisk překročil tři miliardy - Hrot24.cz
 14:36,119.38,6.1,0,0,"Pražská energetika navýšila zisk na 3,2 miliardy korun. Roste na trhu s elektřinou i plynem - energy-hub.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 20:58,123.62,4.9,0,0,"Tříletá fixace, levnější první rok. E.ON láká na nový tarif plynu, má ale podmínku - Peníze.cz"
 22:19,123.62,5.2,0,0,Počet nejvýhodnějších nabídek s cenami energií se viditelně snížil - TZB-info
 23:35,123.62,5.4,0,0,Počet nejvýhodnějších nabídek s cenami energií se viditelně snížil - TZB-info
+01:33,131.09,4.0,0,0,Počet nejvýhodnějších nabídek s cenami energií se viditelně snížil - TZB-info
