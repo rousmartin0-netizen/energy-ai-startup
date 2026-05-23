@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-11:50,123.62,10.1,0,0,Energetika potřebuje víc než nové zdroje. Boduje chytrá optimalizace - Hospodářské noviny
 14:21,123.62,9.8,0,0,Energetika potřebuje víc než nové zdroje. Boduje chytrá optimalizace - Hospodářské noviny
 17:22,123.62,10.0,0,0,"Tříletá fixace, levnější první rok. E.ON láká na nový tarif plynu, má ale podmínku - Peníze.cz"
 19:23,123.62,4.9,0,0,"Tříletá fixace, levnější první rok. E.ON láká na nový tarif plynu, má ale podmínku - Peníze.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 18:44,136.94,6.3,0,0,Kolik aut dokáže jezdit z nových Dukovan - oEnergetice.cz
 19:53,136.94,3.3,0,0,Kolik aut dokáže jezdit z nových Dukovan - oEnergetice.cz
 20:39,136.94,2.9,0,0,Kolik aut dokáže jezdit z nových Dukovan - oEnergetice.cz
+21:37,136.94,3.4,0,0,Kolik aut dokáže jezdit z nových Dukovan - oEnergetice.cz
