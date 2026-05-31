@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-18:35,114.71,1.6,0,0,ERÚ: Díky nové tarifní struktuře se uvolní až 3 300 MW příkonu pro připojení nových zdrojů - Solární Novinky
 20:32,114.71,4.9,0,0,ERÚ: Díky nové tarifní struktuře se uvolní až 3 300 MW příkonu pro připojení nových zdrojů - Solární Novinky
 22:08,114.71,5.0,0,0,"Energetický trh zůstává nečitelný, negativních faktorů přibývá – jistotu přináší jedině fixace - TZB-info"
 23:22,114.71,5.0,0,0,"Energetický trh zůstává nečitelný, negativních faktorů přibývá – jistotu přináší jedině fixace - TZB-info"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 10:25,139.93,9.7,0,0,"Energetická past nájemního bydlení: Pronajímatelé neriskují, nájemníci platí - oEnergetice.cz"
 11:56,139.93,13.4,0,0,Klid na trhu
 13:44,139.93,8.7,0,0,Spotřebovávají tolik elektřiny jako celá města. Američané protestují proti datovým centrům pro AI - iROZHLAS
+15:05,139.93,5.2,0,0,"Velké bateriové úložiště za půl roku: Není nač čekat, pojistit se proti vysokým cenám energií se vyplatí - TZB-info"
