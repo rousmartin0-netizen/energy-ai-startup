@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-08:55,114.71,6.2,0,0,Platby za energie pro firmy budou spravedlivější. Některé ušetří statisíce - Seznam Zprávy
 16:07,114.71,7.6,0,0,HARDMIN posouvá řízení energie na další úroveň: umělá inteligence pomůže předvídat energetické toky - Energy-Hub.cz
 18:35,114.71,1.6,0,0,ERÚ: Díky nové tarifní struktuře se uvolní až 3 300 MW příkonu pro připojení nových zdrojů - Solární Novinky
 20:32,114.71,4.9,0,0,ERÚ: Díky nové tarifní struktuře se uvolní až 3 300 MW příkonu pro připojení nových zdrojů - Solární Novinky
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 04:55,139.93,5.8,0,0,"Energetická past nájemního bydlení: Pronajímatelé neriskují, nájemníci platí - oEnergetice.cz"
 08:12,139.93,6.3,0,0,"Energetická past nájemního bydlení: Pronajímatelé neriskují, nájemníci platí - oEnergetice.cz"
 10:25,139.93,9.7,0,0,"Energetická past nájemního bydlení: Pronajímatelé neriskují, nájemníci platí - oEnergetice.cz"
+11:56,139.93,13.4,0,0,Klid na trhu
