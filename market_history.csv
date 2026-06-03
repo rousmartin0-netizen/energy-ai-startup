@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-04:42,134.31,4.6,0,0,"Majitelé fotovoltaik vydělají. Ostatním porostou účty za distribuci, říká šéf TEDOM energie - Obnovitelně"
 08:31,134.31,1.8,0,0,Energetika v sevření sucha: výroba z vody propadá - Vodárenství.cz
 11:51,134.31,4.6,0,0,"Všichni významní dodavatelé energií mají nakoupeno dostatek zásob, zjistil ERÚ - oEnergetice.cz"
 14:29,134.31,1.0,0,0,"Všichni významní dodavatelé energií mají nakoupeno dostatek zásob, zjistil ERÚ - oEnergetice.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 17:12,113.04,13.6,0,0,Solární energie bude do šesti let největším zdrojem elektřiny. Datová centra ale udrží fosilní paliva ve hře - VTM.cz
 20:19,113.04,7.4,0,0,Firmy přejdou na nové tarify za elektřinu. Velké podniky ušetří i desetitisíce ročně. - BusinessInfo.cz
 22:31,113.04,7.8,0,0,Zlevňovat energie už není kam. Dodavatelé proto inovují své nabídky - TZB-info
+00:13,82.41,10.7,0,0,Zlevňovat energie už není kam. Dodavatelé proto inovují své nabídky - TZB-info
