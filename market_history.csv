@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-10:12,82.41,12.3,0,0,Zlevňovat energie už není kam. Dodavatelé proto inovují své nabídky - TZB-info
 15:04,82.41,4.0,0,0,Zlevňovat energie už není kam. Dodavatelé proto inovují své nabídky - TZB-info
 18:55,82.41,6.6,0,0,Zlevňovat energie už není kam. Dodavatelé proto inovují své nabídky - TZB-info
 21:47,82.41,5.2,0,0,Zlevňovat energie už není kam. Dodavatelé proto inovují své nabídky - TZB-info
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 20:18,139.25,5.2,0,0,Zásobníky plynu jsou naplněné jen ze 17 procent. O dodávky se ale Češi bát nemusí - Obnovitelně
 21:39,139.25,2.6,0,0,Zásobníky plynu jsou naplněné jen ze 17 procent. O dodávky se ale Češi bát nemusí - Obnovitelně
 22:45,139.25,3.2,0,0,Sokolovská uhelná navýšila těžbu a dostala se ze ztráty. Vyšší ceny elektřiny svědčí i dalším těžařům - Hospodářské noviny
+23:48,139.25,3.4,0,0,Sokolovská uhelná navýšila těžbu a dostala se ze ztráty. Vyšší ceny elektřiny svědčí i dalším těžařům - Hospodářské noviny
