@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-23:51,121.05,8.7,0,0,Po zelené energetické cestě ke studeným večeřím - Hrot24.cz
 01:50,122.0,8.4,0,0,Po zelené energetické cestě ke studeným večeřím - Hrot24.cz
 05:55,122.0,7.7,0,0,Vysoké ceny energií zabrzdí podle EGU plány na výstavbu až 40 % datových center v ČR - Průmyslová ekologie
 09:39,122.0,12.1,0,0,Vysoké ceny energií zabrzdí podle EGU plány na výstavbu až 40 % datových center v ČR - Průmyslová ekologie
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 01:38,101.28,6.1,0,0,Francie spouští rekordní tendr na offshore větrné elektrárny s výkonem přes 10 GW - oEnergetice.cz
 06:19,101.28,14.1,0,0,"Datová centra pro AI do roku 2030 zdvojnásobí spotřebu elektřiny, vody i půdy - oEnergetice.cz"
 09:59,101.28,16.1,0,0,"Švédsko a Norsko ohrožují evropskou energetickou bezpečnost, uvádí dánští energetici - oEnergetice.cz"
+12:05,101.28,15.9,0,0,"Švédsko a Norsko ohrožují evropskou energetickou bezpečnost, uvádí dánští energetici - oEnergetice.cz"
