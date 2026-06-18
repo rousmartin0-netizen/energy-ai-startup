@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-16:35,93.6,10.5,0,0,Pod Košicemi leží energetický poklad. Město z něj chce vytápět statisíce lidí - E15.cz
 18:27,93.6,10.6,0,0,Pod Košicemi leží energetický poklad. Město z něj chce vytápět statisíce lidí - E15.cz
 20:35,93.6,9.6,0,0,Pod Košicemi leží energetický poklad. Město z něj chce vytápět statisíce lidí - E15.cz
 22:12,93.6,8.9,0,0,Pod Košicemi leží energetický poklad. Město z něj chce vytápět statisíce lidí - E15.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 21:46,134.53,2.2,0,0,O kolik budou zákazníci platit více po zavedení plateb za povolenky v roce 2028 - TZB-info
 23:10,134.53,3.9,0,0,Česko plánuje jadernou renesanci s malými reaktory. Kolik to bude stát? - Investiční web
 01:40,146.27,4.6,0,0,Automatický systém ČEZ FlexiEnergie už využívá 2 000 zákazníků - TZB-info
+06:27,146.27,4.6,0,0,Pražská energetická síť se promění - iDNES.cz
