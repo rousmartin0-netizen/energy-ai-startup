@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-01:38,101.28,6.1,0,0,Francie spouští rekordní tendr na offshore větrné elektrárny s výkonem přes 10 GW - oEnergetice.cz
 06:19,101.28,14.1,0,0,"Datová centra pro AI do roku 2030 zdvojnásobí spotřebu elektřiny, vody i půdy - oEnergetice.cz"
 09:59,101.28,16.1,0,0,"Švédsko a Norsko ohrožují evropskou energetickou bezpečnost, uvádí dánští energetici - oEnergetice.cz"
 12:05,101.28,15.9,0,0,"Švédsko a Norsko ohrožují evropskou energetickou bezpečnost, uvádí dánští energetici - oEnergetice.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 21:50,126.6,4.0,0,0,"Týden v OZE: Francie chystá rekordní větrné parky, G7 bojuje o kritické suroviny - Obnovitelně"
 22:41,126.6,4.4,0,0,"Týden v OZE: Francie chystá rekordní větrné parky, G7 bojuje o kritické suroviny - Obnovitelně"
 23:47,126.6,4.0,0,0,"Týden v OZE: Francie chystá rekordní větrné parky, G7 bojuje o kritické suroviny - Obnovitelně"
+01:55,136.88,3.6,0,0,"Týden v OZE: Francie chystá rekordní větrné parky, G7 bojuje o kritické suroviny - Obnovitelně"
