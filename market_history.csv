@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-20:01,127.29,7.3,0,0,Krize na Blízkém východě rozvířila energetický trh. Někteří velcí hráči zdražovali - iDNES.cz
 22:24,127.29,5.8,0,0,Krize na Blízkém východě rozvířila energetický trh. Někteří velcí hráči zdražovali - iDNES.cz
 00:08,134.05,6.6,0,0,Krize na Blízkém východě rozvířila energetický trh. Někteří velcí hráči zdražovali - iDNES.cz
 05:30,134.05,8.5,0,0,Krize na Blízkém východě rozvířila energetický trh. Někteří velcí hráči zdražovali - iDNES.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 02:04,122.68,1.4,0,0,"Elektřina zlevňuje na burze, účty domácností ne. Co tvoří „skrytou“ - Seznam"
 07:02,122.68,1.9,0,0,"Elektřina zlevňuje na burze, účty domácností ne. Co tvoří „skrytou“ - Seznam"
 10:39,122.68,2.6,0,0,"Elektřina zlevňuje na burze, účty domácností ne. Co tvoří „skrytou“ - Seznam"
+12:29,122.68,9.5,0,0,Klid na trhu
