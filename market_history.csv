@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-23:10,134.53,3.9,0,0,Česko plánuje jadernou renesanci s malými reaktory. Kolik to bude stát? - Investiční web
 01:40,146.27,4.6,0,0,Automatický systém ČEZ FlexiEnergie už využívá 2 000 zákazníků - TZB-info
 06:27,146.27,4.6,0,0,Pražská energetická síť se promění - iDNES.cz
 10:53,146.27,6.4,0,0,Italský průmysl tlačí na vládu kvůli vysokým cenám elektřiny: Chce komisaře pro rychlejší povolování OZE - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 23:04,146.66,4.3,0,0,Klid na trhu
 00:18,169.35,3.7,0,0,Microsoft a Chevron uzavřely 20letou dohodu o dodávkách energie ⚡ - FXstreet.cz
 04:34,169.35,3.2,0,0,"Géniové, nebo snílci? Španělská „zelená“ energetika se stala vzorem i odstrašujícím příkladem - Newstream"
+08:06,169.35,5.0,0,0,"Energetika v době horka: Vysoké ceny, střídání dovozu a vývozu a větrníky jen na parádu - Ekonomický deník"
