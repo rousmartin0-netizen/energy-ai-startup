@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-11:48,126.6,6.6,0,0,"Týden v OZE: Francie chystá rekordní větrné parky, G7 bojuje o kritické suroviny - Obnovitelně"
 14:32,126.6,6.1,0,0,"Týden v OZE: Francie chystá rekordní větrné parky, G7 bojuje o kritické suroviny - Obnovitelně"
 17:00,126.6,8.6,0,0,"Týden v OZE: Francie chystá rekordní větrné parky, G7 bojuje o kritické suroviny - Obnovitelně"
 19:03,126.6,6.4,0,0,"Týden v OZE: Francie chystá rekordní větrné parky, G7 bojuje o kritické suroviny - Obnovitelně"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 00:13,100.0,3.6,0,0,"Energetika v době horka: Vysoké ceny, střídání dovozu a vývozu a větrníky jen na parádu - Ekonomický deník"
 04:37,185.37,2.2,0,0,"Energetika v době horka: Vysoké ceny, střídání dovozu a vývozu a větrníky jen na parádu - Ekonomický deník"
 08:02,185.37,3.1,0,0,"Ceny plynu sice klesly, ale stále jsou vyšší než před krizí, dodavatelé zatím vyčkávají - TZB-info"
+11:12,185.37,2.8,0,0,"Ceny plynu sice klesly, ale stále jsou vyšší než před krizí, dodavatelé zatím vyčkávají - TZB-info"
