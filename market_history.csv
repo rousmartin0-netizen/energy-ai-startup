@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-04:34,169.35,3.2,0,0,"Géniové, nebo snílci? Španělská „zelená“ energetika se stala vzorem i odstrašujícím příkladem - Newstream"
 08:06,169.35,5.0,0,0,"Energetika v době horka: Vysoké ceny, střídání dovozu a vývozu a větrníky jen na parádu - Ekonomický deník"
 11:28,169.35,6.6,0,0,"Energetika v době horka: Vysoké ceny, střídání dovozu a vývozu a větrníky jen na parádu - Ekonomický deník"
 13:59,169.35,10.2,0,0,"Energetika v době horka: Vysoké ceny, střídání dovozu a vývozu a větrníky jen na parádu - Ekonomický deník"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 15:01,136.08,12.8,0,0,Vedro a bezvětří ženou ceny elektřiny na rekordní úrovně - PrahaIN
 16:16,136.08,9.8,0,0,Vedro a bezvětří ženou ceny elektřiny na rekordní úrovně - PrahaIN
 17:33,136.08,9.5,0,0,Vedro a bezvětří ženou ceny elektřiny na rekordní úrovně - PrahaIN
+18:47,136.08,0.0,0,0,Vedro a bezvětří ženou ceny elektřiny na rekordní úrovně - PrahaIN
