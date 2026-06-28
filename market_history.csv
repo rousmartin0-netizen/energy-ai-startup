@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-13:28,185.37,6.1,0,0,"Ceny plynu sice klesly, ale stále jsou vyšší než před krizí, dodavatelé zatím vyčkávají - TZB-info"
 15:53,185.37,8.2,0,0,"Stát už ví, jak podpoří stavbu plynových elektráren. To se odrazí v ceně elektřiny pro ty, kdo ji spotřebovávají v době nedostatku - Hospodářské noviny"
 17:47,185.37,8.2,0,0,"Stát už ví, jak podpoří stavbu plynových elektráren. To se odrazí v ceně elektřiny pro ty, kdo ji spotřebovávají v době nedostatku - Hospodářské noviny"
 19:20,185.37,6.4,0,0,"Stát už ví, jak podpoří stavbu plynových elektráren. To se odrazí v ceně elektřiny pro ty, kdo ji spotřebovávají v době nedostatku - Hospodářské noviny"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 14:28,136.41,5.0,0,0,Cash Only: Skauti opět draží energie. Vyplatí se k nim přidat - Seznam Zprávy
 15:51,136.41,7.6,0,0,Cash Only: Skauti opět draží energie. Vyplatí se k nim přidat - Seznam Zprávy
 16:53,136.41,8.3,0,0,Cash Only: Skauti opět draží energie. Vyplatí se k nim přidat - Seznam Zprávy
+17:58,136.41,9.7,0,0,Cash Only: Skauti opět draží energie. Vyplatí se k nim přidat - Seznam Zprávy
