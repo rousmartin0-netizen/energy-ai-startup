@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-05:52,144.83,3.4,0,0,"Stát už ví, jak podpoří stavbu plynových elektráren. To se odrazí v ceně elektřiny pro ty, kdo ji spotřebovávají v době nedostatku - Hospodářské noviny"
 08:46,144.83,1.1,0,0,"Čínské baterie ano, data zůstanou v Evropě. Firmy řeší bezpečnost energetiky - focuson.cz"
 11:28,144.83,4.9,0,0,"Čínské baterie ano, data zůstanou v Evropě. Firmy řeší bezpečnost energetiky - focuson.cz"
 13:37,144.83,12.1,0,0,"Čínské baterie ano, data zůstanou v Evropě. Firmy řeší bezpečnost energetiky - focuson.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 23:52,136.41,3.5,0,0,Cash Only: Skauti opět draží energie. Vyplatí se k nim přidat - Seznam Zprávy
 02:12,152.05,5.6,0,0,Cash Only: Skauti opět draží energie. Vyplatí se k nim přidat - Seznam Zprávy
 07:04,152.05,10.5,0,0,Češi si oblíbili sdílení elektřiny. Přeposílají si jí třikrát více než loni - Obnovitelně
+12:06,152.05,20.4,0,0,Česko jako jedna z pilotních zemí pro kampaň EU #Energie pod kontrolou - Peak.cz
