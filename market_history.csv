@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-16:07,144.83,6.1,0,0,Energetický trh poznal nový fenomén „Hitzeflaute“. Klimatizace vyhnaly cenu elektřiny k letošnímu rekordu - Hospodářské noviny
 18:23,144.83,6.4,0,0,Energetický trh poznal nový fenomén „Hitzeflaute“. Klimatizace vyhnaly cenu elektřiny k letošnímu rekordu - Hospodářské noviny
 20:28,144.83,2.5,0,0,Pavel Řežábek: Energetika se mění před očima. Co nás čeká? - BusinessInfo.cz
 22:05,144.83,3.9,0,0,Pavel Řežábek: Energetika se mění před očima. Co nás čeká? - BusinessInfo.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 16:06,152.05,16.8,0,0,Česko jako jedna z pilotních zemí pro kampaň EU #EnergiePodKontrolou - Peak.cz
 18:19,152.05,7.7,0,0,Češi si oblíbili sdílení elektřiny. Přeposílají si jí třikrát více než loni - Obnovitelně
 20:18,152.05,4.8,0,0,Češi si oblíbili sdílení elektřiny. Přeposílají si jí třikrát více než loni - Obnovitelně
+21:46,152.05,5.3,0,0,Češi si oblíbili sdílení elektřiny. Přeposílají si jí třikrát více než loni - Obnovitelně
