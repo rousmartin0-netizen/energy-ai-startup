@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-02:12,152.05,5.6,0,0,Cash Only: Skauti opět draží energie. Vyplatí se k nim přidat - Seznam Zprávy
 07:04,152.05,10.5,0,0,Češi si oblíbili sdílení elektřiny. Přeposílají si jí třikrát více než loni - Obnovitelně
 12:06,152.05,20.4,0,0,Česko jako jedna z pilotních zemí pro kampaň EU #Energie pod kontrolou - Peak.cz
 16:06,152.05,16.8,0,0,Česko jako jedna z pilotních zemí pro kampaň EU #EnergiePodKontrolou - Peak.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 16:49,118.34,16.5,0,0,Výroba uhelných elektráren v ČR vzrostla v červnu kvůli vyšším cenám o 85 % - oEnergetice.cz
 18:05,118.34,13.5,0,0,Výroba uhelných elektráren v ČR vzrostla v červnu kvůli vyšším cenám o 85 % - oEnergetice.cz
 19:44,118.34,9.2,0,0,Klid na trhu
+20:45,118.34,8.1,0,0,Výroba uhelných elektráren v ČR vzrostla v červnu kvůli vyšším cenám o 85 % - oEnergetice.cz
