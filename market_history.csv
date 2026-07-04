@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-01:50,160.75,9.5,0,0,Česko jako jedna z pilotních zemí pro kampaň EU #EnergiePodKontrolou - Peak.cz
 05:57,160.75,6.0,0,0,Česko jako jedna z pilotních zemí pro kampaň EU #EnergiePodKontrolou - Peak.cz
 09:44,160.75,2.2,0,0,"Plyn bude mít ten, kdo zaplatí víc. Asie opět ohrožuje ceny evropských energií, říká šéf velkého evropského obchodníka - Hospodářské noviny"
 12:01,160.75,6.5,0,0,"Plyn bude mít ten, kdo zaplatí víc. Asie opět ohrožuje ceny evropských energií, říká šéf velkého evropského obchodníka - Hospodářské noviny"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 07:48,114.24,12.9,0,0,ČEZ od konce srpna zvýší ceny některých fixovaných produktů elektřiny i plynu - Novinky
 09:55,114.24,14.2,0,0,ČEZ od konce srpna zvýší ceny některých fixovaných produktů elektřiny i plynu - Novinky
 11:23,114.24,12.9,0,0,ČEZ od konce srpna zvýší ceny některých fixovaných produktů elektřiny i plynu - Novinky
+12:40,114.24,15.3,0,0,ČEZ od konce srpna zvýší ceny některých fixovaných produktů elektřiny i plynu - Novinky
