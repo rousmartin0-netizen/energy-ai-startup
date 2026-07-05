@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-10:10,134.01,11.5,0,0,ČEZ si pro třineckou paroplynovou elektrárnu zajistil turbínu od Siemens Energy - oEnergetice.cz
 12:47,134.01,8.4,0,0,ČEZ si pro třineckou paroplynovou elektrárnu zajistil turbínu od Siemens Energy - oEnergetice.cz
 15:31,134.01,13.6,0,0,ČEZ si pro třineckou paroplynovou elektrárnu zajistil turbínu od Siemens Energy - oEnergetice.cz
 17:31,134.01,8.7,0,0,ČEZ si pro třineckou paroplynovou elektrárnu zajistil turbínu od Siemens Energy - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 22:39,114.24,4.3,0,0,Británie po 40 letech staví nové přečerpávací elektrárny. Přidá se i Česko - Obnovitelně
 23:43,114.24,5.7,0,0,Británie po 40 letech staví nové přečerpávací elektrárny. Přidá se i Česko - Obnovitelně
 01:25,123.41,7.4,0,0,Británie po 40 letech staví nové přečerpávací elektrárny. Přidá se i Česko - Obnovitelně
+05:35,123.41,6.3,0,0,Británie po 40 letech staví nové přečerpávací elektrárny. Přidá se i Česko - Obnovitelně
