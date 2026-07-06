@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-23:44,111.08,17.4,0,0,Zelená elektřina ušetřila Evropanům stovky miliard. Česko je ale na chvostu - Ekonomický deník
 01:19,118.34,13.8,0,0,Zelená elektřina ušetřila Evropanům stovky miliard. Česko je ale na chvostu - Ekonomický deník
 05:02,118.34,0.0,0,0,Vyšší spotové ceny vytáhly červnovou výrobu elektřiny v ČR. Meziročně vzrostla o více než 25 % - oEnergetice.cz
 08:20,118.34,15.3,0,0,Vyšší spotové ceny vytáhly červnovou výrobu elektřiny v ČR. Meziročně vzrostla o více než 25 % - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 13:29,126.77,13.4,0,0,"Levné baterie, levnější energie - Svět průmyslu"
 16:40,126.77,14.2,0,0,"Levné baterie, levnější energie - Svět průmyslu"
 18:30,126.77,14.3,0,0,"ČEZ zase zdražuje: Po prázdninách stoupne plyn až o 19 %, elektřina se přiblíží 4 000 Kč za MWh - arecenze"
+20:28,126.77,10.2,0,0,"ČEZ zase zdražuje: Po prázdninách stoupne plyn až o 19 %, elektřina se přiblíží 4 000 Kč za MWh - arecenze"
