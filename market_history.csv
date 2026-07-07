@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-18:05,118.34,13.5,0,0,Výroba uhelných elektráren v ČR vzrostla v červnu kvůli vyšším cenám o 85 % - oEnergetice.cz
 19:44,118.34,9.2,0,0,Klid na trhu
 20:45,118.34,8.1,0,0,Výroba uhelných elektráren v ČR vzrostla v červnu kvůli vyšším cenám o 85 % - oEnergetice.cz
 21:47,118.34,8.7,0,0,Výroba uhelných elektráren v ČR vzrostla v červnu kvůli vyšším cenám o 85 % - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 07:59,112.93,17.4,0,0,"ČEZ zase zdražuje: Po prázdninách stoupne plyn až o 19 %, elektřina se přiblíží 4 000 Kč za MWh - arecenze"
 11:15,112.93,18.1,0,0,"ČEZ zase zdražuje: Po prázdninách stoupne plyn až o 19 %, elektřina se přiblíží 4 000 Kč za MWh - arecenze"
 13:27,112.93,15.2,0,0,Klid na trhu
+16:02,112.93,13.6,0,0,Výroba ze solárních elektráren a elektromobilita v EU dosáhly v roce 2025 rekordů - oEnergetice.cz
