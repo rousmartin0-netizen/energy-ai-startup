@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-00:18,112.93,8.9,0,0,"ČEZ zase zdražuje: Po prázdninách stoupne plyn až o 19 %, elektřina se přiblíží 4 000 Kč za MWh - arecenze"
 04:28,112.93,10.6,0,0,"ČEZ zase zdražuje: Po prázdninách stoupne plyn až o 19 %, elektřina se přiblíží 4 000 Kč za MWh - arecenze"
 07:59,112.93,17.4,0,0,"ČEZ zase zdražuje: Po prázdninách stoupne plyn až o 19 %, elektřina se přiblíží 4 000 Kč za MWh - arecenze"
 11:15,112.93,18.1,0,0,"ČEZ zase zdražuje: Po prázdninách stoupne plyn až o 19 %, elektřina se přiblíží 4 000 Kč za MWh - arecenze"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 04:22,140.78,2.6,0,0,Elektrárna Opatovice má pravomocné stavební povolení na stavbu spalovny odpadu - oEnergetice.cz
 06:31,140.78,9.0,0,0,Elektrárna Opatovice má pravomocné stavební povolení na stavbu spalovny odpadu - oEnergetice.cz
 08:23,140.78,8.6,0,0,Klid na trhu
+09:55,140.78,9.0,0,0,Elektrárna Opatovice má pravomocné stavební povolení na stavbu spalovny odpadu - oEnergetice.cz
