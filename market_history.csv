@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-08:45,157.02,10.5,0,0,Moderní energetika přináší rekordní objemy obchodů na krátkodobém trhu s elektřinou - Solární Novinky
 11:34,157.02,9.4,0,0,Moderní energetika přináší rekordní objemy obchodů na krátkodobém trhu s elektřinou - Solární Novinky
 14:11,157.02,12.7,0,0,Moderní energetika přináší rekordní objemy obchodů na krátkodobém trhu s elektřinou - Solární Novinky
 16:41,157.02,13.4,0,0,Moderní energetika přináší rekordní objemy obchodů na krátkodobém trhu s elektřinou - Solární Novinky
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 16:12,135.93,11.2,0,0,"Vyšší ceny energií dohnaly i ČEZ, bude zdražovat - www.prahanadlani.cz"
 17:18,135.93,12.4,0,0,"Vyšší ceny energií dohnaly i ČEZ, bude zdražovat - www.prahanadlani.cz"
 18:12,135.93,12.2,0,0,"Vyšší ceny energií dohnaly i ČEZ, bude zdražovat - www.prahanadlani.cz"
+19:32,135.93,6.5,0,0,Klid na trhu
