@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-17:00,137.54,12.9,0,0,Amper: Spotřeba elektřiny v ČR dál roste bez ohledu na meziroční zdražování - oEnergetice.cz
 18:24,137.54,10.9,0,0,Amper: Spotřeba elektřiny v ČR dál roste bez ohledu na meziroční zdražování - oEnergetice.cz
 20:01,137.54,8.9,0,0,Amper: Spotřeba elektřiny v ČR dál roste bez ohledu na meziroční zdražování - oEnergetice.cz
 21:18,137.54,8.2,0,0,Amper: Spotřeba elektřiny v ČR dál roste bez ohledu na meziroční zdražování - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 03:57,135.93,8.4,0,0,Klid na trhu
 06:33,135.93,7.6,0,0,"Vyšší ceny energií dohnaly i ČEZ, bude zdražovat - www.prahanadlani.cz"
 08:51,135.93,10.0,0,0,"Vyšší ceny energií dohnaly i ČEZ, bude zdražovat - www.prahanadlani.cz"
+10:16,135.93,11.5,0,0,"Vyšší ceny energií dohnaly i ČEZ, bude zdražovat - www.prahanadlani.cz"
