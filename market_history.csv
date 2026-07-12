@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-13:02,137.54,14.8,0,0,Výroba ze solárních elektráren a elektromobilita v EU dosáhly v roce 2025 rekordů - oEnergetice.cz
 15:29,137.54,15.1,0,0,Amper: Spotřeba elektřiny v ČR dál roste bez ohledu na meziroční zdražování - oEnergetice.cz
 17:00,137.54,12.9,0,0,Amper: Spotřeba elektřiny v ČR dál roste bez ohledu na meziroční zdražování - oEnergetice.cz
 18:24,137.54,10.9,0,0,Amper: Spotřeba elektřiny v ČR dál roste bez ohledu na meziroční zdražování - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 23:11,140.78,3.0,0,0,Klid na trhu
 00:11,140.78,2.7,0,0,"Galerie: Pražská plynárenská zlevňuje. Od června sníží ceny elektřiny, od července plynu - Deník.cz"
 03:57,135.93,8.4,0,0,Klid na trhu
+06:33,135.93,7.6,0,0,"Vyšší ceny energií dohnaly i ČEZ, bude zdražovat - www.prahanadlani.cz"
