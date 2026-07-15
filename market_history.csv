@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-21:26,140.78,5.7,0,0,Klid na trhu
 22:14,140.78,5.1,0,0,Klid na trhu
 23:11,140.78,3.0,0,0,Klid na trhu
 00:11,140.78,2.7,0,0,"Galerie: Pražská plynárenská zlevňuje. Od června sníží ceny elektřiny, od července plynu - Deník.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 23:34,144.26,3.4,0,0,ČEZ Prodej poprvé od začátku krize mírně zvýší fixované ceny elektřiny i plynu - TZB-info
 00:55,164.96,4.7,0,0,ČEZ Prodej poprvé od začátku krize mírně zvýší fixované ceny elektřiny i plynu - TZB-info
 03:56,164.96,2.8,0,0,ČEZ Prodej poprvé od začátku krize mírně zvýší fixované ceny elektřiny i plynu - TZB-info
+06:14,164.96,5.2,0,0,ČEZ Prodej poprvé od začátku krize mírně zvýší fixované ceny elektřiny i plynu - TZB-info
