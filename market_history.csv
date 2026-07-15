@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-19:44,140.78,7.6,0,0,Klid na trhu
 20:30,140.78,6.6,0,0,Klid na trhu
 21:26,140.78,5.7,0,0,Klid na trhu
 22:14,140.78,5.1,0,0,Klid na trhu
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 21:43,144.26,3.6,0,0,Aktuální situace na energetických trzích pohledem experta E.ON - Zprávy Kurzy.cz
 22:40,144.26,5.2,0,0,ČEZ Prodej poprvé od začátku krize mírně zvýší fixované ceny elektřiny i plynu - TZB-info
 23:34,144.26,3.4,0,0,ČEZ Prodej poprvé od začátku krize mírně zvýší fixované ceny elektřiny i plynu - TZB-info
+00:55,164.96,4.7,0,0,ČEZ Prodej poprvé od začátku krize mírně zvýší fixované ceny elektřiny i plynu - TZB-info
