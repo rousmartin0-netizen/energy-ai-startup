@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-20:30,140.78,6.6,0,0,Klid na trhu
 21:26,140.78,5.7,0,0,Klid na trhu
 22:14,140.78,5.1,0,0,Klid na trhu
 23:11,140.78,3.0,0,0,Klid na trhu
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 22:40,144.26,5.2,0,0,ČEZ Prodej poprvé od začátku krize mírně zvýší fixované ceny elektřiny i plynu - TZB-info
 23:34,144.26,3.4,0,0,ČEZ Prodej poprvé od začátku krize mírně zvýší fixované ceny elektřiny i plynu - TZB-info
 00:55,164.96,4.7,0,0,ČEZ Prodej poprvé od začátku krize mírně zvýší fixované ceny elektřiny i plynu - TZB-info
+03:56,164.96,2.8,0,0,ČEZ Prodej poprvé od začátku krize mírně zvýší fixované ceny elektřiny i plynu - TZB-info
