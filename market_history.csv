@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-22:32,164.96,9.3,0,0,Britská jaderná elektrárna Sizewell B bude vyrábět elektřinu až do roku 2055 - oEnergetice.cz
 23:35,164.96,7.1,0,0,Evropa je pod tlakem kvůli dodávkám energie. - Vietnam.vn
 01:03,169.52,6.2,0,0,Evropa je pod tlakem kvůli dodávkám energie. - Vietnam.vn
 04:19,169.52,5.2,0,0,Britská jaderná elektrárna Sizewell B bude vyrábět elektřinu až do roku 2055 - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 21:05,137.06,3.9,0,0,"Ujíždí nám vlak, nebo máme s uhlím skončit později? Experti se na vizi energetiky neshodnou - CNN Prima NEWS"
 22:02,137.06,2.6,0,0,Klid na trhu
 23:00,137.06,3.6,0,0,"Ujíždí nám vlak, nebo máme s uhlím skončit později? Experti se na vizi energetiky neshodnou - CNN Prima NEWS"
+00:01,137.06,3.9,0,0,"Ujíždí nám vlak, nebo máme s uhlím skončit později? Experti se na vizi energetiky neshodnou - CNN Prima NEWS"
