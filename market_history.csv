@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-00:01,137.06,3.9,0,0,"Ujíždí nám vlak, nebo máme s uhlím skončit později? Experti se na vizi energetiky neshodnou - CNN Prima NEWS"
 03:41,128.43,3.0,0,0,"Ujíždí nám vlak, nebo máme s uhlím skončit později? Experti se na vizi energetiky neshodnou - CNN Prima NEWS"
 06:15,128.43,3.9,0,0,"Čím topit v roce 2026 nejlevněji? Velké srovnání tepelného čerpadla, plynu, pelet, dřeva a elektřiny - ČESKÉSTAVBY.cz"
 08:35,128.43,5.2,0,0,Investoři už nesázejí jen na čipy. Novým hitem je energetika - Novinky
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 13:02,136.5,9.4,0,0,"Elektřina místo plynu a ropy. EU představila plán, jak urychlit proměnu energetiky - Aktuálně.cz"
 15:09,136.5,12.6,0,0,"Elektřina místo plynu a ropy. EU představila plán, jak urychlit proměnu energetiky - Aktuálně.cz"
 16:43,136.5,14.6,0,0,Největší polský těžař uhlí investuje do solární energetiky - oEnergetice.cz
+17:54,136.5,14.4,0,0,Největší polský těžař uhlí investuje do solární energetiky - oEnergetice.cz
