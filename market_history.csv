@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-00:15,146.08,3.9,0,0,Šance na levnější energii pro Česko: Evropa chce zdvojnásobit elektrifikaci - Obnovitelně
 03:49,146.08,4.2,0,0,Šance na levnější energii pro Česko: Evropa chce zdvojnásobit elektrifikaci - Obnovitelně
 06:19,146.08,4.7,0,0,Překvapivý obrat v Bruselu. Nová pravidla mohou dopadnout na české a německé firmy jinak - E15.cz
 09:05,146.08,8.2,0,0,Překvapivý obrat v Bruselu. Nová pravidla mohou dopadnout na české a německé firmy jinak - E15.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 12:49,170.67,7.3,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
 14:28,170.67,7.9,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
 15:56,170.67,6.8,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
+17:36,170.67,5.2,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
