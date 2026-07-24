@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-21:18,149.3,4.8,0,0,Šance na levnější energii pro Česko: Evropa chce zdvojnásobit elektrifikaci - Obnovitelně
 22:16,149.3,4.6,0,0,Šance na levnější energii pro Česko: Evropa chce zdvojnásobit elektrifikaci - Obnovitelně
 23:18,149.3,3.8,0,0,Šance na levnější energii pro Česko: Evropa chce zdvojnásobit elektrifikaci - Obnovitelně
 00:15,146.08,3.9,0,0,Šance na levnější energii pro Česko: Evropa chce zdvojnásobit elektrifikaci - Obnovitelně
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 07:06,170.67,6.0,0,0,epet upravuje ceníky pro nové zákazníky. Nadále však zůstává pod indikativním pásmem ERÚ - TZB-info
 09:29,170.67,7.0,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
 11:19,170.67,8.4,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
+12:49,170.67,7.3,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
