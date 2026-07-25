@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-22:32,146.08,3.5,0,0,"Elektřina místo plynu a ropy. EU představila plán, jak urychlit proměnu energetiky - Aktuálně.cz"
 23:33,146.08,4.2,0,0,"Elektřina místo plynu a ropy. EU představila plán, jak urychlit proměnu energetiky - Aktuálně.cz"
 01:01,136.5,5.2,0,0,"Elektřina místo plynu a ropy. EU představila plán, jak urychlit proměnu energetiky - Aktuálně.cz"
 04:26,136.5,5.4,0,0,"Elektřina místo plynu a ropy. EU představila plán, jak urychlit proměnu energetiky - Aktuálně.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 08:49,152.19,3.4,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
 10:17,152.19,3.0,0,0,E.ON loni snížil zisk téměř o polovinu. Těžil z levnějších energií i digitalizace - Hrot24.cz
 11:38,152.19,5.2,0,0,Klid na trhu
+12:41,152.19,7.6,0,0,"Evropa platí za elektřinu, kterou neumí využít. Záporné ceny nejsou elektřina zdarma. Odhalují drahou slabinu evropské energetiky - Hrot24.cz"
