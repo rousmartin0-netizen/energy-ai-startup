@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-13:04,162.4,14.3,0,0,„Teď tu pračku nezapínej.“ Jak nový model podpory energetiky změní chování Čechů - Ekonomický deník
 15:20,162.4,12.0,0,0,„Teď tu pračku nezapínej.“ Jak nový model podpory energetiky změní chování Čechů - Ekonomický deník
 16:51,162.4,14.0,0,0,ERÚ varuje: Kvůli jednomu údaji ve smlouvě na energie můžete přijít o právo na její ukončení - TZB-info
 18:03,162.4,14.1,0,0,ERÚ varuje: Kvůli jednomu údaji ve smlouvě na energie můžete přijít o právo na její ukončení - TZB-info
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 15:02,127.01,14.9,0,0,Klid na trhu
 16:11,127.01,13.7,0,0,Klid na trhu
 17:14,127.01,14.6,0,0,Klid na trhu
+18:13,127.01,15.2,0,0,Klid na trhu
