@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-04:31,162.4,10.6,0,0,ERÚ varuje: Kvůli jednomu údaji ve smlouvě na energie můžete přijít o právo na její ukončení - TZB-info
 07:10,162.4,13.6,0,0,ERÚ varuje: Kvůli jednomu údaji ve smlouvě na energie můžete přijít o právo na její ukončení - TZB-info
 09:35,162.4,14.8,0,0,„Teď tu pračku nezapínej.“ Jak nový model podpory energetiky změní chování Čechů - Ekonomický deník
 11:29,162.4,13.8,0,0,„Teď tu pračku nezapínej.“ Jak nový model podpory energetiky změní chování Čechů - Ekonomický deník
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 09:27,127.01,3.4,0,0,"Evropa platí za elektřinu, kterou neumí využít. Záporné ceny nejsou elektřina zdarma. Odhalují drahou slabinu evropské energetiky - Hrot24.cz"
 11:01,127.01,12.0,0,0,Klid na trhu
 12:11,127.01,14.5,0,0,Klid na trhu
+13:56,127.01,14.5,0,0,Klid na trhu
