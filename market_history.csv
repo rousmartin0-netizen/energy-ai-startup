@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-11:19,170.67,8.4,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
 12:49,170.67,7.3,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
 14:28,170.67,7.9,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
 15:56,170.67,6.8,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 14:02,148.78,14.9,0,0,Elektřina na burze je nejvýše od konce roku 2023. První dodavatelé zdražují - Ekonomický deník
 16:29,148.78,9.7,0,0,Elektřina na burze je nejvýše od konce roku 2023. První dodavatelé zdražují - Ekonomický deník
 18:07,148.78,10.1,0,0,Elektřina na burze je nejvýše od konce roku 2023. První dodavatelé zdražují - Ekonomický deník
+19:51,148.78,6.3,0,0,"Elektřiny je přes den moc, večer chybí. EU chce masivně rozšířit úložiště - Hrot24.cz"
