@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-07:06,170.67,6.0,0,0,epet upravuje ceníky pro nové zákazníky. Nadále však zůstává pod indikativním pásmem ERÚ - TZB-info
 09:29,170.67,7.0,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
 11:19,170.67,8.4,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
 12:49,170.67,7.3,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 08:25,148.78,14.1,0,0,Elektřina na burze je nejvýše od konce roku 2023. První dodavatelé zdražují - Ekonomický deník
 11:49,148.78,13.1,0,0,"Elektřiny je přes den moc, večer chybí. EU chce masivně rozšířit úložiště - Hrot24.cz"
 14:02,148.78,14.9,0,0,Elektřina na burze je nejvýše od konce roku 2023. První dodavatelé zdražují - Ekonomický deník
+16:29,148.78,9.7,0,0,Elektřina na burze je nejvýše od konce roku 2023. První dodavatelé zdražují - Ekonomický deník
