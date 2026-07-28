@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-23:44,170.67,3.0,0,0,E.ON loni snížil zisk téměř o polovinu. Těžil z levnějších energií i digitalizace - Hrot24.cz
 01:12,152.19,2.9,0,0,E.ON loni snížil zisk téměř o polovinu. Těžil z levnějších energií i digitalizace - Hrot24.cz
 04:28,152.19,3.5,0,0,E.ON loni snížil zisk téměř o polovinu. Těžil z levnějších energií i digitalizace - Hrot24.cz
 06:39,152.19,4.1,0,0,"E.ON zlevňoval energie, tržby mu spadly o pětinu. Zisk se propadl téměř o polovinu - Newstream"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 06:13,160.78,2.9,0,0,"Ve Finsku našli způsob, jak zkrotit největší slabinu obnovitelných zdrojů. Pomáhá jim největší písková baterie na světě - Euro.cz"
 09:06,160.78,6.8,0,0,"Ve Finsku našli způsob, jak zkrotit největší slabinu obnovitelných zdrojů. Pomáhá jim největší písková baterie na světě - Euro.cz"
 11:26,160.78,7.2,0,0,"Ve Finsku našli způsob, jak zkrotit největší slabinu obnovitelných zdrojů. Pomáhá jim největší písková baterie na světě - Euro.cz"
+13:09,160.78,8.9,0,0,Klid na trhu
