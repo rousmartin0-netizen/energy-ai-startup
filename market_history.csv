@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-11:24,159.6,3.7,0,0,Evropa se připravuje na drahou zimu. Energetický trh řeší nedostatek vody i plynu - zpravy.kurzy.cz
 13:02,159.6,7.7,0,0,České firmy si polepší: Stát může nově hradit až 80 procent nákladů na energie - oEnergetice.cz
 15:19,159.6,7.6,0,0,České firmy si polepší: Stát může nově hradit až 80 procent nákladů na energie - oEnergetice.cz
 16:54,159.6,3.3,0,0,České firmy si polepší: Stát může nově hradit až 80 procent nákladů na energie - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 15:47,143.17,7.8,0,0,Top 10 událostí z energetiky za poslední týden - oEnergetice.cz
 16:40,143.17,9.7,0,0,Top 10 událostí z energetiky za poslední týden - oEnergetice.cz
 17:44,143.17,10.5,0,0,Klid na trhu
+18:43,143.17,12.6,0,0,"Česká energetika dostane nový datový základ. EDC rozšíří služby o baterie, flexibilitu i tarify - Centrum.cz"
