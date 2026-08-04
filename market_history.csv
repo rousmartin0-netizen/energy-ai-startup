@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-11:53,164.72,10.9,0,0,"Česká energetika dostane nový datový základ. EDC rozšíří služby o baterie, flexibilitu i tarify - Centrum.cz"
 12:58,164.72,8.0,0,0,"Česká energetika dostane nový datový základ. EDC rozšíří služby o baterie, flexibilitu i tarify - Centrum.cz"
 14:36,164.72,11.7,0,0,"Česká energetika dostane nový datový základ. EDC rozšíří služby o baterie, flexibilitu i tarify - Centrum.cz"
 15:41,164.72,15.4,0,0,"Česká energetika dostane nový datový základ. EDC rozšíří služby o baterie, flexibilitu i tarify - Centrum.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 18:11,151.78,7.2,0,0,ČEZ v 1. pololetí meziročně zvýšil výrobu solární energie o 13 pct na 111 GWh - oenergetice.cz
 19:56,151.78,7.3,0,0,Ocel je bezpečnost. V Třineckých železárnách varují před evropskou chybou - E15.cz
 21:13,151.78,5.2,0,0,Ocel je bezpečnost. V Třineckých železárnách varují před evropskou chybou - E15.cz
+22:29,151.78,1.9,0,0,"Zdražování již začalo, připravte se na vyšší ceny energií - TZB-info"
