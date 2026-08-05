@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-01:11,143.17,9.3,0,0,"Česká energetika dostane nový datový základ. EDC rozšíří služby o baterie, flexibilitu i tarify - Centrum.cz"
 04:37,143.17,6.6,0,0,"Vakcíny proti rakovině, konec věčných chemikálií a energetická soběstačnost. Čím nás vědci překvapí? - Newstream"
 07:15,143.17,4.3,0,0,"Česká energetika dostane nový datový základ. EDC rozšíří služby o baterie, flexibilitu i tarify - Centrum.cz"
 09:24,143.17,5.4,0,0,"Česká energetika dostane nový datový základ. EDC rozšíří služby o baterie, flexibilitu i tarify - Centrum.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 17:05,156.98,2.9,0,0,"Zdražování již začalo, připravte se na vyšší ceny energií - TZB-info"
 18:45,156.98,7.4,0,0,"Zdražování již začalo, připravte se na vyšší ceny energií - TZB-info"
 20:16,156.98,1.1,0,0,"Zdražování již začalo, připravte se na vyšší ceny energií - TZB-info"
+21:37,156.98,3.2,0,0,"Zdražování již začalo, připravte se na vyšší ceny energií - TZB-info"
