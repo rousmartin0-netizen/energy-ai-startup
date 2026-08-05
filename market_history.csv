@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-07:15,143.17,4.3,0,0,"Česká energetika dostane nový datový základ. EDC rozšíří služby o baterie, flexibilitu i tarify - Centrum.cz"
 09:24,143.17,5.4,0,0,"Česká energetika dostane nový datový základ. EDC rozšíří služby o baterie, flexibilitu i tarify - Centrum.cz"
 10:57,143.17,6.1,0,0,"Česká energetika dostane nový datový základ. EDC rozšíří služby o baterie, flexibilitu i tarify - Centrum.cz"
 12:03,143.17,6.5,0,0,"Česká energetika dostane nový datový základ. EDC rozšíří služby o baterie, flexibilitu i tarify - Centrum.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 20:16,156.98,1.1,0,0,"Zdražování již začalo, připravte se na vyšší ceny energií - TZB-info"
 21:37,156.98,3.2,0,0,"Zdražování již začalo, připravte se na vyšší ceny energií - TZB-info"
 22:40,156.98,4.5,0,0,Spotřeba elektřiny a plynu loni rostla díky chladnějšímu počasí - Zprávy Kurzy.cz
+23:37,156.98,4.3,0,0,Spotřeba elektřiny a plynu loni rostla díky chladnějšímu počasí - Zprávy Kurzy.cz
