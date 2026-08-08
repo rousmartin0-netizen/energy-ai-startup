@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-01:36,161.26,8.4,0,0,"Česko řeší, kdo podrží síť ve chvíli, kdy to bude potřeba - EnviWeb.cz"
 04:14,161.26,6.2,0,0,"OZE pokrývají už více než čtvrtinu spotřeby energie v EU, u elektřiny vzrostl podíl na 50 % - oEnergetice.cz"
 05:52,161.26,6.8,0,0,"OZE pokrývají už více než čtvrtinu spotřeby energie v EU, u elektřiny vzrostl podíl na 50 % - oEnergetice.cz"
 06:57,161.26,8.0,0,0,"OZE pokrývají už více než čtvrtinu spotřeby energie v EU, u elektřiny vzrostl podíl na 50 % - oEnergetice.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 18:15,144.57,9.4,0,0,EDC spouští nové služby pro stabilitu sítí a plánuje další rozvoj - TZB-info
 19:02,144.57,8.5,0,0,EDC spouští nové služby pro stabilitu sítí a plánuje další rozvoj - TZB-info
 19:38,144.57,6.6,0,0,EDC spouští nové služby pro stabilitu sítí a plánuje další rozvoj - TZB-info
+20:00,144.57,5.1,0,0,EDC spouští nové služby pro stabilitu sítí a plánuje další rozvoj - TZB-info
