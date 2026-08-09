@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-17:04,161.26,9.4,0,0,"Začíná éra chytré energetiky. Nová pravidla dávají bateriím, fotovoltaikám i elektromobilům aktivní roli - Zprávy Kurzy.cz"
 17:57,161.26,10.0,0,0,Vedra ochromují evropskou energetiku. Cena elektřiny vystřelila až na 500 eur za MWh - hrot24.cz
 19:00,161.26,11.0,0,0,Vedra ochromují evropskou energetiku. Cena elektřiny vystřelila až na 500 eur za MWh - Hrot24.cz
 19:54,161.26,12.9,0,0,"Začíná éra chytré energetiky. Nová pravidla dávají bateriím, fotovoltaikám i elektromobilům aktivní roli - Zprávy Kurzy.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 03:55,148.65,2.6,0,0,Klid na trhu
 05:02,148.65,3.7,0,0,Klid na trhu
 05:53,148.65,3.6,0,0,Klid na trhu
+06:40,148.65,2.8,0,0,Klid na trhu
