@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-00:00,144.57,3.1,0,0,Klid na trhu
 02:22,148.65,2.4,0,0,Klid na trhu
 03:55,148.65,2.6,0,0,Klid na trhu
 05:02,148.65,3.7,0,0,Klid na trhu
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 18:12,140.65,10.7,0,0,Tisíce Čechů si od roku 2026 výrazně oddechly. Jedna z nejotravnějších plateb oficiálně skončila - TVGURU.cz
 19:17,140.65,4.6,0,0,OZO Ostrava míří k větší energetické soběstačnosti. Elektřinu i teplo pomohou vyrábět nové kogenerační jednotky - Magazín POSITIV
 20:04,140.65,2.0,0,0,OZO Ostrava míří k větší energetické soběstačnosti. Elektřinu i teplo pomohou vyrábět nové kogenerační jednotky - positiv.cz
+20:56,140.65,12.0,0,0,OZO Ostrava míří k větší energetické soběstačnosti. Elektřinu i teplo pomohou vyrábět nové kogenerační jednotky - Magazín POSITIV
