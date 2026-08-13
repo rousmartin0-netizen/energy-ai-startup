@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-02:37,147.79,9.8,0,0,OZO Ostrava míří k větší energetické soběstačnosti. Elektřinu i teplo pomohou vyrábět nové kogenerační jednotky - positiv.cz
 04:05,147.79,10.8,0,0,OZO Ostrava míří k větší energetické soběstačnosti. Elektřinu i teplo pomohou vyrábět nové kogenerační jednotky - Magazín POSITIV
 05:18,147.79,9.8,0,0,OZO Ostrava míří k větší energetické soběstačnosti. Elektřinu i teplo pomohou vyrábět nové kogenerační jednotky - Magazín POSITIV
 06:08,147.79,10.8,0,0,Evropa chce zdvojnásobit elektrifikaci. Pro Česko je to šance na levnější energii a menší závislost na dovozu - Svět průmyslu
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 07:46,161.21,2.9,0,0,Evropské ceny elektrické energie prudce rostou. Horko omezuje jádro a zatmění soláry - zpravy.kurzy.cz
 08:56,161.21,4.8,0,0,Evropské ceny elektrické energie prudce rostou. Horko omezuje jádro a zatmění soláry - Zprávy Kurzy.cz
 10:03,161.21,5.9,0,0,Evropské ceny elektrické energie prudce rostou. Horko omezuje jádro a zatmění soláry - Zprávy Kurzy.cz
+11:08,161.21,8.3,0,0,Centropol Energy: Kudy malým a středním firmám utíkají peníze za energie? - České noviny
