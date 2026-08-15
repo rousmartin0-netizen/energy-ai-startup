@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-23:00,166.99,3.6,0,0,Červencové vedro zdražilo elektřinu v Česku. Soláry přitom vyrobily historicky nejvíce - oEnergetice.cz
 23:29,166.99,3.6,0,0,Červencové vedro zdražilo elektřinu v Česku. Soláry přitom vyrobily historicky nejvíce - oEnergetice.cz
 23:50,166.99,4.0,0,0,Červencové vedro zdražilo elektřinu v Česku. Soláry přitom vyrobily historicky nejvíce - oEnergetice.cz
 00:24,165.04,4.0,0,0,Červencové vedro zdražilo elektřinu v Česku. Soláry přitom vyrobily historicky nejvíce - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 20:51,165.04,4.0,0,0,Spotřeba elektřiny i plynu v I. pololetí 2026 pokračovala v růstu - TZB-info
 21:08,165.04,4.0,0,0,Spotřeba elektřiny i plynu v I. pololetí 2026 pokračovala v růstu - TZB-info
 21:33,165.04,0.0,0,0,Spotřeba elektřiny i plynu v I. pololetí 2026 pokračovala v růstu - TZB-info
+21:51,165.04,4.7,0,0,Spotřeba elektřiny i plynu v I. pololetí 2026 pokračovala v růstu - TZB-info
