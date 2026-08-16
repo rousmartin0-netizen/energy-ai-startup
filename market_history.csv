@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-15:11,165.04,3.9,0,0,S dvojciferným růstem musí elektřina „jít v čele“. - Vietnam.vn
 15:34,165.04,4.7,0,0,S dvojciferným růstem musí elektřina „jít v čele“. - Vietnam.vn
 15:53,165.04,5.5,0,0,Spotřeba elektřiny i plynu v I. pololetí 2026 pokračovala v růstu - TZB-info
 16:12,165.04,5.9,0,0,Spotřeba elektřiny i plynu v I. pololetí 2026 pokračovala v růstu - TZB-info
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 12:59,184.77,1.3,0,0,Klid na trhu
 13:37,184.77,0.8,0,0,Klid na trhu
 13:57,184.77,3.5,0,0,Klid na trhu
+14:23,184.77,2.5,0,0,Klid na trhu
