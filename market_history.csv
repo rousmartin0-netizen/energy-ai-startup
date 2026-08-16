@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-18:00,165.04,3.7,0,0,Spotřeba elektřiny i plynu v I. pololetí 2026 pokračovala v růstu - tzb-info.cz
 18:39,165.04,3.4,0,0,Spotřeba elektřiny i plynu v I. pololetí 2026 pokračovala v růstu - TZB-info
 19:01,165.04,3.1,0,0,Spotřeba elektřiny i plynu v I. pololetí 2026 pokračovala v růstu - TZB-info
 19:28,165.04,3.1,0,0,Spotřeba elektřiny i plynu v I. pololetí 2026 pokračovala v růstu - TZB-info
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 16:05,184.77,3.9,0,0,Klid na trhu
 16:37,184.77,4.7,0,0,Klid na trhu
 16:57,184.77,5.5,0,0,Klid na trhu
+17:21,184.77,5.4,0,0,Klid na trhu
