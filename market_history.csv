@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-13:19,165.04,2.1,0,0,S dvojciferným růstem musí elektřina „jít v čele“. - Vietnam.vn
 13:47,165.04,2.6,0,0,S dvojciferným růstem musí elektřina „jít v čele“. - Vietnam.vn
 14:02,165.04,2.5,0,0,S dvojciferným růstem musí elektřina „jít v čele“. - Vietnam.vn
 14:32,165.04,3.1,0,0,S dvojciferným růstem musí elektřina „jít v čele“. - Vietnam.vn
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 10:52,184.77,5.1,0,0,Klid na trhu
 11:09,184.77,3.6,0,0,Klid na trhu
 11:32,184.77,2.6,0,0,Klid na trhu
+11:51,184.77,2.3,0,0,Klid na trhu
