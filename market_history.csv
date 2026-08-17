@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-21:09,184.77,4.5,0,0,Klid na trhu
 21:33,184.77,7.3,0,0,Klid na trhu
 21:50,184.77,9.3,0,0,Klid na trhu
 22:01,184.77,9.7,0,0,Klid na trhu
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 22:53,166.0,7.4,0,0,Místo klimatické krize byl ukončen systém průtočného chlazení jaderných elektráren - TZB-info
 23:13,166.0,7.1,0,0,Místo klimatické krize byl ukončen systém průtočného chlazení jaderných elektráren - TZB-info
 23:39,166.0,6.1,0,0,"ERÚ zvedá indikativní ceny elektřiny i plynu. Kdo bude čekat, může brzy platit víc - zpravy.kurzy.cz"
+23:57,166.0,6.2,0,0,"ERÚ zvedá indikativní ceny elektřiny i plynu. Kdo bude čekat, může brzy platit víc - Zprávy Kurzy.cz"
