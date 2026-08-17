@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-19:50,184.77,10.0,0,0,Klid na trhu
 20:00,184.77,8.7,0,0,Klid na trhu
 20:32,184.77,6.6,0,0,Klid na trhu
 20:52,184.77,5.1,0,0,Klid na trhu
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 21:11,166.0,11.6,0,0,"ERÚ zvedá indikativní ceny elektřiny i plynu. Kdo bude čekat, může brzy platit víc - Zprávy Kurzy.cz"
 21:40,166.0,10.3,0,0,"ERÚ zvedá indikativní ceny elektřiny i plynu. Kdo bude čekat, může brzy platit víc - Zprávy Kurzy.cz"
 21:59,166.0,9.3,0,0,"ERÚ zvedá indikativní ceny elektřiny i plynu. Kdo bude čekat, může brzy platit víc - Zprávy Kurzy.cz"
+22:31,166.0,8.0,0,0,"ERÚ zvedá indikativní ceny elektřiny i plynu. Kdo bude čekat, může brzy platit víc - Zprávy Kurzy.cz"
