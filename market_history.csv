@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-06:22,166.0,5.7,0,0,Spotřeba energií roste navzdory zdražování na trhu - ČT24
 07:28,166.0,4.6,0,0,"Velké síťové baterie přebírají otěže, domácí úložiště ztrácejí podíl - oEnergetice.cz"
 08:08,166.0,2.5,0,0,"Velké síťové baterie přebírají otěže, domácí úložiště ztrácejí podíl - oEnergetice.cz"
 08:58,166.0,5.1,0,0,33. týden na Energetické burze ČMKB - ceny elektřiny i plynu drží stabilní úrovně - Zprávy Kurzy.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 09:37,164.9,7.6,0,0,"ERÚ zvedá indikativní ceny elektřiny i plynu. Kdo bude čekat, může brzy platit víc - Zprávy Kurzy.cz"
 10:02,164.9,8.7,0,0,"ERÚ zvedá indikativní ceny elektřiny i plynu. Kdo bude čekat, může brzy platit víc - Zprávy Kurzy.cz"
 10:39,164.9,9.5,0,0,Klid na trhu
+11:01,164.9,10.1,0,0,"ERÚ zvedá indikativní ceny elektřiny i plynu. Kdo bude čekat, může brzy platit víc - Zprávy Kurzy.cz"
