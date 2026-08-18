@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-00:00,184.77,3.8,0,0,Spotřeba energií roste navzdory zdražování na trhu - ct24.ceskatelevize.cz
 01:49,166.0,2.5,0,0,Klid na trhu
 02:48,166.0,2.9,0,0,Spotřeba energií roste navzdory zdražování na trhu - ČT24
 03:35,166.0,3.6,0,0,Spotřeba energií roste navzdory zdražování na trhu - ČT24
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 05:15,164.9,5.6,0,0,"ERÚ zvedá indikativní ceny elektřiny i plynu. Kdo bude čekat, může brzy platit víc - Zprávy Kurzy.cz"
 05:47,164.9,5.6,0,0,Klid na trhu
 06:17,164.9,5.8,0,0,"ERÚ zvedá indikativní ceny elektřiny i plynu. Kdo bude čekat, může brzy platit víc - Zprávy Kurzy.cz"
+07:09,164.9,7.9,0,0,"ERÚ zvedá indikativní ceny elektřiny i plynu. Kdo bude čekat, může brzy platit víc - Zprávy Kurzy.cz"
