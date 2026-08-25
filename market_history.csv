@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-22:58,160.08,1.4,0,0,Klid na trhu
 23:26,160.08,1.8,0,0,Klid na trhu
 23:45,160.08,2.6,0,0,Klid na trhu
 00:00,160.08,2.9,0,0,Klid na trhu
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 07:52,148.18,13.4,0,0,Klid na trhu
 08:29,148.18,13.3,0,0,Pět mýtů o obnovitelné energii aneb Proč soláry a větrníky frčí - Ecoista
 09:10,148.18,13.2,0,0,"Od září zdraží elektřina i plyn. Kdo stihne smlouvu u dodavatele upravit do konce srpna, může na energiích ušetřit tisíce korun - EnergoZrouti.cz"
+09:50,148.18,13.7,0,0,"Od září zdraží elektřina i plyn. Kdo stihne smlouvu u dodavatele upravit do konce srpna, může na energiích ušetřit tisíce korun - EnergoZrouti.cz"
