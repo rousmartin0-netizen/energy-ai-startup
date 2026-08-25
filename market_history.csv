@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-12:00,144.51,5.5,0,0,Pět mýtů o obnovitelné energii aneb Proč soláry a větrníky frčí - Ecoista
 13:05,144.51,5.0,0,0,Pět mýtů o obnovitelné energii aneb Proč soláry a větrníky frčí - Ecoista
 13:58,144.51,7.3,0,0,Pět mýtů o obnovitelné energii aneb Proč soláry a větrníky frčí - Ecoista
 14:48,144.51,6.7,0,0,Pět mýtů o obnovitelné energii aneb Proč soláry a větrníky frčí - Ecoista
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 18:52,148.18,9.4,0,0,"Elektřina podražila za rok o třetinu, plyn je na dvojnásobku. Lze se ještě dostat k dobrým cenám? - Hospodářské noviny"
 19:22,148.18,8.4,0,0,"Elektřina podražila za rok o třetinu, plyn je na dvojnásobku. Lze se ještě dostat k dobrým cenám? - Hospodářské noviny"
 19:51,148.18,8.9,0,0,"Elektřina podražila za rok o třetinu, plyn je na dvojnásobku. Lze se ještě dostat k dobrým cenám? - Hospodářské noviny"
+20:12,148.18,9.0,0,0,"Elektřina podražila za rok o třetinu, plyn je na dvojnásobku. Lze se ještě dostat k dobrým cenám? - Hospodářské noviny"
