@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-19:30,160.08,0.0,0,0,Klid na trhu
 19:48,160.08,3.4,0,0,Klid na trhu
 20:00,160.08,3.1,0,0,Klid na trhu
 20:32,160.08,3.3,0,0,Klid na trhu
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 23:45,144.51,8.4,0,0,Pět mýtů o obnovitelné energii aneb Proč soláry a větrníky frčí - Ecoista
 00:01,144.51,8.0,0,0,Pět mýtů o obnovitelné energii aneb Proč soláry a větrníky frčí - Ecoista
 01:45,148.18,7.7,0,0,Pět mýtů o obnovitelné energii aneb Proč soláry a větrníky frčí - Ecoista
+02:45,148.18,7.1,0,0,Pět mýtů o obnovitelné energii aneb Proč soláry a větrníky frčí - Ecoista
