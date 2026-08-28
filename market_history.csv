@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-10:53,148.18,15.1,0,0,"Od září zdraží elektřina i plyn. Kdo stihne smlouvu u dodavatele upravit do konce srpna, může na energiích ušetřit tisíce korun - EnergoZrouti.cz"
 11:19,148.18,14.7,0,0,Jet Investment zavírá rumunskou tiskárnu ze skupiny EDS. Důvodem jsou drahé energie a slabá poptávka - E15.cz
 11:49,148.18,14.1,0,0,Jet Investment zavírá rumunskou tiskárnu ze skupiny EDS. Důvodem jsou drahé energie a slabá poptávka - E15.cz
 12:17,148.18,13.7,0,0,Jet Investment zavírá rumunskou tiskárnu ze skupiny EDS. Důvodem jsou drahé energie a slabá poptávka - E15.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 03:08,139.42,5.0,0,0,"V Česku vyroste dům budoucnosti. Dvě třetiny energie si vyrobí sám, vodu použije dvakrát - E15.cz"
 14:06,139.42,13.4,0,0,Češi mění pohled na budoucnost energetiky. Roste důraz na bezpečnost i podpora jádra - Nová Večerní Praha
 23:46,139.42,5.6,0,0,Češi mění pohled na budoucnost energetiky. Roste důraz na bezpečnost i podpora jádra - Nová Večerní Praha
+07:06,131.1,5.6,0,0,Češi mění pohled na budoucnost energetiky. Roste důraz na bezpečnost i podpora jádra - Nová Večerní Praha
