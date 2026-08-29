@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-15:00,148.18,12.4,0,0,Tiskařský byznys českých investorů se smrskává. Zavřou továrnu a lukrativní část prodávají - E15.cz
 15:52,148.18,13.1,0,0,"Elektřina zdražila za rok o třetinu, plyn je na dvojnásobku. Lze se ještě dostat k dobrým cenám? - Hospodářské noviny"
 16:22,148.18,12.8,0,0,"Elektřina zdražila za rok o třetinu, plyn je na dvojnásobku. Lze se ještě dostat k dobrým cenám? - Hospodářské noviny"
 17:02,148.18,10.8,0,0,"Elektřina zdražila za rok o třetinu, plyn je na dvojnásobku. Lze se ještě dostat k dobrým cenám? - Hospodářské noviny"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 09:11,139.68,16.9,0,0,Tisíc větrníků nemusí být ekologickou apokalypsou. Tolik turbín by mohlo dodat více než desetinu české spotřeby - Hospodářské noviny
 14:29,139.68,13.4,0,0,Plyn v zimě: Bude to drahé a bude to bolet. Varovné signály pro Česko - ParlamentniListy.cz
 17:50,139.68,7.6,0,0,Plyn v zimě: Bude to drahé a bude to bolet. Varovné signály pro Česko - ParlamentniListy.cz
+20:01,139.68,6.4,0,0,Plyn v zimě: Bude to drahé a bude to bolet. Varovné signály pro Česko - ParlamentniListy.cz
