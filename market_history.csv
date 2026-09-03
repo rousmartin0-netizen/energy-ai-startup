@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-11:37,139.72,6.5,0,0,"Elektřina podražila za rok o třetinu, plyn je na dvojnásobku. Lze se ještě dostat k dobrým cenám? - Hospodářské noviny"
 12:00,139.72,6.6,0,0,"Elektřina podražila za rok o třetinu, plyn je na dvojnásobku. Lze se ještě dostat k dobrým cenám? - Hospodářské noviny"
 13:08,139.72,9.8,0,0,"Elektřina podražila za rok o třetinu, plyn je na dvojnásobku. Lze se ještě dostat k dobrým cenám? - Hospodářské noviny"
 14:01,139.72,11.0,0,0,"Elektřina podražila za rok o třetinu, plyn je na dvojnásobku. Lze se ještě dostat k dobrým cenám? - Hospodářské noviny"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 09:44,152.16,9.8,0,0,Jak mohou podnikatelé v české energetice investovat bez reálné dlouhodobé strategie ČR - Médium.cz
 13:54,152.16,14.0,0,0,Energie před zimou překvapivě zlevňují. Domácnosti mohou s novým tarifem ušetřit přes 17 tisíc korun ročně - EnergoZrouti.cz
 17:26,152.16,13.4,0,0,Klid na trhu
+20:01,152.16,10.1,0,0,Evropě hrozí perná zima. Nervozitu zvyšují útoky na německé uhelné elektrárny - Forbes Česko
