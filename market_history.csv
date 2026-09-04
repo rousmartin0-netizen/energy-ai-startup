@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-19:11,139.72,9.2,0,0,E.ON nově nabízí nižší ceny elektřiny i plynu ke sjednání - TZB-info
 22:07,139.72,4.6,0,0,"Malá elektrárna, velké varování. Nedávný kyberútok ukazuje, jak se mění energetická bezpečnost - oEnergetice.cz"
 03:08,139.42,5.0,0,0,"V Česku vyroste dům budoucnosti. Dvě třetiny energie si vyrobí sám, vodu použije dvakrát - E15.cz"
 14:06,139.42,13.4,0,0,Češi mění pohled na budoucnost energetiky. Roste důraz na bezpečnost i podpora jádra - Nová Večerní Praha
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 09:04,78.95,14.8,0,0,ENERGETIKA: Potřebujeme ideologicky nezatíženou dlouhodobou koncepci - neviditelnypes.lidovky.cz
 13:27,78.95,19.0,0,0,ENERGETIKA: Potřebujeme ideologicky nezatíženou dlouhodobou koncepci - Neviditelný pes
 16:57,78.95,14.7,0,0,ENERGETIKA: Potřebujeme ideologicky nezatíženou dlouhodobou koncepci - Neviditelný pes
+19:20,78.95,11.4,0,0,ENERGETIKA: Potřebujeme ideologicky nezatíženou dlouhodobou koncepci - Neviditelný pes
