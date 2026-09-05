@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-14:29,139.68,13.4,0,0,Plyn v zimě: Bude to drahé a bude to bolet. Varovné signály pro Česko - ParlamentniListy.cz
 17:50,139.68,7.6,0,0,Plyn v zimě: Bude to drahé a bude to bolet. Varovné signály pro Česko - ParlamentniListy.cz
 20:01,139.68,6.4,0,0,Plyn v zimě: Bude to drahé a bude to bolet. Varovné signály pro Česko - ParlamentniListy.cz
 22:36,139.68,5.5,0,0,Plyn v zimě: Bude to drahé a bude to bolet. Varovné signály pro Česko - ParlamentniListy.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 12:50,99.75,18.6,0,0,S Dynamickým tarifem od ČEZ už spoří přes 1 000 domácností - TZB-info
 15:39,99.75,17.7,0,0,S Dynamickým tarifem od ČEZ už spoří přes 1 000 domácností - tzb-info.cz
 17:39,99.75,12.9,0,0,"Energie před podzimem prudce zdražují. Komu končí smlouva, ten si připlatí tisíce korun - CNN Prima NEWS"
+19:29,99.75,14.7,0,0,"Energie před podzimem prudce zdražují. Komu končí smlouva, ten si připlatí tisíce korun - CNN Prima NEWS"
