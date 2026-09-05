@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-02:21,139.68,6.9,0,0,"První predikce do konce roku děsí domácnosti. Energie mají zdražit, největší riziko představuje plyn - EnergoZrouti.cz"
 09:11,139.68,16.9,0,0,Tisíc větrníků nemusí být ekologickou apokalypsou. Tolik turbín by mohlo dodat více než desetinu české spotřeby - Hospodářské noviny
 14:29,139.68,13.4,0,0,Plyn v zimě: Bude to drahé a bude to bolet. Varovné signály pro Česko - ParlamentniListy.cz
 17:50,139.68,7.6,0,0,Plyn v zimě: Bude to drahé a bude to bolet. Varovné signály pro Česko - ParlamentniListy.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 05:37,99.75,13.9,0,0,S Dynamickým tarifem od ČEZ už spoří přes 1 000 domácností - TZB-info
 09:20,99.75,20.0,0,0,S Dynamickým tarifem od ČEZ už spoří přes 1 000 domácností - TZB-info
 12:50,99.75,18.6,0,0,S Dynamickým tarifem od ČEZ už spoří přes 1 000 domácností - TZB-info
+15:39,99.75,17.7,0,0,S Dynamickým tarifem od ČEZ už spoří přes 1 000 domácností - tzb-info.cz
