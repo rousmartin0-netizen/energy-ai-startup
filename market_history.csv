@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-23:46,139.42,5.6,0,0,Češi mění pohled na budoucnost energetiky. Roste důraz na bezpečnost i podpora jádra - Nová Večerní Praha
 07:06,131.1,5.6,0,0,Češi mění pohled na budoucnost energetiky. Roste důraz na bezpečnost i podpora jádra - Nová Večerní Praha
 19:24,131.1,8.4,0,0,"První predikce do konce roku děsí domácnosti. Energie mají zdražit, největší riziko představuje plyn - EnergoZrouti.cz"
 02:21,139.68,6.9,0,0,"První predikce do konce roku děsí domácnosti. Energie mají zdražit, největší riziko představuje plyn - EnergoZrouti.cz"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 21:34,78.95,11.3,0,0,ENERGETIKA: Potřebujeme ideologicky nezatíženou dlouhodobou koncepci - Neviditelný pes
 23:16,78.95,8.8,0,0,S Dynamickým tarifem od ČEZ už spoří přes 1 000 domácností - TZB-info
 01:03,99.75,10.0,0,0,S Dynamickým tarifem od ČEZ už spoří přes 1 000 domácností - TZB-info
+05:37,99.75,13.9,0,0,S Dynamickým tarifem od ČEZ už spoří přes 1 000 domácností - TZB-info
