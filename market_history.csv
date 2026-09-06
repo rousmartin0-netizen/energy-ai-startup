@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-10:44,162.5,17.6,0,0,Klid na trhu
 15:03,162.5,16.1,0,0,Klid na trhu
 18:34,162.5,4.7,0,0,Klid na trhu
 21:30,162.5,5.1,0,0,Top 10 událostí z energetiky za poslední týden - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 01:02,153.72,8.6,0,0,"Energie před podzimem prudce zdražují. Komu končí smlouva, ten si připlatí tisíce korun - CNN Prima NEWS"
 05:49,153.72,5.9,0,0,"Energie před podzimem prudce zdražují. Komu končí smlouva, ten si připlatí tisíce korun - CNN Prima NEWS"
 09:42,153.72,8.7,0,0,"Energie před podzimem prudce zdražují. Komu končí smlouva, ten si připlatí tisíce korun - CNN Prima NEWS"
+13:10,153.72,8.0,0,0,"Energie před podzimem prudce zdražují. Komu končí smlouva, ten si připlatí tisíce korun - CNN Prima NEWS"
