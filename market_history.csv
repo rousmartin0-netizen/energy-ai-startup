@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-20:19,152.43,2.9,0,0,Od září přijde další zdražení elektřiny. Vyšší ceny pocítí většina domácností - Médium.cz
 22:42,152.43,4.9,0,0,Obnovitelná energetika a datová centra se ve Finsku rozvíjejí s českou stopou - Zprávy Kurzy.cz
 00:43,152.16,0.0,0,0,Elektřina bez přerušení? ČEZ Distribuce nasazuje 20 specializovaných čet - oEnergetice.cz
 05:08,152.16,4.7,0,0,Energetika 2026: Nový realismus v energetice a 30 úkolů pro dalších 30 let - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 00:31,140.85,8.2,0,0,"V Perském zálivu letí raketa a Čechovi to zdraží hypotéku, říká exšéf E.ON - Seznam Zprávy"
 05:06,140.85,9.2,0,0,"V Perském zálivu letí raketa a Čechovi to zdraží hypotéku, říká exšéf E.ON - Seznam Zprávy"
 09:39,140.85,12.2,0,0,"V Perském zálivu letí raketa a Čechovi to zdraží hypotéku, říká exšéf E.ON - Seznam Zprávy"
+13:55,140.85,10.9,0,0,Stát začne platit za stabilní zdroje energie. Kapacitní mechanismus ale není bez rizika - Obnovitelně
