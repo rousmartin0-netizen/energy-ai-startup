@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-16:15,153.72,6.2,0,0,"Energie před podzimem prudce zdražují. Komu končí smlouva, ten si připlatí tisíce korun - CNN Prima NEWS"
 18:23,153.72,3.6,0,0,Top 10 událostí z energetiky za poslední týden - oEnergetice.cz
 20:34,153.72,2.8,0,0,Top 10 událostí z energetiky za poslední týden - oEnergetice.cz
 22:18,153.72,2.5,0,0,Top 10 událostí z energetiky za poslední týden - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 00:27,206.0,5.2,0,0,Klid na trhu
 05:13,206.0,5.4,0,0,Klid na trhu
 10:19,206.0,9.7,0,0,Nekompromisní data: bez obnovitelných zdrojů v Česku levnější elektřina nebude - Obnovitelně
+14:28,206.0,11.4,0,0,"Vláda je připravena zastropovat ceny elektřiny, uvedl Havlíček. Stanovila by je v případě dalšího růstu - iROZHLAS"
