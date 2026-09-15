@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-09:03,161.33,5.1,0,0,"Soláry spolykají ročně desítky miliard. Kam s nimi, až podpora skončí? - Seznam Zprávy"
 13:31,161.33,11.8,0,0,"Trnu, kdy někoho napadne brát plyn z Ruska, říká exšéf E.ON - Seznam Zprávy"
 17:24,161.33,4.7,0,0,"Trnu, kdy někoho napadne brát plyn z Ruska, říká exšéf E.ON - Seznam Zprávy"
 20:01,161.33,3.8,0,0,"V Perském zálivu letí raketa a Čechovi to zdraží hypotéku, říká exšéf E.ON - Seznam Zprávy"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 22:24,207.57,3.1,0,0,ČEZ: Ministr Havlíček hrozí možným stropováním cen elektrické energie - Zprávy Kurzy.cz
 00:45,171.04,4.5,0,0,ČEZ: Ministr Havlíček hrozí možným stropováním cen elektrické energie - zpravy.kurzy.cz
 05:27,171.04,4.2,0,0,ČEZ: Ministr Havlíček hrozí možným stropováním cen elektrické energie - zpravy.kurzy.cz
+10:19,171.04,3.1,0,0,"Energetická závislost nás vychází draho, v Americe je plyn desetkrát levnější, upozorňuje expert - iROZHLAS"
