@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-10:00,179.55,2.1,0,0,Blíží se zdražení energií. Největší riziko je plyn - iEuro
 13:31,179.55,0.8,0,0,Klid na trhu
 16:28,179.55,3.2,0,0,Klid na trhu
 18:36,179.55,3.2,0,0,Klid na trhu
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 08:36,70.82,8.9,0,0,ETS 2 bez strašení: Co domácnosti čeká a co mohou udělat už dnes - TZB-info
 12:40,70.82,12.6,0,0,ETS 2 bez strašení: Co domácnosti čeká a co mohou udělat už dnes - TZB-info
 16:04,70.82,9.9,0,0,ETS 2 bez strašení: Co domácnosti čeká a co mohou udělat už dnes - TZB-info
+18:34,70.82,6.8,0,0,ETS 2 bez strašení: Co domácnosti čeká a co mohou udělat už dnes - TZB-info
