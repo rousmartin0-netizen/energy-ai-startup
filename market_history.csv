@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-18:36,179.55,3.2,0,0,Klid na trhu
 20:55,179.55,4.1,0,0,Klid na trhu
 22:50,179.55,4.9,0,0,Klid na trhu
 00:27,206.0,5.2,0,0,Klid na trhu
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 18:34,70.82,6.8,0,0,ETS 2 bez strašení: Co domácnosti čeká a co mohou udělat už dnes - TZB-info
 20:57,70.82,5.8,0,0,ETS 2 bez strašení: Co domácnosti čeká a co mohou udělat už dnes - TZB-info
 22:45,70.82,7.2,0,0,Klid na trhu
+00:26,51.76,7.2,0,0,Klid na trhu
