@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-13:55,207.57,6.9,0,0,ČEZ: Ministr Havlíček hrozí možným stropováním cen elektrické energie - Zprávy Kurzy.cz
 18:59,207.57,0.8,0,0,ČEZ: Ministr Havlíček hrozí možným stropováním cen elektrické energie - Zprávy Kurzy.cz
 22:24,207.57,3.1,0,0,ČEZ: Ministr Havlíček hrozí možným stropováním cen elektrické energie - Zprávy Kurzy.cz
 00:45,171.04,4.5,0,0,ČEZ: Ministr Havlíček hrozí možným stropováním cen elektrické energie - zpravy.kurzy.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 13:57,172.11,16.9,0,0,"Ceny elektřiny a plynu letí nahoru. Odborníci radí, na jak dlouho si je zafixovat - Deník N"
 19:06,172.11,11.0,0,0,"Ceny elektřiny a plynu letí nahoru. Odborníci radí, na jak dlouho si je zafixovat - Deník N"
 22:34,172.11,8.8,0,0,"Ceny elektřiny a plynu letí nahoru. Odborníci radí, na jak dlouho si je zafixovat - Deník N"
+01:06,201.18,13.8,0,0,"Ceny elektřiny a plynu letí nahoru. Odborníci radí, na jak dlouho si je zafixovat - Deník N"
