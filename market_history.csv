@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-22:45,70.82,7.2,0,0,Klid na trhu
 00:26,51.76,7.2,0,0,Klid na trhu
 05:12,51.76,9.8,0,0,Klid na trhu
 09:49,51.76,14.7,0,0,Cash Only: Drahé energie se vrací. A s nimi i drahé politické proklamace - seznamzpravy.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 12:19,143.72,7.6,0,0,Klid na trhu
 17:04,143.72,7.9,0,0,Klid na trhu
 20:05,143.72,4.9,0,0,Klid na trhu
+22:59,143.72,2.6,0,0,Klid na trhu
