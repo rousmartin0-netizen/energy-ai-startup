@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-01:06,201.18,13.8,0,0,"Ceny elektřiny a plynu letí nahoru. Odborníci radí, na jak dlouho si je zafixovat - Deník N"
 06:08,201.18,9.4,0,0,"Ceny elektřiny a plynu letí nahoru. Odborníci radí, na jak dlouho si je zafixovat - Deník N"
 11:32,201.18,11.8,0,0,Některým českým domácnostem se dražší energie vyhýbají. Hormuz to může změnit - Seznam Zprávy
 15:39,201.18,10.8,0,0,Některým českým domácnostem se dražší energie vyhýbají. Hormuz to může změnit - Seznam Zprávy
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 07:24,156.4,5.4,0,0,"Podpora pro elektrárny, které mají nahradit uhlí, se o rok posouvá. Podmínky státu byly až příliš přísné - Hospodářské noviny"
 14:00,156.4,12.7,0,0,"Zima prodraží energie tisícům domácností. Přehled dodavatelů, kteří už potvrdili zvýšení cen - energozrouti.cz"
 19:05,156.4,3.4,0,0,"Zima prodraží energie tisícům domácností. Přehled dodavatelů, kteří už potvrdili zvýšení cen - EnergoZrouti.cz"
+22:58,156.4,3.3,0,0,"Zima prodraží energie tisícům domácností. Přehled dodavatelů, kteří už potvrdili zvýšení cen - EnergoZrouti.cz"
