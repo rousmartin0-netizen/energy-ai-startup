@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-00:27,144.2,4.8,0,0,Některým českým domácnostem se dražší energie vyhýbají. Hormuz to může změnit - Seznam Zprávy
 05:01,144.2,4.8,0,0,Některým českým domácnostem se dražší energie vyhýbají. Hormuz to může změnit - seznamzpravy.cz
 09:52,144.2,4.5,0,0,Elektřina a plyn zdražují. Ceny u nových fixací zvyšují další dva velcí dodavatelé - E15.cz
 14:30,144.2,8.4,0,0,Elektřina a plyn zdražují. Ceny u nových fixací zvyšují další dva velcí dodavatelé - E15.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 15:31,171.38,6.5,0,0,"Investice do energetiky musejí dávat smysl, shodli se účastníci konference Leading Minds Forum - E15.cz"
 20:27,171.38,2.9,0,0,"Investice do energetiky musejí dávat smysl, shodli se účastníci konference Leading Minds Forum - E15.cz"
 00:02,171.38,2.4,0,0,"Investice do energetiky musejí dávat smysl, shodli se účastníci konference Leading Minds Forum - E15.cz"
+05:25,185.1,1.6,0,0,"Hlavní už není, kolik elektrárna stojí, ale zda vyrábí ráno, nebo v poledne - Seznam Zprávy"
