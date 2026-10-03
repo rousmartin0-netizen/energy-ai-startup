@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-14:20,181.14,10.2,0,0,E.ON a Pražská plynárenská zdražily nové fixace elektřiny a plynu - Hospodářské noviny
 18:28,181.14,8.9,0,0,Léto končí a žádný blackout se pořád ještě neudál. Že by soláry málo solárovaly? - Hospodářské noviny
 21:42,181.14,5.4,0,0,Léto končí a žádný blackout se pořád ještě neudál. Že by soláry málo solárovaly? - Hospodářské noviny
 00:01,181.14,4.9,0,0,Léto končí a žádný blackout se pořád ještě neudál. Že by soláry málo solárovaly? - Hospodářské noviny
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 10:32,184.86,1.6,0,0,"Ceny elektřiny a plynu: Někteří dodavatelé zdražili, nejvýhodnější nabídky se mění - TZB-info.cz"
 14:51,184.86,6.8,0,0,"Ceny elektřiny a plynu: Někteří dodavatelé zdražili, nejvýhodnější nabídky se mění - TZB-info"
 18:21,184.86,2.2,0,0,"Ceny elektřiny a plynu: Někteří dodavatelé zdražili, nejvýhodnější nabídky se mění - TZB-info"
+21:30,184.86,3.8,0,0,"Ceny elektřiny a plynu: Někteří dodavatelé zdražili, nejvýhodnější nabídky se mění - TZB-info"
