@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-00:30,177.8,5.0,0,0,"Podpora pro elektrárny, které mají nahradit uhlí, se o rok posouvá. Podmínky státu byly až příliš přísné - Hospodářské noviny"
 05:22,177.8,4.6,0,0,"Podpora pro elektrárny, které mají nahradit uhlí, se o rok posouvá. Podmínky státu byly až příliš přísné - Hospodářské noviny"
 09:59,177.8,4.1,0,0,Méně uhlí rovná se více proudu. Změnám neunikne nikdo - seznamzpravy.cz
 14:18,177.8,3.9,0,0,Energeticky náročný průmysl může přijít až o polovinu výroby. EGU varuje před neúnosnými náklady v porovnání s USA a Čínou - Průmyslová ekologie
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 22:00,100.0,0.7,0,0,Klid na trhu
 00:44,100.0,3.3,0,0,Klid na trhu
 06:17,100.0,4.7,0,0,"Evropa roky zavírala uhelné elektrárny. Kvůli Hormuzu by jich teď potřebovala víc, než jí zbylo - VTM.cz"
+14:56,148.63,3.3,0,0,Ceny energií startují inflaci. Česko bude patřit mezi nejpostiženější - Hospodářské noviny
