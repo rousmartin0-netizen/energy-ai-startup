@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-01:30,161.14,1.6,0,0,Klid na trhu
 07:31,161.14,0.8,0,0,Obavy Čechů z drahých energií sílí: zdražení čeká už 60 procent lidí - oEnergetice.cz
 15:50,161.14,7.8,0,0,Obavy Čechů z drahých energií sílí: zdražení čeká už 60 procent lidí - oEnergetice.cz
 21:24,161.14,2.0,0,0,Obavy Čechů z drahých energií sílí: zdražení čeká už 60 procent lidí - oEnergetice.cz
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 23:21,137.09,0.5,0,0,"Větrná energetika v Německu: Hodně plánů, ale ne vždy se ekonomicky vyplatí - Epoch Times"
 02:45,100.96,1.8,0,0,"Světovou ekonomiku ohrožují přetrvávající vysoké ceny energií, rekordní zadlužení veřejného sektoru i rizika spojená s rozvojem umělé inteligence - Deník N"
 09:31,100.96,4.7,0,0,"Politici by je nejraději zrušili. Nechte povolenky být, reagují experti - Ekonomický deník"
+16:51,100.96,11.6,0,0,"Politici by je nejraději zrušili. Nechte povolenky být, reagují experti - Ekonomický deník"
