@@ -1,5 +1,4 @@
 time,price,wind,solar,news_score,headline
-15:50,161.14,7.8,0,0,Obavy Čechů z drahých energií sílí: zdražení čeká už 60 procent lidí - oEnergetice.cz
 21:24,161.14,2.0,0,0,Obavy Čechů z drahých energií sílí: zdražení čeká už 60 procent lidí - oEnergetice.cz
 01:07,119.12,2.8,0,0,Obavy Čechů z drahých energií sílí: zdražení čeká už 60 procent lidí - oEnergetice.cz
 06:51,119.12,3.3,0,0,"Podpora pro elektrárny, které mají nahradit uhlí, se o rok posouvá. Podmínky státu byly až příliš přísné - Hospodářské noviny"
@@ -49,3 +48,4 @@ time,price,wind,solar,news_score,headline
 09:31,100.96,4.7,0,0,"Politici by je nejraději zrušili. Nechte povolenky být, reagují experti - Ekonomický deník"
 16:51,100.96,11.6,0,0,"Politici by je nejraději zrušili. Nechte povolenky být, reagují experti - Ekonomický deník"
 21:35,100.96,12.6,0,0,"Politici by je nejraději zrušili. Nechte povolenky být, reagují experti - Ekonomický deník"
+01:24,40.03,10.5,0,0,"Politici by je nejraději zrušili. Nechte povolenky být, reagují experti - Ekonomický deník"
