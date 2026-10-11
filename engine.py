@@ -14,13 +14,14 @@ def send_telegram_msg(message):
     except:
         pass
 
-def simulate_bess_chronological(df):
+def simulate_bess_mpc(df):
     """
-    Přísná časová (chronologická) fyzikální simulace BESS kontejneru.
+    Model Predictive Control (MPC) simulace pro BESS kontejner.
     - Kapacita: 1000 kWh (1 MWh)
-    - Max výkon střídače: 500 kW (max 500 kWh za 1 hodinový blok)
-    - Účinnost cyklu (Round-trip): 88%
-    - Bezpečné okno SoC: 5% (50 kWh) až 95% (950 kWh)
+    - Max výkon střídače: 500 kW
+    - Účinnost cyklu: 88%
+    - Logika: Bot nezná budoucnost absolutně, ale vyhodnocuje predikovaný cenový horizont 
+      pro zbývající hodiny dne a podle toho inteligentně časuje nákup a prodej.
     """
     CAPACITY_KWH = 1000.0
     MAX_POWER_KW = 500.0
@@ -29,53 +30,51 @@ def simulate_bess_chronological(df):
     
     SOC_MIN = 50.0   # 5%
     SOC_MAX = 950.0  # 95%
-    current_soc = 500.0 # startujeme den s 50% kapacity
+    current_soc = 500.0 # Startujeme na 50% kapacity
     
-    # Seřadíme data striktně chronologicky podle času (00:00 -> 23:00)
     df = df.sort_values('time').reset_index(drop=True)
     prices = df['price'].values
     n_hours = len(prices)
     
-    # Předvýpočet: Určíme si nejlevnější a nejdražší hodiny dne pro arbitráž
-    price_sorted_indices = np.argsort(prices)
-    n_target = min(6, n_hours // 3) if n_hours >= 6 else 2
-    cheapest_indices = set(price_sorted_indices[:n_target])
-    expensive_indices = set(price_sorted_indices[-n_target:])
-    
-    actions = ["IDLE"] * n_hours
-    power_flow = np.zeros(n_hours) # + nabíjení (kW), - vybíjení (kW)
+    actions = ["IDLE (POHOTOVOST)"] * n_hours
+    power_flow = np.zeros(n_hours)
     soc_levels = np.zeros(n_hours)
     cash_flow = np.zeros(n_hours)
     
-    # Průchod časem hodinu po hodině (reálná fyzikální evoluce stavu)
+    # Simulace řízení hodinu po hodině (MPC přístup)
     for i in range(n_hours):
         p = prices[i]
+        
+        # Predikční horizont: pohled na zbývající hodiny dne
+        future_horizon_prices = prices[i:]
+        
         action = "IDLE (POHOTOVOST)"
         power = 0.0
         
-        # 1. Kritérium pro NABÍJENÍ (Nízká cena nebo záporná cena, a máme místo v baterii)
-        if (i in cheapest_indices or p < 45.0) and current_soc < SOC_MAX:
-            headroom_energy = SOC_MAX - current_soc
-            max_grid_power = headroom_energy / SQRT_EFF
-            power = min(MAX_POWER_KW, max_grid_power) # Respektuje rychlost střídače (max 500 kW)
+        if len(future_horizon_prices) > 0:
+            mean_future = np.mean(future_horizon_prices)
+            min_future = np.min(future_horizon_prices)
+            max_future = np.max(future_horizon_prices)
             
-            if power > 10.0:
-                action = "NABÍJENÍ (CHARGE)"
-                energy_into_battery = power * SQRT_EFF
-                current_soc += energy_into_battery
-                cash_flow[i] = - (power * p) / 1000.0 # Náklady v EUR
-        
-        # 2. Kritérium pro VYBÍJENÍ (Vysoká cena ve špičce, a máme energii v baterii)
-        elif (i in expensive_indices or p > 95.0) and current_soc > SOC_MIN:
-            available_energy = current_soc - SOC_MIN
-            max_discharge_power = available_energy * SQRT_EFF
-            power = -min(MAX_POWER_KW, max_discharge_power) # Respektuje rychlost vybíjení
-            
-            if abs(power) > 10.0:
-                action = "VYBÍJENÍ (DISCHARGE)"
-                energy_taken = abs(power) / SQRT_EFF
-                current_soc -= energy_taken
-                cash_flow[i] = (abs(power) * p) / 1000.0 # Výnos v EUR
+            # 1. NABÍJENÍ: Pokud je aktuální cena na lokálním minimu predikce a pod průměrem
+            if p <= min_future * 1.08 and p < mean_future and current_soc < SOC_MAX:
+                headroom = SOC_MAX - current_soc
+                power = min(MAX_POWER_KW, headroom / SQRT_EFF)
+                
+                if power > 10.0:
+                    action = "NABÍJENÍ (CHARGE)"
+                    current_soc += power * SQRT_EFF
+                    cash_flow[i] = - (power * p) / 1000.0
+                    
+            # 2. VYBÍJENÍ: Pokud cena dosahuje vrcholu predikovaného horizontu (např. večerní špička)
+            elif p >= max_future * 0.92 and p > mean_future and current_soc > SOC_MIN:
+                available = current_soc - SOC_MIN
+                power = -min(MAX_POWER_KW, available * SQRT_EFF)
+                
+                if abs(power) > 10.0:
+                    action = "VYBÍJENÍ (DISCHARGE)"
+                    current_soc -= abs(power) / SQRT_EFF
+                    cash_flow[i] = (abs(power) * p) / 1000.0
 
         actions[i] = action
         power_flow[i] = power
@@ -90,7 +89,7 @@ def simulate_bess_chronological(df):
     return df
 
 def get_market_data():
-    print("🚀 Stahuji reálná data a spouštím chronologickou BESS simulaci...")
+    print("🚀 Stahuji reálná data a spouštím predikční MPC BESS simulaci...")
     prague_tz = ZoneInfo("Europe/Prague")
     
     try:
@@ -114,11 +113,11 @@ def get_market_data():
                 df_list.append([time_str, p])
 
         df = pd.DataFrame(df_list, columns=["time", "price"])
-        df = simulate_bess_chronological(df)
+        df = simulate_bess_mpc(df)
         
         df["wind"] = 15.0  
         df["solar"] = 0.0
-        df["headline"] = "BESS kontejner v chronologickém arbitrážním režimu."
+        df["headline"] = "BESS EMS běží v predikčním MPC režimu."
         
     except Exception as e:
         print(f"Chyba při stahování dat: {e}")
@@ -132,9 +131,9 @@ def get_market_data():
     if not df.empty and 'cumulative_profit_eur' in df.columns:
         total_profit = df.iloc[-1]['cumulative_profit_eur']
         latest_price = df.iloc[-1]["price"]
-        send_telegram_msg(f"⚡ BESS Velín: Denní zisk = {total_profit:.2f} EUR | Cena: {latest_price} EUR/MWh")
+        send_telegram_msg(f"⚡ BESS MPC Velín: Predikovaný zisk = {total_profit:.2f} EUR | Cena: {latest_price} EUR/MWh")
         
-    print(f"✅ Hotovo. Simulace uložena pro {len(df)} hodin.")
+    print(f"✅ Hotovo. Predikční simulace uložena pro {len(df)} hodin.")
 
 if __name__ == "__main__":
     get_market_data()
