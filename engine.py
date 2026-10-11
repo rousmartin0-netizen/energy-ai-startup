@@ -14,65 +14,72 @@ def send_telegram_msg(message):
     except:
         pass
 
-def simulate_bess_arbitrage_advanced(df):
+def simulate_bess_chronological(df):
     """
-    Pokročilá fyzikální simulace 1MWh BESS kontejneru.
+    Přísná časová (chronologická) fyzikální simulace BESS kontejneru.
     - Kapacita: 1000 kWh (1 MWh)
-    - Výkon střídače: 500 kW
-    - Účinnost cyklu (Round-trip): 88% (~93.8% jednosměrně)
-    - Bezpečné okno SoC: 50 kWh (5%) až 950 kWh (95%)
+    - Max výkon střídače: 500 kW (max 500 kWh za 1 hodinový blok)
+    - Účinnost cyklu (Round-trip): 88%
+    - Bezpečné okno SoC: 5% (50 kWh) až 95% (950 kWh)
     """
     CAPACITY_KWH = 1000.0
     MAX_POWER_KW = 500.0
     EFFICIENCY = 0.88
     SQRT_EFF = np.sqrt(EFFICIENCY)
     
-    SOC_MIN = 50.0
-    SOC_MAX = 950.0
+    SOC_MIN = 50.0   # 5%
+    SOC_MAX = 950.0  # 95%
+    current_soc = 500.0 # startujeme den s 50% kapacity
     
-    n_hours = len(df)
-    # Seřadíme data chronologicky podle času (00:00 -> 23:00)
+    # Seřadíme data striktně chronologicky podle času (00:00 -> 23:00)
     df = df.sort_values('time').reset_index(drop=True)
     prices = df['price'].values
+    n_hours = len(prices)
     
-    # Inteligentní optimalizace: Najdeme nejlevnější časy pro nákup a nejdražší pro prodej
-    sorted_indices = np.argsort(prices)
+    # Předvýpočet: Určíme si nejlevnější a nejdražší hodiny dne pro arbitráž
+    price_sorted_indices = np.argsort(prices)
+    n_target = min(6, n_hours // 3) if n_hours >= 6 else 2
+    cheapest_indices = set(price_sorted_indices[:n_target])
+    expensive_indices = set(price_sorted_indices[-n_target:])
     
     actions = ["IDLE"] * n_hours
-    power_flow = np.zeros(n_hours) # +nabíjení, -vybíjení
+    power_flow = np.zeros(n_hours) # + nabíjení (kW), - vybíjení (kW)
     soc_levels = np.zeros(n_hours)
     cash_flow = np.zeros(n_hours)
     
-    # Startujeme den s 50% nabitou baterií (500 kWh)
-    current_soc = 500.0
-    
-    # Simulace průběhu dne
-    for idx in sorted_indices:
-        p = prices[idx]
+    # Průchod časem hodinu po hodině (reálná fyzikální evoluce stavu)
+    for i in range(n_hours):
+        p = prices[i]
+        action = "IDLE (POHOTOVOST)"
+        power = 0.0
         
-        # Nákup (Nabíjení) v levných / záporných hodinách
-        if p < 55.0 and current_soc < SOC_MAX:
-            headroom_kwh = (SOC_MAX - current_soc) / SQRT_EFF
-            charge_kwh = min(MAX_POWER_KW, headroom_kwh)
+        # 1. Kritérium pro NABÍJENÍ (Nízká cena nebo záporná cena, a máme místo v baterii)
+        if (i in cheapest_indices or p < 45.0) and current_soc < SOC_MAX:
+            headroom_energy = SOC_MAX - current_soc
+            max_grid_power = headroom_energy / SQRT_EFF
+            power = min(MAX_POWER_KW, max_grid_power) # Respektuje rychlost střídače (max 500 kW)
             
-            if charge_kwh > 1.0:
-                actions[idx] = "NABÍJENÍ (CHARGE)"
-                power_flow[idx] = charge_kwh
-                current_soc += charge_kwh * SQRT_EFF
-                cash_flow[idx] = - (charge_kwh * p) / 1000.0
-                
-        # Prodej (Vybíjení) v drahých špičkách
-        elif p > 95.0 and current_soc > SOC_MIN:
-            available_kwh = (current_soc - SOC_MIN) * SQRT_EFF
-            discharge_kwh = min(MAX_POWER_KW, available_kwh)
+            if power > 10.0:
+                action = "NABÍJENÍ (CHARGE)"
+                energy_into_battery = power * SQRT_EFF
+                current_soc += energy_into_battery
+                cash_flow[i] = - (power * p) / 1000.0 # Náklady v EUR
+        
+        # 2. Kritérium pro VYBÍJENÍ (Vysoká cena ve špičce, a máme energii v baterii)
+        elif (i in expensive_indices or p > 95.0) and current_soc > SOC_MIN:
+            available_energy = current_soc - SOC_MIN
+            max_discharge_power = available_energy * SQRT_EFF
+            power = -min(MAX_POWER_KW, max_discharge_power) # Respektuje rychlost vybíjení
             
-            if discharge_kwh > 1.0:
-                actions[idx] = "VYBÍJENÍ (DISCHARGE)"
-                power_flow[idx] = -discharge_kwh
-                current_soc -= discharge_kwh
-                cash_flow[idx] = (discharge_kwh * p) / 1000.0
+            if abs(power) > 10.0:
+                action = "VYBÍJENÍ (DISCHARGE)"
+                energy_taken = abs(power) / SQRT_EFF
+                current_soc -= energy_taken
+                cash_flow[i] = (abs(power) * p) / 1000.0 # Výnos v EUR
 
-        soc_levels[idx] = current_soc
+        actions[i] = action
+        power_flow[i] = power
+        soc_levels[i] = current_soc
 
     df['bess_action'] = actions
     df['bess_power_kw'] = power_flow
@@ -83,7 +90,7 @@ def simulate_bess_arbitrage_advanced(df):
     return df
 
 def get_market_data():
-    print("🚀 Stahuji reálná data a spouštím pokročilou BESS simulaci...")
+    print("🚀 Stahuji reálná data a spouštím chronologickou BESS simulaci...")
     prague_tz = ZoneInfo("Europe/Prague")
     
     try:
@@ -107,11 +114,11 @@ def get_market_data():
                 df_list.append([time_str, p])
 
         df = pd.DataFrame(df_list, columns=["time", "price"])
-        df = simulate_bess_arbitrage_advanced(df)
+        df = simulate_bess_chronological(df)
         
         df["wind"] = 15.0  
         df["solar"] = 0.0
-        df["headline"] = "BESS kontejner optimalizuje denní arbitráž."
+        df["headline"] = "BESS kontejner v chronologickém arbitrážním režimu."
         
     except Exception as e:
         print(f"Chyba při stahování dat: {e}")
@@ -125,7 +132,7 @@ def get_market_data():
     if not df.empty and 'cumulative_profit_eur' in df.columns:
         total_profit = df.iloc[-1]['cumulative_profit_eur']
         latest_price = df.iloc[-1]["price"]
-        send_telegram_msg(f"⚡ BESS Velín: Aktuální zisk = {total_profit:.2f} EUR | Cena: {latest_price} EUR/MWh")
+        send_telegram_msg(f"⚡ BESS Velín: Denní zisk = {total_profit:.2f} EUR | Cena: {latest_price} EUR/MWh")
         
     print(f"✅ Hotovo. Simulace uložena pro {len(df)} hodin.")
 
