@@ -23,39 +23,48 @@ def get_market_data():
         data = requests.get(p_url, timeout=10).json()
         
         prices = data["price"]
-        timestamps = data["time"] # Obsahuje unix timestampy pro každou hodinu
+        # Oprava klíče: Energy-Charts používá unix_seconds namísto time
+        timestamps = data.get("unix_seconds", data.get("time", []))
         
-        # Převedeme na hezký DataFrame s reálnými časy
+        # Převedeme na DataFrame s reálnými časy
         df_list = []
         for t, p in zip(timestamps, prices):
             dt = datetime.fromtimestamp(t)
-            # Bereme jen dnešní data, ať je graf čistý
+            # Bereme dnešní data
             if dt.date() == datetime.now().date():
                 time_str = dt.strftime("%H:%M")
                 df_list.append([time_str, p])
                 
+        # Pojistka kdyby dnešní den nebyl plně naplněný
+        if not df_list and timestamps and prices:
+            for t, p in zip(timestamps[-24:], prices[-24:]):
+                dt = datetime.fromtimestamp(t)
+                time_str = dt.strftime("%H:%M")
+                df_list.append([time_str, p])
+
         df = pd.DataFrame(df_list, columns=["time", "price"])
         
-        # Přidáme vítr a zprávy k poslednímu záznamu
-        df["wind"] = 15.0  # Aktuální vítr
+        # Doplňkové hodnoty
+        df["wind"] = 15.0  
         df["solar"] = 0.0
         df["news_score"] = 0
         df["headline"] = "Trh s elektřinou je stabilní."
         
     except Exception as e:
-        print(f="Chyba při stahování dat: {e}")
-        # Záložní data, kdyby API zlobilo
+        print(f"Chyba při stahování dat: {e}")
+        # Záložní data při výpadku API
         df = pd.DataFrame([[datetime.now().strftime("%H:%M"), 100.0, 15, 0, 0, "Záložní režim"]], 
                           columns=["time", "price", "wind", "solar", "news_score", "headline"])
 
-    # Uložení čistých reálných dat
+    # Uložení reálných dat
     file_path = "market_history.csv"
     df.to_csv(file_path, index=False)
     
-    # Aktuální cena pro Telegram
-    latest_price = df.iloc[-1]["price"]
-    send_telegram_msg(f"📊 Aktuální reálná cena elektřiny v ČR: {latest_price} EUR/MWh")
-    print(f"✅ Hotovo. Uloženo {len(df)} reálných bodů pro dnešní den.")
+    if not df.empty:
+        latest_price = df.iloc[-1]["price"]
+        send_telegram_msg(f"📊 Aktuální reálná cena elektřiny v ČR: {latest_price} EUR/MWh")
+        
+    print(f"✅ Hotovo. Uloženo {len(df)} reálných bodů.")
 
 if __name__ == "__main__":
     get_market_data()
