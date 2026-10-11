@@ -14,14 +14,12 @@ def send_telegram_msg(message):
     except:
         pass
 
-def simulate_bess_mpc(df):
+def simulate_bess_mpc_strict(df):
     """
-    Model Predictive Control (MPC) simulace pro BESS kontejner.
+    Pokročilá MPC simulace s důrazem na čekání na absolutní cenové extrémy.
     - Kapacita: 1000 kWh (1 MWh)
     - Max výkon střídače: 500 kW
     - Účinnost cyklu: 88%
-    - Logika: Bot nezná budoucnost absolutně, ale vyhodnocuje predikovaný cenový horizont 
-      pro zbývající hodiny dne a podle toho inteligentně časuje nákup a prodej.
     """
     CAPACITY_KWH = 1000.0
     MAX_POWER_KW = 500.0
@@ -30,7 +28,7 @@ def simulate_bess_mpc(df):
     
     SOC_MIN = 50.0   # 5%
     SOC_MAX = 950.0  # 95%
-    current_soc = 500.0 # Startujeme na 50% kapacity
+    current_soc = 500.0 # Startujeme na 50%
     
     df = df.sort_values('time').reset_index(drop=True)
     prices = df['price'].values
@@ -41,11 +39,8 @@ def simulate_bess_mpc(df):
     soc_levels = np.zeros(n_hours)
     cash_flow = np.zeros(n_hours)
     
-    # Simulace řízení hodinu po hodině (MPC přístup)
     for i in range(n_hours):
         p = prices[i]
-        
-        # Predikční horizont: pohled na zbývající hodiny dne
         future_horizon_prices = prices[i:]
         
         action = "IDLE (POHOTOVOST)"
@@ -56,8 +51,8 @@ def simulate_bess_mpc(df):
             min_future = np.min(future_horizon_prices)
             max_future = np.max(future_horizon_prices)
             
-            # 1. NABÍJENÍ: Pokud je aktuální cena na lokálním minimu predikce a pod průměrem
-            if p <= min_future * 1.08 and p < mean_future and current_soc < SOC_MAX:
+            # 1. NABÍJENÍ: Lokální minimum a pod průměrem dne
+            if p <= min_future * 1.05 and p < mean_future and current_soc < SOC_MAX:
                 headroom = SOC_MAX - current_soc
                 power = min(MAX_POWER_KW, headroom / SQRT_EFF)
                 
@@ -66,8 +61,8 @@ def simulate_bess_mpc(df):
                     current_soc += power * SQRT_EFF
                     cash_flow[i] = - (power * p) / 1000.0
                     
-            # 2. VYBÍJENÍ: Pokud cena dosahuje vrcholu predikovaného horizontu (např. večerní špička)
-            elif p >= max_future * 0.92 and p > mean_future and current_soc > SOC_MIN:
+            # 2. VYBÍJENÍ: Čekáme striktně na absolutní špičku (97%+ maxima zbývajícího dne)
+            elif p >= max_future * 0.97 and p > mean_future and current_soc > SOC_MIN:
                 available = current_soc - SOC_MIN
                 power = -min(MAX_POWER_KW, available * SQRT_EFF)
                 
@@ -89,7 +84,7 @@ def simulate_bess_mpc(df):
     return df
 
 def get_market_data():
-    print("🚀 Stahuji reálná data a spouštím predikční MPC BESS simulaci...")
+    print("🚀 Spouštím zpřísněnou MPC simulaci...")
     prague_tz = ZoneInfo("Europe/Prague")
     
     try:
@@ -113,11 +108,11 @@ def get_market_data():
                 df_list.append([time_str, p])
 
         df = pd.DataFrame(df_list, columns=["time", "price"])
-        df = simulate_bess_mpc(df)
+        df = simulate_bess_mpc_strict(df)
         
         df["wind"] = 15.0  
         df["solar"] = 0.0
-        df["headline"] = "BESS EMS běží v predikčním MPC režimu."
+        df["headline"] = "BESS EMS optimalizuje reálné špičky."
         
     except Exception as e:
         print(f"Chyba při stahování dat: {e}")
@@ -131,9 +126,9 @@ def get_market_data():
     if not df.empty and 'cumulative_profit_eur' in df.columns:
         total_profit = df.iloc[-1]['cumulative_profit_eur']
         latest_price = df.iloc[-1]["price"]
-        send_telegram_msg(f"⚡ BESS MPC Velín: Predikovaný zisk = {total_profit:.2f} EUR | Cena: {latest_price} EUR/MWh")
+        send_telegram_msg(f"⚡ BESS Velín: Optimalizovaný zisk = {total_profit:.2f} EUR | Cena: {latest_price} EUR/MWh")
         
-    print(f"✅ Hotovo. Predikční simulace uložena pro {len(df)} hodin.")
+    print(f"✅ Hotovo.")
 
 if __name__ == "__main__":
     get_market_data()
