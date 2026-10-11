@@ -80,17 +80,17 @@ if os.path.exists(file_path):
                 y=alt.Y('price:Q', title='Cena elektřiny (€/MWh)')
             )
 
-            # Plynulá zelená křivka pro nabíjení (nad nulou)
+            # Plynulá zelená křivka pro nabíjení (nad nulou) - opraveno y2 na 0
             charge_area = base.mark_area(interpolate='monotone', fill='#2ca02c', opacity=0.5).encode(
                 y=alt.Y('charge_power:Q', title='BESS Výkon (kW) [Nabíjení > 0, Vybíjení < 0]'),
-                y2=alt.Constant(0),
+                y2=alt.value(0),
                 tooltip=['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh']
             )
 
-            # Plynulá červená křivka pro vybíjení (pod nulou)
+            # Plynulá červená křivka pro vybíjení (pod nulou) - opraveno y2 na 0
             discharge_area = base.mark_area(interpolate='monotone', fill='#d62728', opacity=0.5).encode(
                 y=alt.Y('discharge_power:Q', title=''),
-                y2=alt.Constant(0),
+                y2=alt.value(0),
                 tooltip=['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh']
             )
 
