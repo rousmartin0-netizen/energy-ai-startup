@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from gnews import GNews
 
 # --- NASTAVENÍ TELEGRAMU ---
@@ -16,6 +17,7 @@ def send_telegram_msg(message):
 
 def get_market_data():
     print("🚀 Stahuji reálná data z trhu...")
+    prague_tz = ZoneInfo("Europe/Prague")
     
     try:
         # Stáhneme reálná data z Energy-Charts (zóna DE-LU / ČR)
@@ -23,22 +25,21 @@ def get_market_data():
         data = requests.get(p_url, timeout=10).json()
         
         prices = data["price"]
-        # Oprava klíče: Energy-Charts používá unix_seconds namísto time
         timestamps = data.get("unix_seconds", data.get("time", []))
         
-        # Převedeme na DataFrame s reálnými časy
+        # Převedeme na DataFrame s reálnými časy v českém čase
         df_list = []
         for t, p in zip(timestamps, prices):
-            dt = datetime.fromtimestamp(t)
-            # Bereme dnešní data
-            if dt.date() == datetime.now().date():
+            dt = datetime.fromtimestamp(t, tz=prague_tz)
+            # Bereme dnešní data v českém čase
+            if dt.date() == datetime.now(prague_tz).date():
                 time_str = dt.strftime("%H:%M")
                 df_list.append([time_str, p])
                 
         # Pojistka kdyby dnešní den nebyl plně naplněný
         if not df_list and timestamps and prices:
             for t, p in zip(timestamps[-24:], prices[-24:]):
-                dt = datetime.fromtimestamp(t)
+                dt = datetime.fromtimestamp(t, tz=prague_tz)
                 time_str = dt.strftime("%H:%M")
                 df_list.append([time_str, p])
 
@@ -52,8 +53,9 @@ def get_market_data():
         
     except Exception as e:
         print(f"Chyba při stahování dat: {e}")
-        # Záložní data při výpadku API
-        df = pd.DataFrame([[datetime.now().strftime("%H:%M"), 100.0, 15, 0, 0, "Záložní režim"]], 
+        # Záložní data při výpadku API v českém čase
+        now_prague = datetime.now(prague_tz)
+        df = pd.DataFrame([[now_prague.strftime("%H:%M"), 100.0, 15, 0, 0, "Záložní režim"]], 
                           columns=["time", "price", "wind", "solar", "news_score", "headline"])
 
     # Uložení reálných dat
