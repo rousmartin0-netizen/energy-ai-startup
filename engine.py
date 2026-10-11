@@ -4,7 +4,6 @@ import numpy as np
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-# --- NASTAVENÍ TELEGRAMU ---
 TELEGRAM_TOKEN = "8671040720:AAF9Lmr2wx0gfs_2DA-xQuTxznIJ7qKBt18"
 TELEGRAM_CHAT_ID = "6143507725"
 
@@ -15,68 +14,63 @@ def send_telegram_msg(message):
     except:
         pass
 
-def simulate_bess_arbitrage(df):
+def simulate_bess_arbitrage_advanced(df):
     """
-    Přísná fyzikální a ekonomická simulace BESS kontejneru.
-    Parametry:
+    Pokročilá fyzikální simulace 1MWh BESS kontejneru.
     - Kapacita: 1000 kWh (1 MWh)
-    - Max výkon střídače: 500 kW
-    - Účinnost (Round-trip): 88% (odpovídá ~93.8% jednosměrně)
-    - Bezpečné SoC: 5% až 95%
+    - Výkon střídače: 500 kW
+    - Účinnost cyklu (Round-trip): 88% (~93.8% jednosměrně)
+    - Bezpečné okno SoC: 50 kWh (5%) až 950 kWh (95%)
     """
     CAPACITY_KWH = 1000.0
     MAX_POWER_KW = 500.0
     EFFICIENCY = 0.88
-    SQRT_EFF = np.sqrt(EFFICIENCY) # rozdělení ztrát na nabíjení a vybíjení
+    SQRT_EFF = np.sqrt(EFFICIENCY)
     
-    SOC_MIN = 50.0   # 5%
-    SOC_MAX = 950.0  # 95%
-    initial_soc = 500.0 # startujeme na 50%
+    SOC_MIN = 50.0
+    SOC_MAX = 950.0
     
     n_hours = len(df)
+    # Seřadíme data chronologicky podle času (00:00 -> 23:00)
+    df = df.sort_values('time').reset_index(drop=True)
     prices = df['price'].values
     
-    # Rozhodovací logika: Seřadíme hodiny podle ceny
-    # Nejlevnější hodiny -> Nabíjení, Nejdražší hodiny -> Vybíjení
+    # Inteligentní optimalizace: Najdeme nejlevnější časy pro nákup a nejdražší pro prodej
     sorted_indices = np.argsort(prices)
     
     actions = ["IDLE"] * n_hours
-    power_flow = np.zeros(n_hours) # kladné = nabíjení, záporné = vybíjení
+    power_flow = np.zeros(n_hours) # +nabíjení, -vybíjení
     soc_levels = np.zeros(n_hours)
     cash_flow = np.zeros(n_hours)
     
-    current_soc = initial_soc
+    # Startujeme den s 50% nabitou baterií (500 kWh)
+    current_soc = 500.0
     
-    # Jednoduchá, ale robustní heuristika pro arbitráž respektující fyziku
-    # Procházíme od nejlevnějších po nejdražší
+    # Simulace průběhu dne
     for idx in sorted_indices:
         p = prices[idx]
         
-        # Pokud je cena velmi nízká nebo záporná, prioritně NABÍJÍME
-        if p < 50.0 and current_soc < SOC_MAX:
-            # Kolik můžeme vzít do plna?
+        # Nákup (Nabíjení) v levných / záporných hodinách
+        if p < 55.0 and current_soc < SOC_MAX:
             headroom_kwh = (SOC_MAX - current_soc) / SQRT_EFF
             charge_kwh = min(MAX_POWER_KW, headroom_kwh)
             
-            if charge_kwh > 1.0: # ignorujeme zlomky
-                actions[idx] = "CHARGE"
+            if charge_kwh > 1.0:
+                actions[idx] = "NABÍJENÍ (CHARGE)"
                 power_flow[idx] = charge_kwh
-                energy_stored = charge_kwh * SQRT_EFF
-                current_soc += energy_stored
-                cash_flow[idx] = - (charge_kwh * p) / 1000.0 # náklady v EUR (price je za MWh)
+                current_soc += charge_kwh * SQRT_EFF
+                cash_flow[idx] = - (charge_kwh * p) / 1000.0
                 
-        # Pokud je cena vysoká, prioritně VYBÍJÍME
-        elif p > 100.0 and current_soc > SOC_MIN:
-            # Kolik můžeme vydat do min?
+        # Prodej (Vybíjení) v drahých špičkách
+        elif p > 95.0 and current_soc > SOC_MIN:
             available_kwh = (current_soc - SOC_MIN) * SQRT_EFF
             discharge_kwh = min(MAX_POWER_KW, available_kwh)
             
             if discharge_kwh > 1.0:
-                actions[idx] = "DISCHARGE"
+                actions[idx] = "VYBÍJENÍ (DISCHARGE)"
                 power_flow[idx] = -discharge_kwh
-                energy_extracted = discharge_kwh * SQRT_EFF
                 current_soc -= discharge_kwh
-                cash_flow[idx] = (discharge_kwh * p) / 1000.0 # příjem v EUR
+                cash_flow[idx] = (discharge_kwh * p) / 1000.0
 
         soc_levels[idx] = current_soc
 
@@ -84,11 +78,12 @@ def simulate_bess_arbitrage(df):
     df['bess_power_kw'] = power_flow
     df['battery_soc_kwh'] = soc_levels
     df['hourly_cash_eur'] = cash_flow
+    df['cumulative_profit_eur'] = np.cumsum(cash_flow)
     
     return df
 
 def get_market_data():
-    print("🚀 Stahuji reálná data z trhu a spouštím BESS simulaci...")
+    print("🚀 Stahuji reálná data a spouštím pokročilou BESS simulaci...")
     prague_tz = ZoneInfo("Europe/Prague")
     
     try:
@@ -112,29 +107,27 @@ def get_market_data():
                 df_list.append([time_str, p])
 
         df = pd.DataFrame(df_list, columns=["time", "price"])
-        
-        # Spuštění přísné fyzikální simulace BESS
-        df = simulate_bess_arbitrage(df)
+        df = simulate_bess_arbitrage_advanced(df)
         
         df["wind"] = 15.0  
         df["solar"] = 0.0
-        df["headline"] = "BESS kontejner v aktivním arbitrážním režimu."
+        df["headline"] = "BESS kontejner optimalizuje denní arbitráž."
         
     except Exception as e:
         print(f"Chyba při stahování dat: {e}")
         now_prague = datetime.now(prague_tz)
-        df = pd.DataFrame([[now_prague.strftime("%H:%M"), 100.0, "IDLE", 0.0, 500.0, 0.0, 15, "Záložní režim"]], 
-                          columns=["time", "price", "bess_action", "bess_power_kw", "battery_soc_kwh", "hourly_cash_eur", "wind", "headline"])
+        df = pd.DataFrame([[now_prague.strftime("%H:%M"), 100.0, "IDLE", 0.0, 500.0, 0.0, 0.0, 15, "Záložní režim"]], 
+                          columns=["time", "price", "bess_action", "bess_power_kw", "battery_soc_kwh", "hourly_cash_eur", "cumulative_profit_eur", "wind", "headline"])
 
     file_path = "market_history.csv"
     df.to_csv(file_path, index=False)
     
-    if not df.empty and 'hourly_cash_eur' in df.columns:
-        total_daily_profit = df['hourly_cash_eur'].sum()
+    if not df.empty and 'cumulative_profit_eur' in df.columns:
+        total_profit = df.iloc[-1]['cumulative_profit_eur']
         latest_price = df.iloc[-1]["price"]
-        send_telegram_msg(f"📊 BESS Simulace: Denní zisk = {total_daily_profit:.2f} EUR | Aktuální cena: {latest_price} EUR/MWh")
+        send_telegram_msg(f"⚡ BESS Velín: Aktuální zisk = {total_profit:.2f} EUR | Cena: {latest_price} EUR/MWh")
         
-    print(f"✅ Hotovo. Simulace proběhla pro {len(df)} hodinových bloků.")
+    print(f"✅ Hotovo. Simulace uložena pro {len(df)} hodin.")
 
 if __name__ == "__main__":
     get_market_data()
