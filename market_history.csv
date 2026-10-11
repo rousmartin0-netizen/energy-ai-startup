@@ -1,1 +1,54 @@
 time,price,wind,solar,news_score,headline
+<<<<<<< Updated upstream
+=======
+20:58,185.1,2.8,0.0,0.0,Elektřina byla v září nejdražší od roku 2022. České uhelné elektrárny prudce navýšily výrobu - oEnergetice.cz
+00:19,184.86,2.4,0.0,0.0,Elektřina byla v září nejdražší od roku 2022. České uhelné elektrárny prudce navýšily výrobu - oEnergetice.cz
+05:28,184.86,2.3,0.0,0.0,"Ceny elektřiny a plynu: Někteří dodavatelé zdražili, nejvýhodnější nabídky se mění - TZB-info.cz"
+10:32,184.86,1.6,0.0,0.0,"Ceny elektřiny a plynu: Někteří dodavatelé zdražili, nejvýhodnější nabídky se mění - TZB-info.cz"
+14:51,184.86,6.8,0.0,0.0,"Ceny elektřiny a plynu: Někteří dodavatelé zdražili, nejvýhodnější nabídky se mění - TZB-info"
+18:21,184.86,2.2,0.0,0.0,"Ceny elektřiny a plynu: Někteří dodavatelé zdražili, nejvýhodnější nabídky se mění - TZB-info"
+21:30,184.86,3.8,0.0,0.0,"Ceny elektřiny a plynu: Někteří dodavatelé zdražili, nejvýhodnější nabídky se mění - TZB-info"
+00:00,184.86,3.6,0.0,0.0,Elektřina i plyn na trzích rychle zdražují. Co to znamená pro domácnosti - echo24.cz
+05:39,171.02,3.7,0.0,0.0,Petr Teplý: Nejlevnější energie nemusí být nejlepší. Zkoumáme férovost energetického trhu - Průmyslová ekologie
+11:17,100.0,4.7,0.0,0.0,Klid na trhu
+15:50,100.0,4.7,0.0,0.0,Klid na trhu
+18:50,100.0,3.2,0.0,0.0,Klid na trhu
+22:00,100.0,0.7,0.0,0.0,Klid na trhu
+00:44,100.0,3.3,0.0,0.0,Klid na trhu
+06:17,100.0,4.7,0.0,0.0,"Evropa roky zavírala uhelné elektrárny. Kvůli Hormuzu by jich teď potřebovala víc, než jí zbylo - VTM.cz"
+14:56,148.63,3.3,0.0,0.0,Ceny energií startují inflaci. Česko bude patřit mezi nejpostiženější - Hospodářské noviny
+21:49,148.63,5.6,0.0,0.0,Ceny energií startují inflaci. Česko bude patřit mezi nejpostiženější - Hospodářské noviny
+01:57,201.63,5.7,0.0,0.0,Ceny energií startují inflaci. Česko bude patřit mezi nejpostiženější - Hospodářské noviny
+08:40,201.63,3.0,0.0,0.0,Dodavatelé energií zatím kvůli Íránu příliš nezdražovali. To se teď změní. Pořád lze však najít nabídky s „předkrizovými“ cenami - Hospodářské noviny
+15:27,201.63,8.0,0.0,0.0,EU hledá cestu z energetické krize a chce nakupovat energie společně. Pomůže to snížit ceny? - Zprávy Kurzy.cz
+20:28,201.63,1.3,0.0,0.0,EU hledá cestu z energetické krize a chce nakupovat energie společně. Pomůže to snížit ceny? - Zprávy Kurzy.cz
+00:00,201.63,2.5,0.0,0.0,Většina dodavatelů energií zdražila. Jaké jsou nyní nejvýhodnější nabídky pro nové zákazníky? - TZB-info
+05:43,137.09,2.6,0.0,0.0,Většina dodavatelů energií zdražila. Jaké jsou nyní nejvýhodnější nabídky pro nové zákazníky? - TZB-info
+12:01,137.09,1.8,0.0,0.0,EU hledá cestu z energetické krize a chce nakupovat energie společně. Pomůže to snížit ceny? - Zprávy Kurzy.cz
+18:50,137.09,1.8,0.0,0.0,Většina dodavatelů energií zdražila. Jaké jsou nyní nejvýhodnější nabídky pro nové zákazníky? - TZB-info
+23:21,137.09,0.5,0.0,0.0,"Větrná energetika v Německu: Hodně plánů, ale ne vždy se ekonomicky vyplatí - Epoch Times"
+02:45,100.96,1.8,0.0,0.0,"Světovou ekonomiku ohrožují přetrvávající vysoké ceny energií, rekordní zadlužení veřejného sektoru i rizika spojená s rozvojem umělé inteligence - Deník N"
+09:31,100.96,4.7,0.0,0.0,"Politici by je nejraději zrušili. Nechte povolenky být, reagují experti - Ekonomický deník"
+16:51,100.96,11.6,0.0,0.0,"Politici by je nejraději zrušili. Nechte povolenky být, reagují experti - Ekonomický deník"
+21:35,100.96,12.6,0.0,0.0,"Politici by je nejraději zrušili. Nechte povolenky být, reagují experti - Ekonomický deník"
+01:24,40.03,10.5,0.0,0.0,"Politici by je nejraději zrušili. Nechte povolenky být, reagují experti - Ekonomický deník"
+07:40,40.03,13.6,0.0,0.0,"Digitalizace a umělá inteligence elektřinu nezlevní, reagují energetici na návrh Evropské komise - Ekonomický deník"
+14:40,40.03,13.6,0.0,0.0,"Plynu bude dost. Největší riziko představuje pro firmy jeho cena, říká Jindřich Švec z innogy - Hospodářské noviny"
+19:47,40.03,0.0,0.0,0.0,"Plynu bude dost. Největší riziko představuje pro firmy jeho cena, říká Jindřich Švec z innogy - Hospodářské noviny"
+23:35,40.03,15.3,0.0,0.0,"Plynu bude dost. Největší riziko představuje pro firmy jeho cena, říká Jindřich Švec z innogy - Hospodářské noviny"
+02:42,114.22,8.6,0.0,0.0,"Plynu bude dost. Největší riziko představuje pro firmy jeho cena, říká Jindřich Švec z innogy - Hospodářské noviny"
+09:03,114.22,7.6,0.0,0.0,"Plynu bude dost. Největší riziko představuje pro firmy jeho cena, říká Jindřich Švec z innogy - Hospodářské noviny"
+15:16,114.22,12.0,0.0,0.0,"Mysleli to dobře... Úřad chtěl prosadit přehlednější faktury za energie. Nakonec se k nim dostanou jen zákazníci, kteří si o ně řeknou - Hospodářské noviny"
+19:19,114.22,6.4,0.0,0.0,"Mysleli to dobře... Úřad chtěl prosadit přehlednější faktury za energie. Nakonec se k nim dostanou jen zákazníci, kteří si o ně řeknou - Hospodářské noviny"
+22:42,114.22,8.2,0.0,0.0,"Mysleli to dobře... Úřad chtěl prosadit přehlednější faktury za energie. Nakonec se k nim dostanou jen zákazníci, kteří si o ně řeknou - Hospodářské noviny"
+01:16,164.84,10.9,0.0,0.0,"Mysleli to dobře... Úřad chtěl prosadit přehlednější faktury za energie. Nakonec se k nim dostanou jen zákazníci, kteří si o ně řeknou - Hospodářské noviny"
+07:17,164.84,13.0,0.0,0.0,"Mysleli to dobře... Úřad chtěl prosadit přehlednější faktury za energie. Nakonec se k nim dostanou jen zákazníci, kteří si o ně řeknou - Hospodářské noviny"
+14:09,164.84,12.6,0.0,0.0,Uhlí mělo v Evropě končit. Teď se vrací do hry a elektrárnám vydělává víc než plyn - E15.cz
+<<<<<<< Updated upstream,,,,,
+18:53,164.84,9.9,0.0,0.0,Uhlí mělo v Evropě končit. Teď se vrací do hry a elektrárnám vydělává víc než plyn - E15.cz
+=======,,,,,
+19:52,164.84,9.2,0.0,0.0,Uhlí mělo v Evropě končit. Teď se vrací do hry a elektrárnám vydělává víc než plyn - E15.cz
+>>>>>>> Stashed changes,,,,,
+19:53,164.84,9.2,0.0,0.0,Uhlí mělo v Evropě končit. Teď se vrací do hry a elektrárnám vydělává víc než plyn - E15.cz
+20:17,164.84,9.7,0.0,0.0,Uhlí mělo v Evropě končit. Teď se vrací do hry a elektrárnám vydělává víc než plyn - E15.cz
+>>>>>>> Stashed changes
