@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from streamlit_autorefresh import st_autorefresh
 
 # --- KONFIGURACE STRÁNEK ---
@@ -24,11 +25,14 @@ if os.path.exists(file_path):
     try:
         df = pd.read_csv(file_path)
         if not df.empty:
-            current_time_str = datetime.now().strftime("%H:%M")
-            current_date_str = datetime.now().strftime("%d.%m.%Y")
+            prague_tz = ZoneInfo("Europe/Prague")
+            now_prague = datetime.now(prague_tz)
             
-            # Klasifikace dat na minulost a budoucnost podle aktuálního času
-            now_dt = datetime.now().time()
+            current_time_str = now_prague.strftime("%H:%M")
+            current_date_str = now_prague.strftime("%d.%m.%Y")
+            
+            # Klasifikace dat na minulost a budoucnost podle českého času
+            now_dt = now_prague.time()
             
             def classify_time(t_str):
                 try:
@@ -47,7 +51,7 @@ if os.path.exists(file_path):
 
             # --- HORNÍ PANEL METRIK ---
             col1, col2, col3, col4, col5 = st.columns(5)
-            col1.metric("Aktuální čas", current_time_str, current_date_str)
+            col1.metric("Aktuální čas (CZ)", current_time_str, current_date_str)
             col2.metric("Aktuální cena", f"{latest_price:.2f} €/MWh")
             col3.metric("Denní maximum", f"{max_price:.2f} €/MWh")
             col4.metric("Denní minimum", f"{min_price:.2f} €/MWh")
@@ -60,7 +64,7 @@ if os.path.exists(file_path):
 
             with left_col:
                 st.subheader("📈 Hodinová cenová křivka dne")
-                st.markdown("Kompletní trajektorie reálných a predikovaných cen elektřiny na burze.")
+                st.markdown("Kompletní trajektorie reálných a predikovaných cen elektřiny na burze (v českém čase).")
                 
                 # Vykreslení hlavního grafu
                 chart_data = df.set_index('time')[['price']]
