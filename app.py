@@ -15,7 +15,7 @@ st.set_page_config(
 st_autorefresh(interval=30000, key="datarefresh")
 
 st.title("⚡ SECOND FOUNDATION: BESS CONTROL CENTER (1 MWh / 500 kW)")
-st.markdown("Reálný dispečink bateriového kontejneru s chronologickou fyzikální simulací rychlosti nabíjení.")
+st.markdown("Reálný dispečink bateriového kontejneru s pokročilým výkonovým grafem a MPC řízením.")
 
 file_path = "market_history.csv"
 
@@ -39,7 +39,6 @@ if os.path.exists(file_path):
 
             df['status'] = df['time'].apply(classify_time)
             
-            # Vyhledání aktuálního řádku
             latest_row = df.iloc[-1]
             for idx, row in df.iterrows():
                 try:
@@ -67,20 +66,19 @@ if os.path.exists(file_path):
             
             st.markdown("---")
 
-            # --- SPOJENÝ GRAF: CENA + VÝKON BATERIE ---
-            st.subheader("📊 Integrovaný dispečerský graf: Cena elektřiny vs. Výkon BESS")
-            st.markdown("*Modrá čára ukazuje vývoj ceny (€/MWh) na burze. Sloupce znázorňují aktivitu kontejneru: zelená = nabíjení (příkon), červená = vybíjení (dodávka do sítě).*")
+            # --- INTEGROVANÝ DISPEČERSKÝ GRAF S NABÍJECÍ KŘIVKOU ---
+            st.subheader("📊 Integrovaný dispečerský graf: Cena elektřiny vs. Nabíjecí křivka výkonu")
+            st.markdown("*Modrá čára znázorňuje vývoj tržní ceny (€/MWh). Zelenofialová/zeleno-červená plocha ukazuje nabíjecí a vybíjecí výkon střídače v čase.*")
 
-            # Vytvoření pokročilého překrývajícího se grafu (Dual-Axis) přes Altair
             base = alt.Chart(df).encode(x=alt.X('time:N', title='Hodina dne'))
 
             price_line = base.mark_line(strokeWidth=3, color='#1f77b4').encode(
                 y=alt.Y('price:Q', title='Cena elektřiny (€/MWh)')
             )
 
-            # Opraveno alt.Condition -> alt.condition (s malým 'c')
-            power_bars = base.mark_bar(opacity=0.75, width=15).encode(
-                y=alt.Y('bess_power_kw:Q', title='BESS Výkon střídače (kW)'),
+            # Změna z sloupců na plynulý nabíjecí graf (Area / Line chart)
+            power_area = base.mark_area(opacity=0.6, interpolate='monotone').encode(
+                y=alt.Y('bess_power_kw:Q', title='BESS Výkon (kW) [Nabíjení > 0, Vybíjení < 0]'),
                 color=alt.condition(
                     alt.datum.bess_power_kw > 0,
                     alt.value('#2ca02c'), # Zelená pro nabíjení
@@ -89,7 +87,7 @@ if os.path.exists(file_path):
                 tooltip=['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh']
             )
 
-            combined_chart = alt.layer(price_line, power_bars).resolve_scale(
+            combined_chart = alt.layer(price_line, power_area).resolve_scale(
                 y='independent'
             ).properties(
                 height=420
@@ -99,7 +97,7 @@ if os.path.exists(file_path):
 
             st.markdown("---")
 
-            # --- DVOUSLOUPCOVÝ PŘEHLED (STATUS + VÝVOJ SoC) ---
+            # --- DVOUSLOUPCOVÝ PŘEHLED ---
             left_col, right_col = st.columns([1, 1])
 
             with left_col:
@@ -111,18 +109,18 @@ if os.path.exists(file_path):
                 st.subheader("🚨 Aktuální stav kontejneru")
                 
                 if "NABÍJENÍ" in str(current_action):
-                    st.success(f"🟢 **AKTIVNĚ NABÍJÍ**\nPříkon do baterie: **+{current_power:.1f} kW**")
+                    st.success(f"🟢 **AKTIVNĚ NABÍJÍ**\nPříkon: **+{current_power:.1f} kW**")
                 elif "VYBÍJENÍ" in str(current_action):
-                    st.warning(f"🔴 **AKTIVNĚ VYBÍJÍ**\nDodávka do sítě: **{current_power:.1f} kW**")
+                    st.warning(f"🔴 **AKTIVNĚ VYBÍJÍ**\nVýkon do sítě: **{current_power:.1f} kW**")
                 else:
-                    st.info("🔵 **IDLE (Pohotovost)**\nČeká na optimální cenové okno v síti.")
+                    st.info("🔵 **IDLE (Pohotovost)**\nČeká na optimální cenový extrem.")
 
                 st.markdown("#### Fyzické parametry kontejneru:")
                 st.progress(int(soc_percent))
                 st.write(f"• **Kapacita v baterii:** {current_soc:.1f} kWh / 1000 kWh")
                 st.write(f"• **Rychlost střídače:** 500 kW limit")
                 st.write(f"• **Ztráty účinnosti:** 88% celkově (Round-trip)")
-                st.success("🤖 Chronologický fyzikální model aktivní.")
+                st.success("🤖 MPC predikční model s čekáním na peaky aktivní.")
 
             st.markdown("---")
 
