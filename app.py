@@ -1,84 +1,101 @@
 import streamlit as st
 import pandas as pd
 import os
+from datetime import datetime
 from streamlit_autorefresh import st_autorefresh
 
-# 1. KONFIGURACE STRÁNKY
-st.set_page_config(page_title="CZ Second Foundation Live", layout="wide", page_icon="🇨🇿")
+# --- KONFIGURACE STRÁNEK ---
+st.set_page_config(
+    page_title="CZ Energy Trading Terminal | Second Foundation",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
 
-# 2. AUTO-REFRESH (Stránka se sama obnoví každých 30 sekund)
-# To zajistí, že uvidíš nová data hned, jak je robot zapíše
+# Automatický refresh dat každých 30 sekund
 st_autorefresh(interval=30000, key="datarefresh")
 
-# Profesionální tmavý vzhled
-st.markdown("""
-    <style>
-    .main { background-color: #0e1117; }
-    .stMetric { background-color: #161b22; border-radius: 10px; padding: 15px; border: 1px solid #30363d; }
-    </style>
-    """, unsafe_allow_html=True)
-
-st.title("🇨🇿 CZ Second Foundation: LIVE TERMINAL")
+# --- HLAVIČKA TERMINÁLU ---
+st.title("🇨🇿 Second Foundation: ENERGY TRADING TERMINAL")
+st.markdown("Profesionální přehled reálného trhu s elektřinou pro českou zónu (DE-LU / CZE) s hodinovou křivkou a predikcí.")
 
 file_path = "market_history.csv"
 
 if os.path.exists(file_path):
-    df = pd.read_csv(file_path)
-    
-    if not df.empty:
-        latest = df.iloc[-1]
-        
-        # Načtení dat
-        cena = latest['price']
-        vitr = latest['wind']
-        slunce = latest.get('solar', 0)
-        sentiment = latest.get('news_score', 0)
-        titulek = latest.get('headline', "Skenuji český trh...")
-
-        # METRIKY
-        col1, col2, col3, col4 = st.columns(4)
-        col1.metric("Cena v ČR", f"{cena} EUR/MWh")
-        col2.metric("Vítr (Praha)", f"{vitr} km/h")
-        col3.metric("Slunce", f"{slunce} W/m²")
-        col4.metric("AI Sentiment", sentiment)
-
-        st.markdown("---")
-
-        # ANALÝZA
-        st.subheader("🤖 AI Analýza a Doporučení")
-        c1, c2 = st.columns([1, 1])
-        with c1:
-            if sentiment > 1 or (cena > 150 and vitr < 10):
-                st.error("🚀 DOPORUČENÍ: NAKOUPIT (BUY)")
-            elif vitr > 25 or slunce > 500 or sentiment < -1:
-                st.success("🚨 DOPORUČENÍ: PRODAT (SELL)")
-            else:
-                st.info("⚖️ DOPORUČENÍ: DRŽET (HOLD)")
+    try:
+        df = pd.read_csv(file_path)
+        if not df.empty:
+            current_time_str = datetime.now().strftime("%H:%M")
+            current_date_str = datetime.now().strftime("%d.%m.%Y")
             
-            st.caption(f"Poslední aktualizace terminálu: {latest['time']}")
+            # Klasifikace dat na minulost a budoucnost podle aktuálního času
+            now_dt = datetime.now().time()
+            
+            def classify_time(t_str):
+                try:
+                    t_obj = datetime.strptime(str(t_str).strip(), "%H:%M").time()
+                    return "Minulost" if t_obj <= now_dt else "Budoucnost (Predikce)"
+                except:
+                    return "Neznámé"
 
-        with c2:
-            st.write("### 📰 Monitoring médií:")
-            st.info(f"{titulek}")
+            df['status'] = df['time'].apply(classify_time)
+            
+            # Výpočet klíčových tržních metrik dne
+            latest_price = df.iloc[-1]['price'] if 'price' in df.columns else 0
+            max_price = df['price'].max() if 'price' in df.columns else 0
+            min_price = df['price'].min() if 'price' in df.columns else 0
+            avg_price = df['price'].mean() if 'price' in df.columns else 0
 
-        # LIVE GRAF
-        st.markdown("---")
-        st.subheader("📈 Real-time cenová křivka")
-        
-        if len(df) > 1:
-            # Vykreslení grafu
-            st.area_chart(df.set_index('time')['price'], color="#00ff00")
+            # --- HORNÍ PANEL METRIK ---
+            col1, col2, col3, col4, col5 = st.columns(5)
+            col1.metric("Aktuální čas", current_time_str, current_date_str)
+            col2.metric("Aktuální cena", f"{latest_price:.2f} €/MWh")
+            col3.metric("Denní maximum", f"{max_price:.2f} €/MWh")
+            col4.metric("Denní minimum", f"{min_price:.2f} €/MWh")
+            col5.metric("Průměrná cena", f"{avg_price:.2f} €/MWh")
+            
+            st.markdown("---")
+
+            # --- HLAVNÍ SEKCE: GRAF A TELEMETRIE ---
+            left_col, right_col = st.columns([3, 1])
+
+            with left_col:
+                st.subheader("📈 Hodinová cenová křivka dne")
+                st.markdown("Kompletní trajektorie reálných a predikovaných cen elektřiny na burze.")
+                
+                # Vykreslení hlavního grafu
+                chart_data = df.set_index('time')[['price']]
+                st.line_chart(chart_data, use_container_width=True)
+
+            with right_col:
+                st.subheader("📰 Tržní přehled")
+                latest_headline = df.iloc[-1].get('headline', 'Stabilní situace na trhu.') if 'headline' in df.columns else 'Sleduji trh...'
+                wind_speed = df.iloc[-1].get('wind', 0) if 'wind' in df.columns else 0
+                
+                st.info(f"**Hlavní zpráva:**\n\n{latest_headline}")
+                st.metric("Vítr (Praha)", f"{wind_speed} km/h")
+                st.success("🤖 Systém běží automatizovaně.")
+
+            st.markdown("---")
+
+            # --- DETAILNÍ TABULKOVÝ HARMONOGRAM ---
+            st.subheader("📋 Detailní hodinový harmonogram")
+            
+            tab1, tab2 = st.tabs(["Všechny hodinové bloky", "Filtrovaný pohled"])
+            
+            with tab1:
+                st.dataframe(df[['time', 'price', 'wind', 'status', 'headline']], use_container_width=True, height=300)
+            
+            with tab2:
+                filter_status = st.selectbox("Zobrazit sekci:", ["Vše", "Minulost", "Budoucnost (Predikce)"])
+                if filter_status == "Vše":
+                    st.dataframe(df[['time', 'price', 'wind', 'status', 'headline']], use_container_width=True)
+                else:
+                    filtered_df = df[df['status'] == filter_status]
+                    st.dataframe(filtered_df[['time', 'price', 'wind', 'status', 'headline']], use_container_width=True)
+
         else:
-            st.info("Sběr dat zahájen. Čekám na další body pro vykreslení křivky...")
-
-    else:
-        st.warning("Databáze je prázdná. Spusťte bota v GitHub Actions.")
+            st.warning("⚠️ Databáze je zatím prázdná. Čekám na první data z engine.py.")
+    except Exception as e:
+        st.error(f"Chyba při vykreslování terminálu: {e}")
 else:
-    st.error("❌ Soubor s daty nebyl nalezen.")
-
-# SIDEBAR
-st.sidebar.title("Terminál v2.0")
-st.sidebar.write("Stav: **ONLINE - LIVE**")
-st.sidebar.write("Obnovování: **30s**")
-st.sidebar.markdown("---")
-st.sidebar.caption("Tento dashboard se automaticky aktualizuje. Nechte ho otevřený pro sledování trhu.")
+    st.warning("⚠️ Soubor 'market_history.csv' nebyl nalezen. Spusťte workflow v GitHub Actions.")
