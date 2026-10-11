@@ -1,97 +1,97 @@
-time,price,wind,solar,news_score,headline
-00:00,142.0,15.0,0.0,0,Trh s elektřinou je stabilní.
-00:15,117.7,15.0,0.0,0,Trh s elektřinou je stabilní.
-00:30,103.39,15.0,0.0,0,Trh s elektřinou je stabilní.
-00:45,97.2,15.0,0.0,0,Trh s elektřinou je stabilní.
-01:00,111.0,15.0,0.0,0,Trh s elektřinou je stabilní.
-01:15,104.87,15.0,0.0,0,Trh s elektřinou je stabilní.
-01:30,103.89,15.0,0.0,0,Trh s elektřinou je stabilní.
-01:45,96.43,15.0,0.0,0,Trh s elektřinou je stabilní.
-02:00,104.8,15.0,0.0,0,Trh s elektřinou je stabilní.
-02:15,98.85,15.0,0.0,0,Trh s elektřinou je stabilní.
-02:30,100.96,15.0,0.0,0,Trh s elektřinou je stabilní.
-02:45,98.79,15.0,0.0,0,Trh s elektřinou je stabilní.
-03:00,97.48,15.0,0.0,0,Trh s elektřinou je stabilní.
-03:15,99.53,15.0,0.0,0,Trh s elektřinou je stabilní.
-03:30,102.42,15.0,0.0,0,Trh s elektřinou je stabilní.
-03:45,100.45,15.0,0.0,0,Trh s elektřinou je stabilní.
-04:00,101.07,15.0,0.0,0,Trh s elektřinou je stabilní.
-04:15,102.39,15.0,0.0,0,Trh s elektřinou je stabilní.
-04:30,103.4,15.0,0.0,0,Trh s elektřinou je stabilní.
-04:45,103.32,15.0,0.0,0,Trh s elektřinou je stabilní.
-05:00,102.39,15.0,0.0,0,Trh s elektřinou je stabilní.
-05:15,98.77,15.0,0.0,0,Trh s elektřinou je stabilní.
-05:30,100.59,15.0,0.0,0,Trh s elektřinou je stabilní.
-05:45,102.81,15.0,0.0,0,Trh s elektřinou je stabilní.
-06:00,99.04,15.0,0.0,0,Trh s elektřinou je stabilní.
-06:15,103.01,15.0,0.0,0,Trh s elektřinou je stabilní.
-06:30,106.66,15.0,0.0,0,Trh s elektřinou je stabilní.
-06:45,113.29,15.0,0.0,0,Trh s elektřinou je stabilní.
-07:00,121.59,15.0,0.0,0,Trh s elektřinou je stabilní.
-07:15,125.99,15.0,0.0,0,Trh s elektřinou je stabilní.
-07:30,120.6,15.0,0.0,0,Trh s elektřinou je stabilní.
-07:45,125.79,15.0,0.0,0,Trh s elektřinou je stabilní.
-08:00,134.91,15.0,0.0,0,Trh s elektřinou je stabilní.
-08:15,135.17,15.0,0.0,0,Trh s elektřinou je stabilní.
-08:30,138.0,15.0,0.0,0,Trh s elektřinou je stabilní.
-08:45,133.29,15.0,0.0,0,Trh s elektřinou je stabilní.
-09:00,125.97,15.0,0.0,0,Trh s elektřinou je stabilní.
-09:15,116.51,15.0,0.0,0,Trh s elektřinou je stabilní.
-09:30,100.0,15.0,0.0,0,Trh s elektřinou je stabilní.
-09:45,83.98,15.0,0.0,0,Trh s elektřinou je stabilní.
-10:00,99.18,15.0,0.0,0,Trh s elektřinou je stabilní.
-10:15,78.6,15.0,0.0,0,Trh s elektřinou je stabilní.
-10:30,74.22,15.0,0.0,0,Trh s elektřinou je stabilní.
-10:45,52.09,15.0,0.0,0,Trh s elektřinou je stabilní.
-11:00,44.51,15.0,0.0,0,Trh s elektřinou je stabilní.
-11:15,29.93,15.0,0.0,0,Trh s elektřinou je stabilní.
-11:30,25.0,15.0,0.0,0,Trh s elektřinou je stabilní.
-11:45,32.84,15.0,0.0,0,Trh s elektřinou je stabilní.
-12:00,23.66,15.0,0.0,0,Trh s elektřinou je stabilní.
-12:15,24.77,15.0,0.0,0,Trh s elektřinou je stabilní.
-12:30,22.25,15.0,0.0,0,Trh s elektřinou je stabilní.
-12:45,17.32,15.0,0.0,0,Trh s elektřinou je stabilní.
-13:00,14.62,15.0,0.0,0,Trh s elektřinou je stabilní.
-13:15,13.78,15.0,0.0,0,Trh s elektřinou je stabilní.
-13:30,14.55,15.0,0.0,0,Trh s elektřinou je stabilní.
-13:45,18.66,15.0,0.0,0,Trh s elektřinou je stabilní.
-14:00,17.35,15.0,0.0,0,Trh s elektřinou je stabilní.
-14:15,23.58,15.0,0.0,0,Trh s elektřinou je stabilní.
-14:30,33.63,15.0,0.0,0,Trh s elektřinou je stabilní.
-14:45,46.53,15.0,0.0,0,Trh s elektřinou je stabilní.
-15:00,38.81,15.0,0.0,0,Trh s elektřinou je stabilní.
-15:15,55.83,15.0,0.0,0,Trh s elektřinou je stabilní.
-15:30,74.01,15.0,0.0,0,Trh s elektřinou je stabilní.
-15:45,98.02,15.0,0.0,0,Trh s elektřinou je stabilní.
-16:00,93.75,15.0,0.0,0,Trh s elektřinou je stabilní.
-16:15,103.5,15.0,0.0,0,Trh s elektřinou je stabilní.
-16:30,111.88,15.0,0.0,0,Trh s elektřinou je stabilní.
-16:45,142.45,15.0,0.0,0,Trh s elektřinou je stabilní.
-17:00,149.41,15.0,0.0,0,Trh s elektřinou je stabilní.
-17:15,189.74,15.0,0.0,0,Trh s elektřinou je stabilní.
-17:30,215.64,15.0,0.0,0,Trh s elektřinou je stabilní.
-17:45,231.67,15.0,0.0,0,Trh s elektřinou je stabilní.
-18:00,216.93,15.0,0.0,0,Trh s elektřinou je stabilní.
-18:15,228.39,15.0,0.0,0,Trh s elektřinou je stabilní.
-18:30,228.8,15.0,0.0,0,Trh s elektřinou je stabilní.
-18:45,238.16,15.0,0.0,0,Trh s elektřinou je stabilní.
-19:00,223.63,15.0,0.0,0,Trh s elektřinou je stabilní.
-19:15,234.01,15.0,0.0,0,Trh s elektřinou je stabilní.
-19:30,239.92,15.0,0.0,0,Trh s elektřinou je stabilní.
-19:45,241.59,15.0,0.0,0,Trh s elektřinou je stabilní.
-20:00,235.46,15.0,0.0,0,Trh s elektřinou je stabilní.
-20:15,234.03,15.0,0.0,0,Trh s elektřinou je stabilní.
-20:30,231.22,15.0,0.0,0,Trh s elektřinou je stabilní.
-20:45,215.77,15.0,0.0,0,Trh s elektřinou je stabilní.
-21:00,225.52,15.0,0.0,0,Trh s elektřinou je stabilní.
-21:15,214.99,15.0,0.0,0,Trh s elektřinou je stabilní.
-21:30,212.34,15.0,0.0,0,Trh s elektřinou je stabilní.
-21:45,205.02,15.0,0.0,0,Trh s elektřinou je stabilní.
-22:00,205.01,15.0,0.0,0,Trh s elektřinou je stabilní.
-22:15,202.13,15.0,0.0,0,Trh s elektřinou je stabilní.
-22:30,200.07,15.0,0.0,0,Trh s elektřinou je stabilní.
-22:45,188.53,15.0,0.0,0,Trh s elektřinou je stabilní.
-23:00,197.3,15.0,0.0,0,Trh s elektřinou je stabilní.
-23:15,188.01,15.0,0.0,0,Trh s elektřinou je stabilní.
-23:30,180.29,15.0,0.0,0,Trh s elektřinou je stabilní.
-23:45,164.84,15.0,0.0,0,Trh s elektřinou je stabilní.
+time,price,bess_action,bess_power_kw,battery_soc_kwh,hourly_cash_eur,wind,solar,headline
+00:00,142.0,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+00:15,117.7,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+00:30,103.39,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+00:45,97.2,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+01:00,111.0,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+01:15,104.87,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+01:30,103.89,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+01:45,96.43,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+02:00,104.8,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+02:15,98.85,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+02:30,100.96,DISCHARGE,-23.23326078587434,51.53347842825127,2.3456300089418733,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+02:45,98.79,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+03:00,97.48,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+03:15,99.53,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+03:30,102.42,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+03:45,100.45,DISCHARGE,-500.0,450.0,50.225,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+04:00,101.07,DISCHARGE,-1.4385302774438051,50.09494815080747,0.14539225514124537,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+04:15,102.39,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+04:30,103.4,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+04:45,103.32,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+05:00,102.39,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+05:15,98.77,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+05:30,100.59,DISCHARGE,-375.2332607858744,74.76673921412561,37.7447137024511,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+05:45,102.81,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+06:00,99.04,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+06:15,103.01,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+06:30,106.66,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+06:45,113.29,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+07:00,121.59,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+07:15,125.99,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+07:30,120.6,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+07:45,125.79,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+08:00,134.91,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+08:15,135.17,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+08:30,138.0,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+08:45,133.29,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+09:00,125.97,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+09:15,116.51,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+09:30,100.0,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+09:45,83.98,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+10:00,99.18,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+10:15,78.6,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+10:30,74.22,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+10:45,52.09,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+11:00,44.51,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+11:15,29.93,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+11:30,25.0,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+11:45,32.84,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+12:00,23.66,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+12:15,24.77,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+12:30,22.25,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+12:45,17.32,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+13:00,14.62,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+13:15,13.78,CHARGE,479.7016118001235,950.0,-6.6102882106057015,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+13:30,14.55,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+13:45,18.66,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+14:00,17.35,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+14:15,23.58,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+14:30,33.63,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+14:45,46.53,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+15:00,38.81,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+15:15,55.83,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+15:30,74.01,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+15:45,98.02,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+16:00,93.75,IDLE,0.0,950.0,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+16:15,103.5,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+16:30,111.88,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+16:45,142.45,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+17:00,149.41,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+17:15,189.74,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+17:30,215.64,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+17:45,231.67,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+18:00,216.93,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+18:15,228.39,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+18:30,228.8,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+18:45,238.16,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+19:00,223.63,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+19:15,234.01,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+19:30,239.92,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+19:45,241.59,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+20:00,235.46,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+20:15,234.03,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+20:30,231.22,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+20:45,215.77,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+21:00,225.52,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+21:15,214.99,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+21:30,212.34,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+21:45,205.02,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+22:00,205.01,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+22:15,202.13,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+22:30,200.07,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+22:45,188.53,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+23:00,197.3,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+23:15,188.01,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+23:30,180.29,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
+23:45,164.84,IDLE,0.0,50.09494815080747,0.0,15.0,0.0,BESS kontejner v aktivním arbitrážním režimu.
