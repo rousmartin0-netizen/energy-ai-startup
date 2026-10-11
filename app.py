@@ -15,7 +15,7 @@ st.set_page_config(
 st_autorefresh(interval=30000, key="datarefresh")
 
 st.title("⚡ SECOND FOUNDATION: BESS CONTROL CENTER (1 MWh / 500 kW)")
-st.markdown("Reálný dispečink bateriového kontejneru s pokročilým výkonovým grafem a MPC řízením.")
+st.markdown("Reálný dispečink bateriového kontejneru s plynulou výkonovou křivkou a MPC řízením.")
 
 file_path = "market_history.csv"
 
@@ -38,6 +38,10 @@ if os.path.exists(file_path):
                     return "Neznámé"
 
             df['status'] = df['time'].apply(classify_time)
+            
+            # Příprava oddělených sérií pro plynulé křivky (nabíjení > 0, vybíjení < 0)
+            df['charge_power'] = df['bess_power_kw'].apply(lambda x: max(0, x))
+            df['discharge_power'] = df['bess_power_kw'].apply(lambda x: min(0, x))
             
             latest_row = df.iloc[-1]
             for idx, row in df.iterrows():
@@ -66,9 +70,9 @@ if os.path.exists(file_path):
             
             st.markdown("---")
 
-            # --- INTEGROVANÝ DISPEČERSKÝ GRAF S NABÍJECÍ KŘIVKOU ---
-            st.subheader("📊 Integrovaný dispečerský graf: Cena elektřiny vs. Nabíjecí křivka výkonu")
-            st.markdown("*Modrá čára znázorňuje vývoj tržní ceny (€/MWh). Zelenofialová/zeleno-červená plocha ukazuje nabíjecí a vybíjecí výkon střídače v čase.*")
+            # --- INTEGROVANÝ DISPEČERSKÝ GRAF S PLYNULÝMI KŘIVKAMI ---
+            st.subheader("📊 Integrovaný dispečerský graf: Cena elektřiny vs. BESS Výkonová Křivka")
+            st.markdown("*Modrá čára znázorňuje vývoj tržní ceny (€/MWh). Plynulá barevná křivka (zelená = nabíjení, červená = vybíjení) ukazuje výkon střídače v čase.*")
 
             base = alt.Chart(df).encode(x=alt.X('time:N', title='Hodina dne'))
 
@@ -76,18 +80,21 @@ if os.path.exists(file_path):
                 y=alt.Y('price:Q', title='Cena elektřiny (€/MWh)')
             )
 
-            # Změna z sloupců na plynulý nabíjecí graf (Area / Line chart)
-            power_area = base.mark_area(opacity=0.6, interpolate='monotone').encode(
-                y=alt.Y('bess_power_kw:Q', title='BESS Výkon (kW) [Nabíjení > 0, Vybíjení < 0]'),
-                color=alt.condition(
-                    alt.datum.bess_power_kw > 0,
-                    alt.value('#2ca02c'), # Zelená pro nabíjení
-                    alt.value('#d62728')  # Červená pro vybíjení
-                ),
+            # Plynulá zelená křivka pro nabíjení (nad nulou)
+            charge_area = base.mark_area(interpolate='monotone', fill='#2ca02c', opacity=0.5).encode(
+                y=alt.Y('charge_power:Q', title='BESS Výkon (kW) [Nabíjení > 0, Vybíjení < 0]'),
+                y2=alt.Constant(0),
                 tooltip=['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh']
             )
 
-            combined_chart = alt.layer(price_line, power_area).resolve_scale(
+            # Plynulá červená křivka pro vybíjení (pod nulou)
+            discharge_area = base.mark_area(interpolate='monotone', fill='#d62728', opacity=0.5).encode(
+                y=alt.Y('discharge_power:Q', title=''),
+                y2=alt.Constant(0),
+                tooltip=['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh']
+            )
+
+            combined_chart = alt.layer(price_line, charge_area, discharge_area).resolve_scale(
                 y='independent'
             ).properties(
                 height=420
