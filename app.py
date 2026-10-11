@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
+import altair as alt
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from streamlit_autorefresh import st_autorefresh
@@ -14,7 +15,7 @@ st.set_page_config(
 st_autorefresh(interval=30000, key="datarefresh")
 
 st.title("⚡ SECOND FOUNDATION: BESS CONTROL CENTER (1 MWh / 500 kW)")
-st.markdown("Živý dispečink velkokapacitního bateriového kontejneru na českém spotovém trhu.")
+st.markdown("Reálný dispečink bateriového kontejneru s chronologickou fyzikální simulací rychlosti nabíjení.")
 
 file_path = "market_history.csv"
 
@@ -38,7 +39,7 @@ if os.path.exists(file_path):
 
             df['status'] = df['time'].apply(classify_time)
             
-            # Vyhledání nejbližšího aktuálního řádku podle času
+            # Vyhledání aktuálního řádku
             latest_row = df.iloc[-1]
             for idx, row in df.iterrows():
                 try:
@@ -56,54 +57,76 @@ if os.path.exists(file_path):
             current_action = latest_row.get('bess_action', 'IDLE')
             total_profit = df['cumulative_profit_eur'].iloc[-1] if 'cumulative_profit_eur' in df.columns else 0
 
-            # --- HORNÍ PANEL ŘÍDÍCÍCH METRIK ---
+            # --- HORNÍ PANEL METRIK ---
             col1, col2, col3, col4, col5 = st.columns(5)
             col1.metric("Dispečerský čas", current_time_str, current_date_str)
-            col2.metric("Aktuální tržní cena", f"{latest_price:.2f} €/MWh")
+            col2.metric("Tržní cena", f"{latest_price:.2f} €/MWh")
             col3.metric("Množství energie v BESS", f"{current_soc:.1f} kWh", f"{soc_percent:.1f}% kapacity")
-            col4.metric("Aktuální výkon střídače", f"{current_power:+.1f} kW", "Kladné=Nabíjí / Záporné=Vybíjí")
-            col5.metric("Celkový denní čistý P&L", f"{total_profit:+.2f} EUR", "Arbitrážní výnos")
+            col4.metric("Výkon střídače", f"{current_power:+.1f} kW", "Max 500 kW")
+            col5.metric("Celkový denní P&L", f"{total_profit:+.2f} EUR", "Čistá arbitráž")
             
             st.markdown("---")
 
-            # --- HLAVNÍ VIZUALIZACE ---
-            left_col, right_col = st.columns([2, 1])
+            # --- SPOJENÝ GRAF: CENA + VÝKON BATERIE ---
+            st.subheader("📊 Integrovaný dispečerský graf: Cena elektřiny vs. Výkon BESS")
+            st.markdown("*Modrá čára ukazuje vývoj ceny (€/MWh) na burze. Sloupce znázorňují aktivitu kontejneru: zelená = nabíjení (příkon), červená = vybíjení (dodávka do sítě).*")
 
-            with left_col:
-                st.subheader("📊 Vizualizace stavu nabití (SoC) během dne")
-                st.markdown("*Graf ukazuje, jak se kontejner plní (nabíjí při levné/záporné ceně) a vyprazdňuje (prodává ve špičce).*")
-                
-                # Vizualizace 1: Vývoj kapacity baterie v čase
-                soc_chart_data = df.set_index('time')[['battery_soc_kwh']]
-                st.line_chart(soc_chart_data, use_container_width=True)
+            # Vytvoření pokročilého překrývajícího se grafu (Dual-Axis) přes Altair
+            base = alt.Chart(df).encode(x=alt.X('time:N', title='Hodina dne'))
 
-                st.subheader("📈 Tržní ceny & Výkonové toky")
-                price_chart_data = df.set_index('time')[['price']]
-                st.line_chart(price_chart_data, use_container_width=True)
+            price_line = base.mark_line(strokeWidth=3, color='#1f77b4').encode(
+                y=alt.Y('price:Q', title='Cena elektřiny (€/MWh)')
+            )
 
-            with right_col:
-                st.subheader("🚨 Živý stav kontejneru")
-                
-                if "NABÍJENÍ" in str(current_action):
-                    st.success("🟢 Stav: **AKTIVNĚ NABÍJÍ**\nNakupuje levnou elektřinu do zásoby.")
-                elif "VYBÍJENÍ" in str(current_action):
-                    st.warning("🔴 Stav: **AKTIVNĚ VYBÍJÍ**\nProdává drahou elektřinu do sítě.")
-                else:
-                    st.info("🔵 Stav: **IDLE (Pohotovost)**\nČeká na optimální cenové okno.")
+            power_bars = base.mark_bar(opacity=0.75, width=15).encode(
+                y=alt.Y('bess_power_kw:Q', title='BESS Výkon střídače (kW)'),
+                color=alt.Condition(
+                    alt.datum.bess_power_kw > 0,
+                    alt.value('#2ca02c'), # Zelená pro nabíjení
+                    alt.value('#d62728')  # Červená pro vybíjení
+                ),
+                tooltip=['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh']
+            )
 
-                st.markdown("#### Fyzické parametry:")
-                st.progress(int(soc_percent))
-                st.write(f"• **Kapacita:** {current_soc:.1f} / 1000 kWh")
-                st.write(f"• **Invertor:** Max 500 kW")
-                st.write(f"• **Efektivita kontejneru:** 88%")
-                
-                st.markdown("---")
-                st.info("💡 **Strategie:** Automatická arbitráž s plnou znalostí denní křivky (Perfect Foresight).")
+            combined_chart = alt.layer(price_line, power_bars).resolve_scale(
+                y='independent'
+            ).properties(
+                height=420
+            )
+
+            st.altair_chart(combined_chart, use_container_width=True)
 
             st.markdown("---")
 
-            # --- BUDOUCÍ PLÁN A DISPEČERSKÝ HARMONOGRAM ---
-            st.subheader("🔮 Plán dispečinku pro budoucí hodiny a kompletní log")
+            # --- DVOUSLOUPCOVÝ PŘEHLED (STATUS + VÝVOJ SoC) ---
+            left_col, right_col = st.columns([1, 1])
+
+            with left_col:
+                st.subheader("🔋 Vývoj stavu nabití (SoC v čase)")
+                soc_chart_data = df.set_index('time')[['battery_soc_kwh']]
+                st.line_chart(soc_chart_data, use_container_width=True)
+
+            with right_col:
+                st.subheader("🚨 Aktuální stav kontejneru")
+                
+                if "NABÍJENÍ" in str(current_action):
+                    st.success(f"🟢 **AKTIVNĚ NABÍJÍ**\nPříkon do baterie: **+{current_power:.1f} kW**")
+                elif "VYBÍJENÍ" in str(current_action):
+                    st.warning(f"🔴 **AKTIVNĚ VYBÍJÍ**\nDodávka do sítě: **{current_power:.1f} kW**")
+                else:
+                    st.info("🔵 **IDLE (Pohotovost)**\nČeká na optimální cenové okno v síti.")
+
+                st.markdown("#### Fyzické parametry kontejneru:")
+                st.progress(int(soc_percent))
+                st.write(f"• **Kapacita v baterii:** {current_soc:.1f} kWh / 1000 kWh")
+                st.write(f"• **Rychlost střídače:** 500 kW limit")
+                st.write(f"• **Ztráty účinnosti:** 88% celkově (Round-trip)")
+                st.success("🤖 Chronologický fyzikální model aktivní.")
+
+            st.markdown("---")
+
+            # --- DISPEČERSKÝ HARMONOGRAM ---
+            st.subheader("🔮 Harmonogram a dispečerský log")
             
             tab1, tab2, tab3 = st.tabs(["Budoucí plán (Predikce)", "Minulost (Uplynulé hodiny)", "Kompletní log dne"])
             
@@ -112,7 +135,7 @@ if os.path.exists(file_path):
                 if not future_df.empty:
                     st.dataframe(future_df[['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh', 'hourly_cash_eur']], use_container_width=True)
                 else:
-                    st.info("Pro dnešní den již vypršely budoucí hodinové bloky. Čeká se na zítřejší aukci.")
+                    st.info("Pro dnešní den již nejsou k dispozici budoucí hodinové bloky.")
             
             with tab2:
                 past_df = df[df['status'] == "Minulost"]
