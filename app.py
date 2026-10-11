@@ -5,19 +5,16 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 from streamlit_autorefresh import st_autorefresh
 
-# --- KONFIGURACE STRÁNEK ---
 st.set_page_config(
-    page_title="CZ Energy Trading Terminal | Second Foundation",
+    page_title="BESS Trading Terminal | Second Foundation",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
 
-# Automatický refresh dat každých 30 sekund
 st_autorefresh(interval=30000, key="datarefresh")
 
-# --- HLAVIČKA TERMINÁLU ---
-st.title("🇨🇿 Second Foundation: ENERGY TRADING TERMINAL")
-st.markdown("Profesionální přehled reálného trhu s elektřinou pro českou zónu (DE-LU / CZE) s hodinovou křivkou a predikcí.")
+st.title("⚡ SECOND FOUNDATION: BESS TRADING TERMINAL (1 MWh / 500 kW)")
+st.markdown("Fyzikálně verifikovaná simulace velkokapacitního bateriového kontejneru na spotovém trhu (DE-LU / CZE).")
 
 file_path = "market_history.csv"
 
@@ -31,9 +28,7 @@ if os.path.exists(file_path):
             current_time_str = now_prague.strftime("%H:%M")
             current_date_str = now_prague.strftime("%d.%m.%Y")
             
-            # Klasifikace dat na minulost a budoucnost podle českého času
             now_dt = now_prague.time()
-            
             def classify_time(t_str):
                 try:
                     t_obj = datetime.strptime(str(t_str).strip(), "%H:%M").time()
@@ -43,63 +38,69 @@ if os.path.exists(file_path):
 
             df['status'] = df['time'].apply(classify_time)
             
-            # Výpočet klíčových tržních metrik dne
+            # Finanční a fyzikální metriky BESS
             latest_price = df.iloc[-1]['price'] if 'price' in df.columns else 0
-            max_price = df['price'].max() if 'price' in df.columns else 0
-            min_price = df['price'].min() if 'price' in df.columns else 0
-            avg_price = df['price'].mean() if 'price' in df.columns else 0
+            total_profit = df['hourly_cash_eur'].sum() if 'hourly_cash_eur' in df.columns else 0
+            current_soc = df.iloc[-1]['battery_soc_kwh'] if 'battery_soc_kwh' in df.columns else 500
+            soc_percent = (current_soc / 1000.0) * 100
 
             # --- HORNÍ PANEL METRIK ---
             col1, col2, col3, col4, col5 = st.columns(5)
             col1.metric("Aktuální čas (CZ)", current_time_str, current_date_str)
-            col2.metric("Aktuální cena", f"{latest_price:.2f} €/MWh")
-            col3.metric("Denní maximum", f"{max_price:.2f} €/MWh")
-            col4.metric("Denní minimum", f"{min_price:.2f} €/MWh")
-            col5.metric("Průměrná cena", f"{avg_price:.2f} €/MWh")
+            col2.metric("Tržní cena", f"{latest_price:.2f} €/MWh")
+            col3.metric("Baterie SoC", f"{soc_percent:.1f}%", f"{current_soc:.0f} kWh")
+            col4.metric("Celkový denní P&L", f"{total_profit:+.2f} EUR", "Čistý zisk")
+            col5.metric("Kapacita kontejneru", "1.0 MWh", "500 kW Invertor")
             
             st.markdown("---")
 
-            # --- HLAVNÍ SEKCE: GRAF A TELEMETRIE ---
+            # --- HLAVNÍ SEKCE: GRAF A BESS STATUS ---
             left_col, right_col = st.columns([3, 1])
 
             with left_col:
-                st.subheader("📈 Hodinová cenová křivka dne")
-                st.markdown("Kompletní trajektorie reálných a predikovaných cen elektřiny na burze (v českém čase).")
+                st.subheader("📈 Hodinová cenová křivka & Arbitrážní profil")
+                st.markdown("Vývoj cen elektřiny na burze pro dnešní den.")
                 
-                # Vykreslení hlavního grafu
                 chart_data = df.set_index('time')[['price']]
                 st.line_chart(chart_data, use_container_width=True)
 
             with right_col:
-                st.subheader("📰 Tržní přehled")
-                latest_headline = df.iloc[-1].get('headline', 'Stabilní situace na trhu.') if 'headline' in df.columns else 'Sleduji trh...'
-                wind_speed = df.iloc[-1].get('wind', 0) if 'wind' in df.columns else 0
+                st.subheader("🔋 Stav BESS Kontejneru")
+                latest_action = df.iloc[-1].get('bess_action', 'IDLE')
                 
-                st.info(f"**Hlavní zpráva:**\n\n{latest_headline}")
-                st.metric("Vítr (Praha)", f"{wind_speed} km/h")
-                st.success("🤖 Systém běží automatizovaně.")
+                if latest_action == "CHARGE":
+                    st.success("🟢 Aktuální stav: **NABÍJÍ SE**")
+                elif latest_action == "DISCHARGE":
+                    st.warning("🔴 Aktuální stav: **VYBÍJÍ SE**")
+                else:
+                    st.info("🔵 Aktuální stav: **IDLE (Pohotovost)**")
+                
+                st.progress(int(soc_percent))
+                st.markdown(f"**Účinnost cyklu:** 88% (Loss-aware)")
+                st.markdown(f"**Ochrana článků:** 5% - 95% SoC")
+                st.success("🤖 Fyzikální model bez odchylek aktivní.")
 
             st.markdown("---")
 
-            # --- DETAILNÍ TABULKOVÝ HARMONOGRAM ---
-            st.subheader("📋 Detailní hodinový harmonogram")
+            # --- DETAILNÍ TABULKA ---
+            st.subheader("📋 Detailní provozní harmonogram baterie")
             
-            tab1, tab2 = st.tabs(["Všechny hodinové bloky", "Filtrovaný pohled"])
+            tab1, tab2 = st.tabs(["Fyzikální log (Všechny hodiny)", "Filtrovaný pohled"])
             
             with tab1:
-                st.dataframe(df[['time', 'price', 'wind', 'status', 'headline']], use_container_width=True, height=300)
+                st.dataframe(df[['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh', 'hourly_cash_eur', 'status']], use_container_width=True, height=300)
             
             with tab2:
                 filter_status = st.selectbox("Zobrazit sekci:", ["Vše", "Minulost", "Budoucnost (Predikce)"])
                 if filter_status == "Vše":
-                    st.dataframe(df[['time', 'price', 'wind', 'status', 'headline']], use_container_width=True)
+                    st.dataframe(df[['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh', 'hourly_cash_eur', 'status']], use_container_width=True)
                 else:
                     filtered_df = df[df['status'] == filter_status]
-                    st.dataframe(filtered_df[['time', 'price', 'wind', 'status', 'headline']], use_container_width=True)
+                    st.dataframe(filtered_df[['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh', 'hourly_cash_eur', 'status']], use_container_width=True)
 
         else:
-            st.warning("⚠️ Databáze je zatím prázdná. Čekám na první data z engine.py.")
+            st.warning("⚠️ Databáze je zatím prázdná.")
     except Exception as e:
         st.error(f"Chyba při vykreslování terminálu: {e}")
 else:
-    st.warning("⚠️ Soubor 'market_history.csv' nebyl nalezen. Spusťte workflow v GitHub Actions.")
+    st.warning("⚠️ Soubor 'market_history.csv' nebyl nalezen.")
