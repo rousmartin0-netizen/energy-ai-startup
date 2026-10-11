@@ -78,9 +78,10 @@ if os.path.exists(file_path):
                 y=alt.Y('price:Q', title='Cena elektřiny (€/MWh)')
             )
 
+            # Opraveno alt.Condition -> alt.condition (s malým 'c')
             power_bars = base.mark_bar(opacity=0.75, width=15).encode(
                 y=alt.Y('bess_power_kw:Q', title='BESS Výkon střídače (kW)'),
-                color=alt.Condition(
+                color=alt.condition(
                     alt.datum.bess_power_kw > 0,
                     alt.value('#2ca02c'), # Zelená pro nabíjení
                     alt.value('#d62728')  # Červená pro vybíjení
