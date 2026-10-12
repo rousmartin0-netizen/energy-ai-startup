@@ -15,12 +15,6 @@ def send_telegram_msg(message):
         pass
 
 def simulate_bess_mpc_strict(df):
-    """
-    Pokročilá MPC simulace s důrazem na čekání na absolutní cenové extrémy.
-    - Kapacita: 1000 kWh (1 MWh)
-    - Max výkon střídače: 500 kW
-    - Účinnost cyklu: 88%
-    """
     CAPACITY_KWH = 1000.0
     MAX_POWER_KW = 500.0
     EFFICIENCY = 0.88
@@ -106,7 +100,6 @@ def get_market_data():
         available_dates = sorted(df_all['date'].unique())
         target_date = current_date if current_date in available_dates else available_dates[-1]
         
-        # Opravený print bez chybného znaku lambda
         print(f"Cílový datum pro simulaci: {target_date}")
         
         df_day = df_all[df_all['date'] == target_date].copy()
