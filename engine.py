@@ -84,8 +84,10 @@ def simulate_bess_mpc_strict(df):
     return df
 
 def get_market_data():
-    print("🚀 Spouštím zpřísněnou MPC simulaci...")
+    print("Stahuji reálná data a spouštím MPC simulaci pro aktuální den...")
     prague_tz = ZoneInfo("Europe/Prague")
+    now_prague = datetime.now(prague_tz)
+    current_date = now_prague.date()
     
     try:
         p_url = "https://api.energy-charts.info/price?bzn=DE-LU"
@@ -94,25 +96,32 @@ def get_market_data():
         prices = data["price"]
         timestamps = data.get("unix_seconds", data.get("time", []))
         
-        df_list = []
-        for t, p in zip(timestamps, prices):
-            dt = datetime.fromtimestamp(t, tz=prague_tz)
-            if dt.date() == datetime.now(prague_tz).date():
-                time_str = dt.strftime("%H:%M")
-                df_list.append([time_str, p])
-                
-        if not df_list and timestamps and prices:
-            for t, p in zip(timestamps[-24:], prices[-24:]):
-                dt = datetime.fromtimestamp(t, tz=prague_tz)
-                time_str = dt.strftime("%H:%M")
-                df_list.append([time_str, p])
-
+        df_all = pd.DataFrame({
+            'timestamp': timestamps,
+            'price': prices
+        })
+        df_all['dt'] = pd.to_datetime(df_all['timestamp'], unit='s', utc=True).dt.tz_convert(prague_tz)
+        df_all['date'] = df_all['dt'].dt.date
+        
+        available_dates = sorted(df_all['date'].unique())
+        target_date = current_date if current_date in available_dates else available_dates[-1]
+        
+        # Opravený print bez chybného znaku lambda
+        print(f"Cílový datum pro simulaci: {target_date}")
+        
+        df_day = df_all[df_all['date'] == target_date].copy()
+        df_day['time'] = df_day['dt'].dt.strftime("%H:%M")
+        
+        df_list = df_day[['time', 'price']].values.tolist()
+        
         df = pd.DataFrame(df_list, columns=["time", "price"])
+        df = df.drop_duplicates(subset=['time']).sort_values('time').reset_index(drop=True)
+        
         df = simulate_bess_mpc_strict(df)
         
         df["wind"] = 15.0  
         df["solar"] = 0.0
-        df["headline"] = "BESS EMS optimalizuje reálné špičky."
+        df["headline"] = f"BESS EMS optimalizuje den {target_date}."
         
     except Exception as e:
         print(f"Chyba při stahování dat: {e}")
@@ -126,9 +135,9 @@ def get_market_data():
     if not df.empty and 'cumulative_profit_eur' in df.columns:
         total_profit = df.iloc[-1]['cumulative_profit_eur']
         latest_price = df.iloc[-1]["price"]
-        send_telegram_msg(f"⚡ BESS Velín: Optimalizovaný zisk = {total_profit:.2f} EUR | Cena: {latest_price} EUR/MWh")
+        send_telegram_msg(f"⚡ BESS Velín ({target_date}): Zisk = {total_profit:.2f} EUR | Cena: {latest_price} EUR/MWh")
         
-    print(f"✅ Hotovo.")
+    print(f"Hotovo. Simulace uložena pro {len(df)} hodin dne {target_date}.")
 
 if __name__ == "__main__":
     get_market_data()
