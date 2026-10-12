@@ -15,7 +15,7 @@ st.set_page_config(
 
 st_autorefresh(interval=30000, key="datarefresh")
 
-# --- SIDEBAR ---
+# --- SIDEBAR: WHAT-IF SCÉNÁŘE ---
 st.sidebar.header("🎛️ What-If Scénáře & Kontejner")
 cap_slider = st.sidebar.slider("Kapacita baterie (kWh)", min_value=500.0, max_value=3000.0, value=1000.0, step=100.0)
 power_slider = st.sidebar.slider("Max výkon střídače (kW)", min_value=100.0, max_value=1500.0, value=500.0, step=50.0)
@@ -23,26 +23,42 @@ eff_slider = st.sidebar.slider("Účinnost cyklu (Round-trip)", min_value=0.75, 
 deg_slider = st.sidebar.slider("Degradační náklady (€/MWh)", min_value=0.0, max_value=50.0, value=15.0, step=1.0)
 
 st.title("⚡ SECOND FOUNDATION: BESS CONTROL CENTER (1 MWh / 500 kW)")
-st.markdown("Reálný dispečink s pásmovou predikcí cen, backtestingem a interaktivním MPC řízením.")
+st.markdown("Reálný dispečink s živým Rolling-Horizon MPC řízením a tržními pásmy.")
 
 file_path = "market_history.csv"
 
 def simulate_local(df_prices, capacity, max_p, eff, deg_cost):
+    prague_tz = ZoneInfo("Europe/Prague")
+    now_prague = datetime.now(prague_tz)
+    current_time_obj = now_prague.time()
+    
     SQRT_EFF = np.sqrt(eff)
     SOC_MIN = capacity * 0.05
     SOC_MAX = capacity * 0.95
-    current_soc = capacity * 0.5
     
     prices = df_prices['price'].values
+    times = df_prices['time'].values
     n_hours = len(prices)
     
     actions = ["IDLE (POHOTOVOST)"] * n_hours
     power_flow = np.zeros(n_hours)
     soc_levels = np.zeros(n_hours)
     cash_flow = np.zeros(n_hours)
+    statuses = ["Budoucnost (Plán)"] * n_hours
+    
+    current_soc = capacity * 0.5
     
     for i in range(n_hours):
+        t_str = str(times[i]).strip()
+        try:
+            row_time = datetime.strptime(t_str, "%H:%M").time()
+        except:
+            row_time = current_time_obj
+            
         p = prices[i]
+        is_past = row_time <= current_time_obj
+        statuses[i] = "Minulost" if is_past else "Budoucnost (Plán)"
+        
         future_prices = prices[i:]
         action = "IDLE (POHOTOVOST)"
         power = 0.0
@@ -79,6 +95,9 @@ def simulate_local(df_prices, capacity, max_p, eff, deg_cost):
     df_prices['battery_soc_kwh'] = soc_levels
     df_prices['hourly_cash_eur'] = cash_flow
     df_prices['cumulative_profit_eur'] = np.cumsum(cash_flow)
+    df_prices['status'] = statuses
+    df_prices['price_upper'] = df_prices['price'] * 1.10
+    df_prices['price_lower'] = df_prices['price'] * 0.90
     return df_prices
 
 if os.path.exists(file_path):
@@ -93,14 +112,6 @@ if os.path.exists(file_path):
             current_date_str = now_prague.strftime("%d.%m.%Y")
             
             now_dt = now_prague.time()
-            def classify_time(t_str):
-                try:
-                    t_obj = datetime.strptime(str(t_str).strip(), "%H:%M").time()
-                    return "Minulost" if t_obj <= now_dt else "Budoucnost (Plán)"
-                except:
-                    return "Neznámé"
-
-            df['status'] = df['time'].apply(classify_time)
             df['charge_power'] = df['bess_power_kw'].apply(lambda x: max(0, x))
             df['discharge_power'] = df['bess_power_kw'].apply(lambda x: min(0, x))
             
@@ -131,13 +142,12 @@ if os.path.exists(file_path):
             
             st.markdown("---")
 
-            # --- GRAF S PÁSMOVOU PREDIKCÍ ---
-            st.subheader("📊 Integrovaný dispečerský graf s pásmovou predikcí (Conf. Interval ±12%)")
-            st.markdown("*Modré pásmo znázorňuje pesimistický/optimistický cenový koridor trhu (€/MWh). Plynulé plochy ukazují výkon.*")
+            # --- GRAF S PÁSMEM ---
+            st.subheader("📊 Integrovaný dispečerský graf s tržním koridorem")
+            st.markdown("*Modré pásmo ukazuje cenový koridor (€/MWh). Plynulé plochy znázorňují nabíjení (zelená) a vybíjení (červená).*")
 
             base = alt.Chart(df).encode(x=alt.X('time:N', title='Hodina dne'))
 
-            # Pásmo nejistoty ceny
             price_band = base.mark_area(opacity=0.15, color='#1f77b4').encode(
                 y='price_lower:Q',
                 y2='price_upper:Q',
@@ -188,34 +198,28 @@ if os.path.exists(file_path):
                 st.write(f"• **Rychlost střídače:** {power_slider} kW limit")
                 st.write(f"• **Ztráty účinnosti:** {int(eff_slider*100)}% Round-trip")
                 st.write(f"• **Degradační náklady:** {deg_slider:.1f} €/MWh")
-                st.success("🤖 Pásmová predikce a MPC řízení aktivní.")
+                st.success("🤖 Rolling-Horizon MPC dispečink aktivní.")
 
             st.markdown("---")
 
-            # --- HARMONOGRAM & BACKTESTING ---
-            st.subheader("🔮 Harmonogram, Backtesting & Audit")
+            # --- HARMONOGRAM & LOGY ---
+            st.subheader("🔮 Harmonogram & Auditní stopa")
             
-            tab1, tab2, tab3, tab4 = st.tabs(["Budoucí plán", "Minulost", "Backtesting (Plán vs. Skutečnost)", "Kompletní log & Export"])
+            tab1, tab2, tab3 = st.tabs(["Budoucí plán (MPC)", "Minulost (Historie)", "Kompletní log & Export"])
             
             with tab1:
                 future_df = df[df['status'] == "Budoucnost (Plán)"]
                 if not future_df.empty:
-                    st.dataframe(future_df[['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh']], use_container_width=True)
+                    st.dataframe(future_df[['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh', 'hourly_cash_eur']], use_container_width=True)
                 else:
                     st.info("Pro dnešní den již nejsou budoucí bloky.")
             
             with tab2:
-                st.dataframe(df[df['status'] == "Minulost"][['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh']], use_container_width=True)
+                past_df = df[df['status'] == "Minulost"]
+                st.dataframe(past_df[['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh', 'hourly_cash_eur']], use_container_width=True)
 
             with tab3:
-                st.markdown("### 📈 Backtesting: Porovnání ranního plánu (Forecast) vs. Reálné provedení (Actual)")
-                st.markdown("Tento přehled porovnává predikované ceny a akce modelu s reálným vývojem na trhu. Pomáhá identifikovat odchylky v cash-flow.")
-                bt_df = df[['time', 'price', 'forecast_price', 'bess_action', 'forecast_action', 'bess_power_kw', 'forecast_power_kw']].copy()
-                bt_df['price_error_eur'] = (bt_df['price'] - bt_df['forecast_price']).round(2)
-                st.dataframe(bt_df, use_container_width=True)
-
-            with tab4:
-                st.dataframe(df[['time', 'price', 'price_lower', 'price_upper', 'bess_action', 'bess_power_kw', 'battery_soc_kwh', 'cumulative_profit_eur']], use_container_width=True)
+                st.dataframe(df[['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh', 'hourly_cash_eur', 'cumulative_profit_eur', 'status']], use_container_width=True)
                 csv_data = df.to_csv(index=False).encode('utf-8')
                 st.download_button(
                     label="📥 Stáhnout kompletní dispečerský audit (CSV)",
