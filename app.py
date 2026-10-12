@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 import os
 import altair as alt
 from datetime import datetime
@@ -220,7 +221,6 @@ if os.path.exists(file_path):
             with tab3:
                 st.dataframe(df[['time', 'price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh', 'hourly_cash_eur', 'cumulative_profit_eur', 'status']], use_container_width=True)
                 
-                # Tlačítko pro export auditního CSV pro investory/financial audit
                 csv_data = df.to_csv(index=False).encode('utf-8')
                 st.download_button(
                     label="📥 Stáhnout kompletní dispečerský audit (CSV)",
