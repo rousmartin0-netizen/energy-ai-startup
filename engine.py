@@ -27,11 +27,11 @@ def simulate_rolling_mpc(df, capacity_kwh=1000.0, max_power_kw=500.0, efficiency
     times = df['time'].values
     n_hours = len(prices)
     
-    actions = ["IDLE (POHOTOVOST)"] * n_hours
+    actions = ["IDLE (Pohotovost)"] * n_hours
     power_flow = np.zeros(n_hours)
     soc_levels = np.zeros(n_hours)
     cash_flow = np.zeros(n_hours)
-    statuses = ["Budoucnost (Plán)"] * n_hours
+    statuses = ["Budoucnost"] * n_hours
     
     current_soc = capacity_kwh * 0.5
     
@@ -44,10 +44,10 @@ def simulate_rolling_mpc(df, capacity_kwh=1000.0, max_power_kw=500.0, efficiency
             
         p = prices[i]
         is_past = row_time <= current_time_obj
-        statuses[i] = "Minulost" if is_past else "Budoucnost (Plán)"
+        statuses[i] = "Minulost" if is_past else "Budoucnost"
         
         future_prices = prices[i:]
-        action = "IDLE (POHOTOVOST)"
+        action = "IDLE (Pohotovost)"
         power = 0.0
         
         if len(future_prices) > 0:
@@ -55,11 +55,11 @@ def simulate_rolling_mpc(df, capacity_kwh=1000.0, max_power_kw=500.0, efficiency
             min_f = np.min(future_prices)
             max_f = np.max(future_prices)
             
-            if p <= min_f * 1.05 and p < (mean_f - deg_cost) if 'deg_cost' in locals() else p < (mean_f - degradation_cost_mwh) and current_soc < SOC_MAX:
+            if p <= min_f * 1.05 and p < (mean_f - degradation_cost_mwh) and current_soc < SOC_MAX:
                 headroom = SOC_MAX - current_soc
                 power = min(max_power_kw, headroom / SQRT_EFF)
                 if power > 10.0:
-                    action = "NABÍJENÍ (CHARGE)"
+                    action = "Nabíjení"
                     current_soc += power * SQRT_EFF
                     en_mwh = power / 1000.0
                     cash_flow[i] = - (en_mwh * p) - (en_mwh * degradation_cost_mwh * 0.5)
@@ -68,7 +68,7 @@ def simulate_rolling_mpc(df, capacity_kwh=1000.0, max_power_kw=500.0, efficiency
                 available = current_soc - SOC_MIN
                 power = -min(max_power_kw, available * SQRT_EFF)
                 if abs(power) > 10.0:
-                    action = "VYBÍJENÍ (DISCHARGE)"
+                    action = "Vybíjení"
                     current_soc -= abs(power) / SQRT_EFF
                     en_mwh = abs(power) / 1000.0
                     cash_flow[i] = (en_mwh * p) - (en_mwh * degradation_cost_mwh)
@@ -84,7 +84,6 @@ def simulate_rolling_mpc(df, capacity_kwh=1000.0, max_power_kw=500.0, efficiency
     df['cumulative_profit_eur'] = np.cumsum(cash_flow)
     df['status'] = statuses
     
-    # Generování ranní predikce (Forecast price s přirozenou tržní chybou)
     np.random.seed(42)
     forecast_prices = prices * np.random.normal(1.0, 0.04, n_hours)
     df['forecast_price'] = forecast_prices
@@ -96,7 +95,7 @@ def simulate_rolling_mpc(df, capacity_kwh=1000.0, max_power_kw=500.0, efficiency
     return df
 
 def get_market_data():
-    print("Stahuji data a spouštím MPC s predikční analýzou...")
+    print("Stahuji data pro EnergyAi...")
     prague_tz = ZoneInfo("Europe/Prague")
     now_prague = datetime.now(prague_tz)
     current_date = now_prague.date()
@@ -123,7 +122,7 @@ def get_market_data():
         
         df["wind"] = 15.0  
         df["solar"] = 0.0
-        df["headline"] = f"BESS EMS optimalizuje den {target_date}."
+        df["headline"] = f"EnergyAi optimalizuje den {target_date}."
         
     except Exception as e:
         print(f"Chyba: {e}")
@@ -136,7 +135,7 @@ def get_market_data():
     
     if not df.empty and 'cumulative_profit_eur' in df.columns:
         total_profit = df.iloc[-1]['cumulative_profit_eur']
-        send_telegram_msg(f"⚡ BESS Velín ({target_date}): Zisk = {total_profit:.2f} EUR")
+        send_telegram_msg(f"⚡ EnergyAi Velín ({target_date}): Zisk = {total_profit:.2f} EUR")
         
     print(f"Hotovo pro {target_date}.")
 
