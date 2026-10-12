@@ -14,15 +14,16 @@ def send_telegram_msg(message):
     except:
         pass
 
-def simulate_bess_mpc_strict(df):
-    CAPACITY_KWH = 1000.0
-    MAX_POWER_KW = 500.0
-    EFFICIENCY = 0.88
-    SQRT_EFF = np.sqrt(EFFICIENCY)
+def simulate_bess_mpc_advanced(df, capacity_kwh=1000.0, max_power_kw=500.0, efficiency=0.88, degradation_cost_mwh=15.0):
+    """
+    Pokročilá MPC simulace s fyzikálními parametry a degradačními náklady.
+    - degradation_cost_mwh: Náklady na opotřebení článků (€ / MWh propustnosti)
+    """
+    SQRT_EFF = np.sqrt(efficiency)
     
-    SOC_MIN = 50.0   # 5%
-    SOC_MAX = 950.0  # 95%
-    current_soc = 500.0 # Startujeme na 50%
+    SOC_MIN = capacity_kwh * 0.05   # 5%
+    SOC_MAX = capacity_kwh * 0.95   # 95%
+    current_soc = capacity_kwh * 0.5 # Startujeme na 50%
     
     df = df.sort_values('time').reset_index(drop=True)
     prices = df['price'].values
@@ -45,25 +46,30 @@ def simulate_bess_mpc_strict(df):
             min_future = np.min(future_horizon_prices)
             max_future = np.max(future_horizon_prices)
             
-            # 1. NABÍJENÍ: Lokální minimum a pod průměrem dne
-            if p <= min_future * 1.05 and p < mean_future and current_soc < SOC_MAX:
+            # 1. NABÍJENÍ: Lokální minimum, pod průměrem a zohlednění degradačního limitu
+            if p <= min_future * 1.05 and p < (mean_future - degradation_cost_mwh) and current_soc < SOC_MAX:
                 headroom = SOC_MAX - current_soc
-                power = min(MAX_POWER_KW, headroom / SQRT_EFF)
+                power = min(max_power_kw, headroom / SQRT_EFF)
                 
                 if power > 10.0:
                     action = "NABÍJENÍ (CHARGE)"
                     current_soc += power * SQRT_EFF
-                    cash_flow[i] = - (power * p) / 1000.0
+                    # Peněžní tok: nákup energie + započtení degradačního nákladu na MWh
+                    energy_mwh = power / 1000.0
+                    cash_flow[i] = - (energy_mwh * p) - (energy_mwh * degradation_cost_mwh * 0.5)
                     
-            # 2. VYBÍJENÍ: Čekáme striktně na absolutní špičku (97%+ maxima zbývajícího dne)
-            elif p >= max_future * 0.97 and p > mean_future and current_soc > SOC_MIN:
+            # 2. VYBÍJENÍ: Čekáme na absolutní špičku s ohledem na degradaci
+            elif p >= max_future * 0.97 and p > (mean_future + degradation_cost_mwh) and current_soc > SOC_MIN:
                 available = current_soc - SOC_MIN
-                power = -min(MAX_POWER_KW, available * SQRT_EFF)
+                power = -min(max_power_kw, available * SQRT_EFF)
                 
                 if abs(power) > 10.0:
                     action = "VYBÍJENÍ (DISCHARGE)"
-                    current_soc -= abs(power) / SQRT_EFF
-                    cash_flow[i] = (abs(power) * p) / 1000.0
+                    energy_taken = abs(power) / SQRT_EFF
+                    current_soc -= energy_taken
+                    energy_mwh = abs(power) / 1000.0
+                    # Peněžní tok: prodej energie minus degradační náklady
+                    cash_flow[i] = (energy_mwh * p) - (energy_mwh * degradation_cost_mwh)
 
         actions[i] = action
         power_flow[i] = power
@@ -78,7 +84,7 @@ def simulate_bess_mpc_strict(df):
     return df
 
 def get_market_data():
-    print("Stahuji reálná data a spouštím MPC simulaci pro aktuální den...")
+    print("Stahuji reálná data a spouštím pokročilou MPC simulaci...")
     prague_tz = ZoneInfo("Europe/Prague")
     now_prague = datetime.now(prague_tz)
     current_date = now_prague.date()
@@ -100,8 +106,6 @@ def get_market_data():
         available_dates = sorted(df_all['date'].unique())
         target_date = current_date if current_date in available_dates else available_dates[-1]
         
-        print(f"Cílový datum pro simulaci: {target_date}")
-        
         df_day = df_all[df_all['date'] == target_date].copy()
         df_day['time'] = df_day['dt'].dt.strftime("%H:%M")
         
@@ -110,11 +114,12 @@ def get_market_data():
         df = pd.DataFrame(df_list, columns=["time", "price"])
         df = df.drop_duplicates(subset=['time']).sort_values('time').reset_index(drop=True)
         
-        df = simulate_bess_mpc_strict(df)
+        # Spuštění s výchozími parametry
+        df = simulate_bess_mpc_advanced(df)
         
         df["wind"] = 15.0  
         df["solar"] = 0.0
-        df["headline"] = f"BESS EMS optimalizuje den {target_date}."
+        df["headline"] = f"BESS EMS optimalizuje den {target_date} s degradačním modelováním."
         
     except Exception as e:
         print(f"Chyba při stahování dat: {e}")
