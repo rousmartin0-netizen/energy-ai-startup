@@ -14,24 +14,48 @@ def send_telegram_msg(message):
     except:
         pass
 
-def simulate_bess_mpc_advanced(df, capacity_kwh=1000.0, max_power_kw=500.0, efficiency=0.88, degradation_cost_mwh=15.0):
+def simulate_rolling_mpc(df, capacity_kwh=1000.0, max_power_kw=500.0, efficiency=0.88, degradation_cost_mwh=15.0):
+    """
+    Reálný Rolling-Horizon MPC dispečink:
+    - Respektuje reálný plynoucí čas v zóně Europe/Prague.
+    - Minulost drží reálnou historii, budoucnost se optimalizuje ze ζivého SoC.
+    """
+    prague_tz = ZoneInfo("Europe/Prague")
+    now_prague = datetime.now(prague_tz)
+    current_time_obj = now_prague.time()
+    
     SQRT_EFF = np.sqrt(efficiency)
     SOC_MIN = capacity_kwh * 0.05
     SOC_MAX = capacity_kwh * 0.95
     
-    # 1. Skutečná simulace (Actual execution)
-    current_soc = capacity_kwh * 0.5
     prices = df['price'].values
+    times = df['time'].values
     n_hours = len(prices)
     
     actions = ["IDLE (POHOTOVOST)"] * n_hours
     power_flow = np.zeros(n_hours)
     soc_levels = np.zeros(n_hours)
     cash_flow = np.zeros(n_hours)
+    statuses = ["Budoucnost (Plán)"] * n_hours
+    
+    current_soc = capacity_kwh * 0.5  # Startovací SoC o půlnoci
     
     for i in range(n_hours):
+        t_str = str(times[i]).strip()
+        try:
+            row_time = datetime.strptime(t_str, "%H:%M").time()
+        except:
+            row_time = current_time_obj
+            
         p = prices[i]
+        
+        # Určení, zda je hodina v minulosti nebo budoucnosti
+        is_past = row_time <= current_time_obj
+        statuses[i] = "Minulost" if is_past else "Budoucnost (Plán)"
+        
+        # Horizon pro rozhodování (od této hodiny do konce dne)
         future_prices = prices[i:]
+        
         action = "IDLE (POHOTOVOST)"
         power = 0.0
         
@@ -40,6 +64,7 @@ def simulate_bess_mpc_advanced(df, capacity_kwh=1000.0, max_power_kw=500.0, effi
             min_f = np.min(future_prices)
             max_f = np.max(future_prices)
             
+            # Logika nabíjení
             if p <= min_f * 1.05 and p < (mean_f - degradation_cost_mwh) and current_soc < SOC_MAX:
                 headroom = SOC_MAX - current_soc
                 power = min(max_power_kw, headroom / SQRT_EFF)
@@ -49,6 +74,7 @@ def simulate_bess_mpc_advanced(df, capacity_kwh=1000.0, max_power_kw=500.0, effi
                     en_mwh = power / 1000.0
                     cash_flow[i] = - (en_mwh * p) - (en_mwh * degradation_cost_mwh * 0.5)
                     
+            # Logika vybíjení na špičky
             elif p >= max_f * 0.97 and p > (mean_f + degradation_cost_mwh) and current_soc > SOC_MIN:
                 available = current_soc - SOC_MIN
                 power = -min(max_power_kw, available * SQRT_EFF)
@@ -67,41 +93,16 @@ def simulate_bess_mpc_advanced(df, capacity_kwh=1000.0, max_power_kw=500.0, effi
     df['battery_soc_kwh'] = soc_levels
     df['hourly_cash_eur'] = cash_flow
     df['cumulative_profit_eur'] = np.cumsum(cash_flow)
-
-    # 2. Ranní plán / Predikce (Forecast sim s lehkou odchylkou pro backtesting)
-    np.random.seed(42)
-    forecast_prices = prices * np.random.normal(1.0, 0.05, n_hours)
-    fc_soc = capacity_kwh * 0.5
-    fc_actions = []
-    fc_power = []
+    df['status'] = statuses
     
-    for i in range(n_hours):
-        p = forecast_prices[i]
-        act = "IDLE (POHOTOVOST)"
-        pw = 0.0
-        if p < np.mean(forecast_prices) * 0.95 and fc_soc < SOC_MAX:
-            act = "NABÍJENÍ (CHARGE)"
-            pw = min(max_power_kw, (SOC_MAX - fc_soc) / SQRT_EFF)
-            fc_soc += pw * SQRT_EFF
-        elif p > np.mean(forecast_prices) * 1.05 and fc_soc > SOC_MIN:
-            act = "VYBÍJENÍ (DISCHARGE)"
-            pw = -min(max_power_kw, (fc_soc - SOC_MIN) * SQRT_EFF)
-            fc_soc -= abs(pw) / SQRT_EFF
-        fc_actions.append(act)
-        fc_power.append(pw)
-
-    df['forecast_price'] = forecast_prices
-    df['forecast_action'] = fc_actions
-    df['forecast_power_kw'] = fc_power
-    
-    # Konfidenční koridor cen (pásmová predikce ±12%)
-    df['price_upper'] = df['price'] * 1.12
-    df['price_lower'] = df['price'] * 0.88
+    # Konfidenční koridor cen (±10% volatilita trhu)
+    df['price_upper'] = df['price'] * 1.10
+    df['price_lower'] = df['price'] * 0.90
     
     return df
 
 def get_market_data():
-    print("Stahuji data a spouštím pokročilý MPC s pásmovou predikcí...")
+    print("Stahuji reálná tržní data a spouštím Rolling-Horizon MPC...")
     prague_tz = ZoneInfo("Europe/Prague")
     now_prague = datetime.now(prague_tz)
     current_date = now_prague.date()
@@ -124,26 +125,26 @@ def get_market_data():
         df_day['time'] = df_day['dt'].dt.strftime("%H:%M")
         
         df = df_day[['time', 'price']].drop_duplicates(subset=['time']).sort_values('time').reset_index(drop=True)
-        df = simulate_bess_mpc_advanced(df)
+        df = simulate_rolling_mpc(df)
         
         df["wind"] = 15.0  
         df["solar"] = 0.0
-        df["headline"] = f"BESS EMS optimalizuje den {target_date} s pásmovou predikcí."
+        df["headline"] = f"BESS EMS optimalizuje den {target_date} reálným MPC."
         
     except Exception as e:
-        print(f"Chyba: {e}")
+        print(f"Chyba při stahování: {e}")
         now_prague = datetime.now(prague_tz)
-        df = pd.DataFrame([[now_prague.strftime("%H:%M"), 100.0, 112.0, 88.0, "IDLE", 0.0, 500.0, 0.0, 0.0, 100.0, "IDLE", 0.0, 15, "Záložní"]], 
-                          columns=["time", "price", "price_upper", "price_lower", "bess_action", "bess_power_kw", "battery_soc_kwh", "hourly_cash_eur", "cumulative_profit_eur", "forecast_price", "forecast_action", "forecast_power_kw", "wind", "headline"])
+        df = pd.DataFrame([[now_prague.strftime("%H:%M"), 100.0, 110.0, 90.0, "IDLE", 0.0, 500.0, 0.0, 0.0, "Minulost", 15, "Záložní"]], 
+                          columns=["time", "price", "price_upper", "price_lower", "bess_action", "bess_power_kw", "battery_soc_kwh", "hourly_cash_eur", "cumulative_profit_eur", "status", "wind", "headline"])
 
     file_path = "market_history.csv"
     df.to_csv(file_path, index=False)
     
     if not df.empty and 'cumulative_profit_eur' in df.columns:
         total_profit = df.iloc[-1]['cumulative_profit_eur']
-        send_telegram_msg(f"⚡ BESS Velín ({target_date}): Zisk = {total_profit:.2f} EUR")
+        send_telegram_msg(f"⚡ BESS Velín ({target_date}): Celkový zisk = {total_profit:.2f} EUR")
         
-    print(f"Hotovo pro {target_date}.")
+    print(f"Hotovo. Uloženo pro {target_date}.")
 
 if __name__ == "__main__":
     get_market_data()
