@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 from zoneinfo import ZoneInfo
+import os
 
 TELEGRAM_TOKEN = "8671040720:AAF9Lmr2wx0gfs_2DA-xQuTxznIJ7qKBt18"
 TELEGRAM_CHAT_ID = "6143507725"
@@ -94,6 +95,25 @@ def simulate_rolling_mpc(df, capacity_kwh=1000.0, max_power_kw=500.0, efficiency
     
     return df
 
+def update_historical_ledger(target_date_str, daily_profit):
+    ledger_path = "historical_ledger.csv"
+    if os.path.exists(ledger_path):
+        ledger_df = pd.read_csv(ledger_path)
+    else:
+        ledger_df = pd.DataFrame(columns=["date", "daily_profit_eur", "cumulative_all_time_eur"])
+    
+    # Pokud už záznam pro daný den existuje, aktualizujeme ho, jinak přidáme nový
+    if target_date_str in ledger_df['date'].values:
+        ledger_df.loc[ledger_df['date'] == target_date_str, 'daily_profit_eur'] = round(daily_profit, 2)
+    else:
+        new_row = pd.DataFrame({"date": [target_date_str], "daily_profit_eur": [round(daily_profit, 2)], "cumulative_all_time_eur": [0.0]})
+        ledger_df = pd.concat([ledger_df, new_row], ignore_index=True)
+    
+    # Seřadit podle data a přepočítat celkový kumulativní zisk napříč historií
+    ledger_df = ledger_df.sort_values("date").reset_index(drop=True)
+    ledger_df['cumulative_all_time_eur'] = ledger_df['daily_profit_eur'].cumsum().round(2)
+    ledger_df.to_csv(ledger_path, index=False)
+
 def get_market_data():
     print("Stahuji data pro EnergyAi...")
     prague_tz = ZoneInfo("Europe/Prague")
@@ -124,20 +144,18 @@ def get_market_data():
         df["solar"] = 0.0
         df["headline"] = f"EnergyAi optimalizuje den {target_date}."
         
+        # Uložení do denního souboru
+        file_path = "market_history.csv"
+        df.to_csv(file_path, index=False)
+        
+        # Zápis do historické knihy (ledgeru)
+        if not df.empty and 'cumulative_profit_eur' in df.columns:
+            total_profit = df.iloc[-1]['cumulative_profit_eur']
+            update_historical_ledger(str(target_date), total_profit)
+            send_telegram_msg(f"⚡ EnergyAi Velín ({target_date}): Denní zisk = {total_profit:.2f} EUR")
+            
     except Exception as e:
         print(f"Chyba: {e}")
-        now_prague = datetime.now(prague_tz)
-        df = pd.DataFrame([[now_prague.strftime("%H:%M"), 100.0, 102.0, 2.0, 110.0, 90.0, "IDLE", 0.0, 500.0, 0.0, 0.0, "Minulost", 15, "Záložní"]], 
-                          columns=["time", "price", "forecast_price", "price_error_eur", "price_upper", "price_lower", "bess_action", "bess_power_kw", "battery_soc_kwh", "hourly_cash_eur", "cumulative_profit_eur", "status", "wind", "headline"])
-
-    file_path = "market_history.csv"
-    df.to_csv(file_path, index=False)
-    
-    if not df.empty and 'cumulative_profit_eur' in df.columns:
-        total_profit = df.iloc[-1]['cumulative_profit_eur']
-        send_telegram_msg(f"⚡ EnergyAi Velín ({target_date}): Zisk = {total_profit:.2f} EUR")
-        
-    print(f"Hotovo pro {target_date}.")
 
 if __name__ == "__main__":
     get_market_data()
