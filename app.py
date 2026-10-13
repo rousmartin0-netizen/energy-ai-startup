@@ -26,6 +26,7 @@ st.title("⚡ EnergyAi — BESS Control Center")
 st.markdown("Autonomní dispečink velkokapacitního úložiště s optimalizací na spotovém trhu.")
 
 file_path = "market_history.csv"
+ledger_path = "historical_ledger.csv"
 
 def simulate_local(df_prices, capacity, max_p, eff, deg_cost):
     prague_tz = ZoneInfo("Europe/Prague")
@@ -138,13 +139,20 @@ if os.path.exists(file_path):
             current_action = latest_row.get('bess_action', 'IDLE')
             total_profit = df['cumulative_profit_eur'].iloc[-1] if 'cumulative_profit_eur' in df.columns else 0
 
+            # --- Načtení historického ledgeru pro All-Time výdělek ---
+            all_time_profit = total_profit
+            if os.path.exists(ledger_path):
+                ledger_df = pd.read_csv(ledger_path)
+                if not ledger_df.empty:
+                    all_time_profit = ledger_df['cumulative_all_time_eur'].iloc[-1]
+
             # --- METRIKY ---
             col1, col2, col3, col4, col5 = st.columns(5)
             col1.metric("Čas", current_time_str, current_date_str)
             col2.metric("Cena elektřiny", f"{latest_price:.2f} €/MWh")
             col3.metric("Stav baterie (SoC)", f"{current_soc:.1f} kWh", f"{soc_percent:.1f}%")
             col4.metric("Výkon střídače", f"{current_power:+.1f} kW", f"Max {power_slider} kW")
-            col5.metric("Celkový zisk", f"{total_profit:+.2f} EUR", "Arbitráž")
+            col5.metric("Celkový zisk (All-Time)", f"{all_time_profit:+.2f} EUR", "Historický P&L")
             
             st.markdown("---")
 
@@ -225,10 +233,10 @@ if os.path.exists(file_path):
 
             st.markdown("---")
 
-            # --- HARMONOGRAM & LOGY ---
-            st.subheader("🔮 Harmonogram & Export")
+            # --- HARMONOGRAM, HISTORIE & LOGY ---
+            st.subheader("🔮 Harmonogram, Historie a Export")
             
-            tab1, tab2, tab3 = st.tabs(["Budoucí plán", "Minulost", "Kompletní log & Export"])
+            tab1, tab2, tab3, tab4 = st.tabs(["Budoucí plán", "Minulost dne", "Historie všech dní (All-Time)", "Kompletní log & Export"])
             
             with tab1:
                 future_df = df[df['status'] == "Budoucnost"]
@@ -242,10 +250,19 @@ if os.path.exists(file_path):
                 st.dataframe(past_df[['time', 'price', 'forecast_price', 'bess_action', 'bess_power_kw', 'battery_soc_kwh']], use_container_width=True)
 
             with tab3:
+                st.markdown("### 💰 Celkový přehled výdělků kontejneru napříč všemi dny")
+                if os.path.exists(ledger_path):
+                    ledger_df = pd.read_csv(ledger_path)
+                    st.dataframe(ledger_df, use_container_width=True)
+                    st.line_chart(ledger_df.set_index('date')[['cumulative_all_time_eur']], use_container_width=True)
+                else:
+                    st.info("Zatím nejsou k dispozici historické záznamy z předchozích dní.")
+
+            with tab4:
                 st.dataframe(df[['time', 'price', 'forecast_price', 'price_error_eur', 'bess_action', 'bess_power_kw', 'battery_soc_kwh', 'cumulative_profit_eur', 'status']], use_container_width=True)
                 csv_data = df.to_csv(index=False).encode('utf-8')
                 st.download_button(
-                    label="📥 Stáhnout auditní CSV",
+                    label="📥 Stáhnout denní auditní CSV",
                     data=csv_data,
                     file_name=f"energyai_audit_{datetime.now().strftime('%Y-%m-%d')}.csv",
                     mime="text/csv",
